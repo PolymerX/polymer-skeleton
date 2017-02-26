@@ -27,6 +27,32 @@ Remove the `.git` folder and change details within:
 
 Then start building your application!
 
+		$ yarn && bower install
+
+### Developing
+
+Start the `webpack-dev-server` on the port `3000` with hot reload
+
+		$ yarn dev
+
+### Build (Webpack)
+
+CURRENTLY simply build the Webpack bundle (rework to Kubozer maybe)
+
+		$ yarn build
+
+### Build SASS
+
+Configuration within the `SASS` namespace of the `package.json`
+
+		$ yarn sass
+
+### Test
+
+CURRENTLY only XO for code style
+
+		$ yarn test
+
 ## How Polymer is imported
 
 It's a little trick to just show Polymer to Webpack and bundle with the other `js`.
