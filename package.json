@@ -1,0 +1,32 @@
+{
+  "name": "polymer-webpack-skeleton",
+  "version": "0.0.0",
+  "main": "src/index.js",
+  "license": "MIT",
+  "author": "LasaleFamine <info@godev.space>",
+  "scripts": {
+    "build": "webpack",
+    "dev": "webpack-dev-server --hot",
+    "sass": "node build_utils/sass_build.js",
+    "test": "xo"
+  },
+  "sass": {
+    "files": [
+      "src/assets/sass/style.scss"
+    ]
+  },
+  "xo": {
+    "envs": ["browser"]
+  },
+  "devDependencies": {
+    "babel-core": "^6.23.1",
+    "babel-loader": "^6.3.2",
+    "babel-preset-es2015": "^6.22.0",
+    "fs-extra": "^2.0.0",
+    "node-sass": "^4.5.0",
+    "pkg-conf": "^2.0.0",
+    "webpack": "^2.2.1",
+    "webpack-dev-server": "^2.4.1",
+    "xo": "^0.17.1"
+  }
+}
