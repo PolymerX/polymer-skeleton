@@ -1,4 +1,4 @@
-# Polymer 1.x Webpack Skeleton (ES6 Syntaxt)
+# Polymer 1.x Webpack Skeleton (ES6 Syntax)
 
 [![Build Status](https://travis-ci.org/LasaleFamine/polymer-webpack-sekeleton.svg?branch=master)](https://travis-ci.org/LasaleFamine/polymer-webpack-sekeleton)
 
