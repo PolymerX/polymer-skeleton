@@ -1,6 +1,6 @@
 # Polymer 1.x Webpack Skeleton (ES6 Syntax)
 
-[![Build Status](https://travis-ci.org/LasaleFamine/polymer-webpack-sekeleton.svg?branch=master)](https://travis-ci.org/LasaleFamine/polymer-webpack-sekeleton)
+[![Build Status](https://travis-ci.org/PolymerX/polymer-webpack-sekeleton.svg?branch=master)](https://travis-ci.org/PolymerX/polymer-webpack-sekeleton)
 
 > Mininum boilerplate to deliver a Polymer 1.x in ES6 syntaxt with Webpack
 
@@ -18,7 +18,7 @@ Made for personal use, glad if someone can get a good starting point from here.
 
 Clone this repository:
 
-	$ git clone https://github.com/lasalefamine/polymer-webpack-skeleton [your-app-name]
+	$ git clone https://github.com/PolymerX/polymer-webpack-skeleton [your-app-name]
 
 Remove the `.git` folder and change details within:
 
