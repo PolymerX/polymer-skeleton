@@ -1,6 +1,6 @@
 # Polymer 1.x Webpack Skeleton (ES6 Syntax)
 
-[![Build Status](https://travis-ci.org/PolymerX/polymer-webpack-sekeleton.svg?branch=master)](https://travis-ci.org/PolymerX/polymer-webpack-sekeleton)
+[![Build Status](https://travis-ci.org/PolymerX/polymer-webpack-skeleton.svg?branch=master)](https://travis-ci.org/PolymerX/polymer-webpack-skeleton)
 
 > Mininum boilerplate to deliver a Polymer 1.x in ES6 syntaxt with Webpack
 
