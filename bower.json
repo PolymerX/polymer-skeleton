@@ -1,0 +1,30 @@
+{
+  "name": "polymer-webpack-skeleton",
+  "description": "",
+  "main": "src/index.js",
+  "authors": [
+    "LasaleFamine"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "polymer",
+    "webpack",
+    "skeleton",
+    "starter-kit",
+    "postcss",
+    "es6",
+    "esnext"
+  ],
+  "homepage": "https://github.com/PolymerX/polymer-webpack-skeleton",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "./src/assets/bower",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "^1.8.1"
+  }
+}

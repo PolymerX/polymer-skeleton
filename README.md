@@ -18,7 +18,7 @@ Made for personal use, glad if someone can get a good starting point from here.
 
 Clone this repository:
 
-		$ git clone https://github.com/lasalefamine/polymer-webpack-skeleton [your-app-name]
+	$ git clone https://github.com/lasalefamine/polymer-webpack-skeleton [your-app-name]
 
 Remove the `.git` folder and change details within:
 
@@ -27,31 +27,31 @@ Remove the `.git` folder and change details within:
 
 Then start building your application!
 
-		$ yarn && bower install
+	$ yarn && bower install
 
 ### Developing
 
 Start the `webpack-dev-server` on the port `3000` with hot reload
 
-		$ yarn dev
+	$ yarn dev
 
 ### Build (Webpack)
 
 CURRENTLY simply build the Webpack bundle (rework to Kubozer maybe)
 
-		$ yarn build
+	$ yarn build
 
 ### Build SASS
 
 Configuration within the `SASS` namespace of the `package.json`
 
-		$ yarn sass
+	$ yarn sass
 
 ### Test
 
 CURRENTLY only XO for code style
 
-		$ yarn test
+	$ yarn test
 
 ## How Polymer is imported
 
