@@ -10,9 +10,9 @@ module.exports = {
 	},
 	module: {
 		rules: [{
-			test: /\.js[x]?$/,
-			exclude: /node_modules/,
-			loader: 'babel-loader?presets[]=es2015'
+				test: /\.js[x]?$/,
+				exclude: /node_modules/,
+				loader: 'babel-loader?presets[]=es2015'
 		}]
 	},
 	devServer: {
