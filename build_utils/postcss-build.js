@@ -11,7 +11,7 @@ const postcssOptions = {}
 const filterType = /^text\/css$/
 
 // Initialize watcher.
-const watcher = chokidar.watch('./src/components/**/*.usable.html', {
+const watcher = chokidar.watch('./src/components/**/*.postcss.html', {
   ignored: /(^|[\/\\])\../,
   persistent: true
 })
@@ -21,7 +21,7 @@ const log = console.log.bind(console)
 
 const compile = path => {
 	const html = readFileSync(path, 'utf8')
-	const normalizedPath = path.replace('.usable', '')
+	const normalizedPath = path.replace('.postcss', '.style')
 
 	posthtml([ postcss(postcssPlugins, postcssOptions, filterType) ])
     .process(html)

@@ -1,10 +1,10 @@
 <link rel="import" href="/assets/bower/polymer/polymer.html">
+<link rel="import" href="webpack-app.style.html">
+
 
 <dom-module id="webpack-app">
     <template>
-			<style>
-    				div { display: -ms-flexbox; display: flex; }
-			</style>
+			<style include="webpack-app-styles"></style>
 
 			[[name]]
 			<div>
