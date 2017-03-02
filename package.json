@@ -6,7 +6,8 @@
   "author": "LasaleFamine <info@godev.space>",
   "scripts": {
     "build": "webpack",
-    "dev": "webpack-dev-server --hot",
+    "dev": "./build_utils/run_dev.sh",
+    "dev:js": "webpack-dev-server --hot",
     "dev:postcss": "node build_utils/postcss-build.js",
     "test": "xo"
   },

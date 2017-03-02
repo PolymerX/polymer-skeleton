@@ -1,4 +1,5 @@
 const { readFileSync, writeFileSync } = require('fs')
+const { join } = require('path')
 
 const posthtml = require('posthtml')
 const postcss = require('posthtml-postcss')
@@ -11,7 +12,7 @@ const postcssOptions = {}
 const filterType = /^text\/css$/
 
 // Initialize watcher.
-const watcher = chokidar.watch('./src/components/**/*.postcss.html', {
+const watcher = chokidar.watch('./src/components/**/*.style.html', {
   ignored: /(^|[\/\\])\../,
   persistent: true
 })
@@ -19,21 +20,23 @@ const watcher = chokidar.watch('./src/components/**/*.postcss.html', {
 // Something to use when events are received.
 const log = console.log.bind(console)
 
-const compile = path => {
-	const html = readFileSync(path, 'utf8')
-	const normalizedPath = path.replace('.postcss', '.style')
+const compile = sourcePath => {
+	const html = readFileSync(sourcePath, 'utf8')
+  const splittedPath = sourcePath.split('/')
+  const normalizedPath = splittedPath.splice(0, splittedPath.length - 1).join('/')
+	const correctPath = join(normalizedPath, 'style-module.html')
 
 	posthtml([ postcss(postcssPlugins, postcssOptions, filterType) ])
     .process(html)
-    .then(result => Promise.resolve(writeFileSync(normalizedPath, result.html, 'utf8')))
-		.then(() => log(`>> Compiled: ${path}`))
+    .then(result => Promise.resolve(writeFileSync(correctPath, result.html, 'utf8')))
+		.then(() => log(`>> Compiled: ${sourcePath}`))
 }
 
 // Add event listeners.
 watcher
-  .on('add', path => log(`File ${path} has been added`))
-  .on('change', path => compile(path))
-  .on('unlink', path => log(`File ${path} has been removed`))
+  .on('add', sourcePath => log(`File ${sourcePath} has been added`))
+  .on('change', sourcePath => compile(sourcePath))
+  .on('unlink', sourcePath => log(`File ${sourcePath} has been removed`))
 
 
 
