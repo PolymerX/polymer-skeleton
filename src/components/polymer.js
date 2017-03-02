@@ -1,4 +1,4 @@
-'use strict';
+'use strict'
 
 // Exports Polymer global object as module
-export default window.Polymer;
+export default window.Polymer
