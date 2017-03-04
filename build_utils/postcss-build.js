@@ -1,4 +1,4 @@
-const {readFileSync, writeFileSync} = require('fs')
+const {readFileSync} = require('fs')
 const {join} = require('path')
 
 const replace = require('replace-in-file')
