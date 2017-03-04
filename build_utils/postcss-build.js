@@ -1,36 +1,47 @@
 const {readFileSync, writeFileSync} = require('fs')
 const {join} = require('path')
 
-const posthtml = require('posthtml')
-const postcss = require('posthtml-postcss')
+const replace = require('replace-in-file')
 const chokidar = require('chokidar')
 
+const postcss = require('postcss')
 const autoprefixer = require('autoprefixer')
 
 const postcssPlugins = [
-  autoprefixer({browsers: ['last 2 versions']})
+  autoprefixer
 ]
-const postcssOptions = {}
-const filterType = /^text\/css$/
+// const postcssOptions = {}
+// const filterType = /^text\/css$/
 
 // Initialize watcher.
-const watcher = chokidar.watch('./src/components/**/*.style.html', {
+const watcher = chokidar.watch('./src/components/**/*.postcss', {
   persistent: true
 })
 
 // Something to use when events are received.
 const log = console.log.bind(console)
 
+const replaceHtml = (path, css) => {
+  return replace({
+    files: path,
+    from: /<style>((.|\n)*)<\/style>/,
+    to: `<style>
+        ${css}
+      </style>`
+  }).then(changedFiles => changedFiles)
+}
+
 const compile = sourcePath => {
-  const html = readFileSync(sourcePath, 'utf8')
+  const css = readFileSync(sourcePath, 'utf8')
   const splittedPath = sourcePath.split('/')
   const normalizedPath = splittedPath.splice(0, splittedPath.length - 1).join('/')
-  const correctPath = join(normalizedPath, 'style-module.html')
+  const htmlPath = join(normalizedPath, 'style-module.html')
 
-  posthtml([postcss(postcssPlugins, postcssOptions, filterType)])
-    .process(html)
-    .then(result => Promise.resolve(writeFileSync(correctPath, result.html, 'utf8')))
-		.then(() => log(`>> Compiled: ${sourcePath}`))
+  postcss(postcssPlugins)
+    .process(css)
+    .then(cssRes => replaceHtml(htmlPath, cssRes))
+		.then(compileFiles => log(`>> Compiled: ${sourcePath} -> ${compileFiles}`))
+    .catch(err => console.error(`! ERR: ${err}`))
 }
 
 // Add event listeners.
