@@ -1,21 +1,18 @@
+<p align="center"><img src="http://i.imgur.com/PgsSS0L.jpg" width="607"></p>
 
-<img src="http://i.imgur.com/XZxefFm.jpg" width="380">
+[![Build Status](https://travis-ci.org/PolymerX/polymer-skeleton.svg?style=flat-square&branch=master)](https://travis-ci.org/PolymerX/polymer-skeleton)
+[![GitHub issues](https://img.shields.io/github/issues/PolymerX/polymer-skeleton.svg?style=flat-square)](https://github.com/PolymerX/polymer-skeleton/issues)
 
-# Polymer 1.x Webpack Skeleton (ES6 Syntax)
 
-[![Build Status](https://travis-ci.org/PolymerX/polymer-skeleton.svg?branch=master)](https://travis-ci.org/PolymerX/polymer-skeleton)
-
-> Mininum boilerplate to deliver a Polymer 1.x in ES6 syntax with Webpack
-
-🚧 WIP
-
-Made for personal use, glad if someone can get a good starting point from here.
+## Polymer Skeleton
+> A mininum boilerplate to deliver a Polymer 1.x in ES6 syntax with Webpack and PostCSS.
+> Made for personal use, glad if someone can get a good starting point from here.
 
 ## Features
 
-- [Webpack]() and [Babel]() as module loader with the ES2015 preset.
+- [Webpack](https://webpack.js.org/) and [Babel](https://babeljs.io/) as module loader with the ES2015 preset.
 - webpack-dev-server with hot reloading active.
-- PostCSS build.
+- [PostCSS](http://postcss.org/) with Autoprefixer and CSS Nano plugins.
 
 ## Usage
 
@@ -32,45 +29,49 @@ Then start building your application!
 
 	$ yarn && bower install
 
+#### Developing
 
-### Build (Webpack) // TODO
-
-CURRENTLY simply build the Webpack bundle (rework to Kubozer maybe)
-
-	$ yarn build
-
-### Developing
-
-Start the `webpack-dev-server` on the port `3000` with hot reload and watch on `.postcss` files.
+Start the `webpack-dev-server` on localhost `http://localhost:3000` with hot-reload and watch on `.postcss` files.
 
 	$ yarn dev
 
-### Developing JS
+#### Developing JS
 
-Start the `webpack-dev-server` on the port `3000` with hot reload.
+Start the `webpack-dev-server` on localhost `http://localhost:3000` with hot-reload.
 
 	$ yarn dev:js
 
-### Developing PostCSS
+#### Developing Style
 
 Watch on `.postcss` files within the `components` directory.
 
 	$ yarn dev:postcss
 
-### Test
+#### Test
 
 CURRENTLY only XO for code style
 
 	$ yarn test
+
+#### Build (Webpack) // TODO
+
+CURRENTLY simply build the Webpack bundle (rework to Kubozer maybe)
+
+	$ yarn build
 
 ## How Polymer is imported
 
 It's a little trick to just show Polymer to Webpack and bundle with the other `js`.
 Exporting the `window.Polymer` object and importing it where needed inside the `js` of the components.
 
-## PostCSS build
+## Styling components with PostCSS and Autoprefixer
 
-During development the `.postcss` files will be watched and compiled to the `style-module.html` file within the component directory.
+During development the `.postcss` files will be watched and compiled to the `style-module.html` file within the component directory. All css is scoped to the component so don't worry about CSS specificity, you can also use `:host`, `:host-context` and `:root` selectors.
+
+If you don't know how autoprefixer work (...and you should), it allow you to write CSS without worry about vendor prefixes. Just write your css properties prefix-free and let autoprefixer do the work for you when compiling.
+
+**How about commons styles?**
+You can make a shared `style-module` and import it when you need commons styles inside your component. More info about this technique [here](https://www.polymer-project.org/1.0/docs/devguide/styling#style-modules)
 
 ## Todo
 
