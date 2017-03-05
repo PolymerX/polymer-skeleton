@@ -6,7 +6,7 @@ const chokidar = require('chokidar')
 
 const postcss = require('postcss')
 const autoprefixer = require('autoprefixer')
-const cssnano = require('cssnano');
+const cssnano = require('cssnano')
 
 const postcssPlugins = [
   autoprefixer,
