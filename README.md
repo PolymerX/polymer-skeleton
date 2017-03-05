@@ -1,10 +1,13 @@
+
+<img src="http://i.imgur.com/XZxefFm.jpg" width="380">
+
 # Polymer 1.x Webpack Skeleton (ES6 Syntax)
 
 [![Build Status](https://travis-ci.org/PolymerX/polymer-skeleton.svg?branch=master)](https://travis-ci.org/PolymerX/polymer-skeleton)
 
 > Mininum boilerplate to deliver a Polymer 1.x in ES6 syntax with Webpack
 
-:construction: WIP
+🚧 WIP
 
 Made for personal use, glad if someone can get a good starting point from here.
 
