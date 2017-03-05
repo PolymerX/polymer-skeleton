@@ -29,6 +29,7 @@
     "fs-extra": "^2.0.0",
     "postcss": "^5.2.15",
     "replace-in-file": "^2.4.1",
+    "stylelint-config-standard": "^16.0.0",
     "webpack": "^2.2.1",
     "webpack-dev-server": "^2.4.1",
     "xo": "^0.17.1"
