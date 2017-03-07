@@ -17,7 +17,11 @@ const postcssPlugins = [
 
 // Initialize watcher.
 const watcher = chokidar.watch('./src/components/**/*.postcss', {
-  persistent: true
+  persistent: true,
+  awaitWriteFinish: {
+    stabilityThreshold: 1000,
+    pollInterval: 100
+  }
 })
 
 // Something to use when events are received.
@@ -30,7 +34,7 @@ const replaceHtml = (path, css) => {
     to: `<style>
         ${css}
       </style>`
-  }).then(changedFiles => changedFiles)
+  })
 }
 
 const compile = sourcePath => {
