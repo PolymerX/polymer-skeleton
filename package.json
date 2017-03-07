@@ -34,5 +34,7 @@
     "webpack-dev-server": "^2.4.1",
     "xo": "^0.17.1"
   },
-  "dependencies": {}
+  "dependencies": {
+    "postcss-reporter": "^3.0.0"
+  }
 }

@@ -7,10 +7,15 @@ const chokidar = require('chokidar')
 const postcss = require('postcss')
 const autoprefixer = require('autoprefixer')
 const cssnano = require('cssnano')
+const postcssReporter = require('postcss-reporter')
 
 const postcssPlugins = [
   autoprefixer,
-  cssnano()
+  cssnano(),
+  postcssReporter({
+    filter: () => true,
+    clearReportedMessages: true
+  })
 ]
 // const postcssOptions = {}
 // const filterType = /^text\/css$/
