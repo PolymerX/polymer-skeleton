@@ -26,7 +26,7 @@ const log = console.log.bind(console)
 const replaceHtml = (path, css) => {
   return replace({
     files: path,
-    from: /<style>((.|\n)*)<\/style>/,
+    from: /<style>(.|\n)*?<\/style>/,
     to: `<style>
         ${css}
       </style>`
