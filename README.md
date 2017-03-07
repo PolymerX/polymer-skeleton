@@ -33,13 +33,13 @@ Then start building your application!
 
 #### Developing
 
-Start the `webpack-dev-server` on localhost `http://localhost:3000` with hot-reload and watch on `.postcss` files.
+Start the `webpack-dev-server` & `browser-sync` on localhost `http://localhost:3000` with hot-reload and watch on `.postcss` files.
 
 	$ yarn dev
 
 #### Developing JS
 
-Start the `webpack-dev-server` on localhost `http://localhost:3000` with hot-reload.
+Start the `webpack-dev-server` & `browser-sync` on localhost `http://localhost:3000` with hot-reload.
 
 	$ yarn dev:js
 
