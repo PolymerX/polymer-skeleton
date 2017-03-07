@@ -30,7 +30,7 @@ const replaceHtml = (path, css) => {
     to: `<style>
         ${css}
       </style>`
-  }).then(changedFiles => changedFiles)
+  })
 }
 
 const compile = sourcePath => {
