@@ -10,8 +10,10 @@
 
 ## Features
 
-- [Webpack](https://webpack.js.org/) and [Babel](https://babeljs.io/) as module loader with the ES2015 preset.
+- [Webpack](https://webpack.js.org/)
+  - [Babel](https://babeljs.io/) as module loader with the ES2015 preset.
 - webpack-dev-server with hot reloading active.
+  - [BrowserSync](https://www.npmjs.com/package/browser-sync-webpack-plugin) plugin.
 - [PostCSS](http://postcss.org/) with Autoprefixer and CSS Nano plugins.
 
 ## Usage
@@ -31,13 +33,13 @@ Then start building your application!
 
 #### Developing
 
-Start the `webpack-dev-server` on localhost `http://localhost:3000` with hot-reload and watch on `.postcss` files.
+Start the `webpack-dev-server` & `browser-sync` on localhost `http://localhost:3000` with hot-reload and watch on `.postcss` files.
 
 	$ yarn dev
 
 #### Developing JS
 
-Start the `webpack-dev-server` on localhost `http://localhost:3000` with hot-reload.
+Start the `webpack-dev-server` & `browser-sync` on localhost `http://localhost:3000` with hot-reload.
 
 	$ yarn dev:js
 
