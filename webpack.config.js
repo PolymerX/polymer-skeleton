@@ -31,7 +31,7 @@ module.exports = {
       {
         // prevent BrowserSync from reloading the page
         // and let Webpack Dev Server take care of this
-        reload: true
+        reload: false
       }
     )
   ],
@@ -39,6 +39,14 @@ module.exports = {
     contentBase: path.resolve('src'),
     publicPath: '/assets/js',
     compress: true,
-    port: 3100
+    port: 3100,
+    watchContentBase: true,
+    watchOptions: {
+      // Bower files and postcss ignored, reload when "style-module.html" is compiled(modified)
+		  ignored: ['src/assets/bower/**/*', 'src/components/**/*.postcss'],
+  		poll: true
+	  },
+	  hot: true,
+	  inline: true
   }
 }
