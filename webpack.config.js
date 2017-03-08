@@ -43,10 +43,10 @@ module.exports = {
     watchContentBase: true,
     watchOptions: {
       // Bower files and postcss ignored, reload when "style-module.html" is compiled(modified)
-		  ignored: ['src/assets/bower/**/*', 'src/components/**/*.postcss'],
-  		poll: true
-	  },
-	  hot: true,
-	  inline: true
+      ignored: ['src/assets/bower/**/*', 'src/components/**/*.postcss'],
+      poll: true
+    },
+    hot: true,
+    inline: true
   }
 }
