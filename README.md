@@ -66,7 +66,7 @@ CURRENTLY simply build the Webpack bundle (rework to Kubozer maybe)
 
 ## Styling components with PostCSS and CSSNext
 
-During development the `.postcss` files will be watched and compiled to the `style-module.html` file within the component directory. The CSS is scoped to the component so don't worry about CSS specificity, you can also use `:host`, `:host-context` and `:root` selectors. Read more about [styling web components](https://www.polymer-project.org/2.0/docs/devguide/style-shadow-dom) and [custom CSS properties](https://www.polymer-project.org/2.0/docs/devguide/custom-css-properties).
+During development `.postcss` files will be watched, compiled and injected to the relative `style-module.html` file within the component directory. The CSS is scoped to the component so don't worry about CSS specificity, you can also use `:host`, `:host-context` and `:root` selectors. Read more about [styling web components](https://www.polymer-project.org/2.0/docs/devguide/style-shadow-dom) and [custom CSS properties](https://www.polymer-project.org/2.0/docs/devguide/custom-css-properties).
 
 [Cssnext](http://cssnext.io/) also include Autoprefixer plugin, if you don't know how it work (...and you should), it allow you to write CSS without worry about vendor prefixes. Just write your css properties prefix-free and let autoprefixer do the work for you when compiling.
 
