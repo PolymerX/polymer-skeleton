@@ -17,7 +17,7 @@
   - [Babel](https://babeljs.io/) as module loader with the ES2015 preset.
 - webpack-dev-server with hot reloading active.
   - [BrowserSync](https://www.npmjs.com/package/browser-sync-webpack-plugin) plugin.
-- [PostCSS](http://postcss.org/) with Autoprefixer and CSS Nano plugins.
+- [PostCSS](http://postcss.org/) with [cssnext](http://cssnext.io/) (include autoprefixer) plugin.
 
 ## Usage
 
@@ -64,16 +64,17 @@ CURRENTLY simply build the Webpack bundle (rework to Kubozer maybe)
 
 	$ yarn build
 
+## Styling components with PostCSS and CSSNext
+
+During development the `.postcss` files will be watched and compiled to the `style-module.html` file within the component directory. The CSS is scoped to the component so don't worry about CSS specificity, you can also use `:host`, `:host-context` and `:root` selectors. Read more about [styling web components](https://www.polymer-project.org/2.0/docs/devguide/style-shadow-dom) and [custom CSS properties](https://www.polymer-project.org/2.0/docs/devguide/custom-css-properties)
+
+[cssnext](http://cssnext.io/) also include Autoprefixer plugin, if you don't know how it work (...and you should), it allow you to write CSS without worry about vendor prefixes. Just write your css properties prefix-free and let autoprefixer do the work for you when compiling.
+
+
 ## How Polymer is imported
 
 It's a little trick to just show Polymer to Webpack and bundle with the other `js`.
 Exporting the `window.Polymer` object and importing it where needed inside the `js` of the components.
-
-## Styling components with PostCSS and Autoprefixer
-
-During development the `.postcss` files will be watched and compiled to the `style-module.html` file within the component directory. All css is scoped to the component so don't worry about CSS specificity, you can also use `:host`, `:host-context` and `:root` selectors.
-
-If you don't know how autoprefixer work (...and you should), it allow you to write CSS without worry about vendor prefixes. Just write your css properties prefix-free and let autoprefixer do the work for you when compiling.
 
 **How about commons styles?**
 You can make a shared `style-module` and import it when you need commons styles inside your component. More info about this technique [here](https://www.polymer-project.org/1.0/docs/devguide/styling#style-modules)
