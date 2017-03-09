@@ -1,4 +1,4 @@
-<img src="http://i.imgur.com/OqurdD1.jpg" width="607">
+<img src="http://i.imgur.com/OqurdD1.jpg" width="530">
 
 [![Build Status](https://travis-ci.org/PolymerX/polymer-skeleton.svg?style=flat-square&branch=master)](https://travis-ci.org/PolymerX/polymer-skeleton)
 [![GitHub release](https://img.shields.io/github/release/PolymerX/polymer-skeleton.svg?style=flat-square)](https://github.com/PolymerX/polymer-skeleton)
