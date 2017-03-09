@@ -5,13 +5,17 @@ const replace = require('replace-in-file')
 const chokidar = require('chokidar')
 
 const postcss = require('postcss')
-const autoprefixer = require('autoprefixer')
+const cssnext = require('postcss-cssnext')
 const cssnano = require('cssnano')
 const postcssReporter = require('postcss-reporter')
 
 const postcssPlugins = [
-  autoprefixer,
-  cssnano(),
+  cssnext({
+    browsers: ['last 2 version']
+  }),
+  cssnano({
+    autoprefixer: false
+  }),
   postcssReporter({
     filter: () => true,
     clearReportedMessages: true
