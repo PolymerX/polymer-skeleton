@@ -70,14 +70,13 @@ During development `.postcss` files will be watched, compiled and injected to th
 
 [Cssnext](http://cssnext.io/) also include Autoprefixer plugin, if you don't know how it work (...and you should), it allow you to write CSS without worry about vendor prefixes. Just write your css properties prefix-free and let autoprefixer do the work for you when compiling.
 
+**How about commons styles?**
+You can make a shared `style-module` and import it when you need commons styles inside your component. More info about this technique [here](https://www.polymer-project.org/1.0/docs/devguide/styling#style-modules)
 
 ## How Polymer is imported
 
 It's a little trick to just show Polymer to Webpack and bundle with the other `js`.
 Exporting the `window.Polymer` object and importing it where needed inside the `js` of the components.
-
-**How about commons styles?**
-You can make a shared `style-module` and import it when you need commons styles inside your component. More info about this technique [here](https://www.polymer-project.org/1.0/docs/devguide/styling#style-modules)
 
 ## Todo
 
