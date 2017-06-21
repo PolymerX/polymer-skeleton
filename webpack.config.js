@@ -1,35 +1,40 @@
-const path = require('path')
-const BrowserSyncPlugin = require('browser-sync-webpack-plugin')
+'use strict';
+
+const path = require('path');
+const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
+
+const isBuild = process.env.NODE_ENV === 'build';
 
 module.exports = {
-  entry: {
-    main: './src/index.js'
-  },
+  entry: ['./src/index.js'],
   output: {
-    path: path.resolve('src/assets/js'),
-    filename: '[name].bundle.js'
+    path: isBuild ? path.resolve('./dist') : path.resolve('./src'),
+    filename: 'bundle.js'
   },
   module: {
     rules: [{
-      test: /\.js[x]?$/,
+      test: /\.html$/,
+      loaders: ['babel-loader', 'wc-loader', 'postcss-polymer-loader']
+    }, {
+      test: /\.js?$/,
       exclude: /node_modules/,
-      loader: 'babel-loader?presets[]=es2015'
+      loader: 'babel-loader'
     }]
   },
   plugins: [
     new BrowserSyncPlugin(
       // BrowserSync options
       {
-        // browse to http://localhost:3000/ during development
+        // Browse to http://localhost:3000/ during development
         host: 'localhost',
         port: 3000,
-        // proxy the Webpack Dev Server endpoint
+        // Proxy the Webpack Dev Server endpoint
         // (which should be serving on http://localhost:3100/)
         // through BrowserSync
         proxy: 'http://localhost:3100/'
       },
       {
-        // prevent BrowserSync from reloading the page
+        // Prevent BrowserSync from reloading the page
         // and let Webpack Dev Server take care of this
         reload: false
       }
@@ -37,16 +42,16 @@ module.exports = {
   ],
   devServer: {
     contentBase: path.resolve('src'),
-    publicPath: '/assets/js',
+    publicPath: '/',
     compress: true,
     port: 3100,
     watchContentBase: true,
     watchOptions: {
       // Bower files and postcss ignored, reload when "style-module.html" is compiled(modified)
-      ignored: ['src/assets/bower/**/*', 'src/components/**/*.postcss'],
+      // ignored: ['src/assets/bower/**/*', 'src/components/**/*.postcss'],
       poll: true
     },
     hot: true,
     inline: true
   }
-}
+};

@@ -5,13 +5,11 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
 
-	<title>NEWS</title>
+	<title>Px App</title>
 
 	<link rel="shortcut icon" sizes="32x32" href="/images/news-icon-32.png">
 	<meta name="theme-color" content="#000">
 	<link rel="manifest" href="/manifest.json">
-
-	<link rel="import" href="/components/app/webpack-app.html">
 
 	<style>
 		body {
@@ -36,11 +34,12 @@
 		}
 	</style>
 
+  <script src="./vendor/webcomponentsjs/webcomponents-loader.js" async></script>
 </head>
 
 <body>
 	<div>another test</div>
-	<webpack-app unresolved name="Webpack">
+	<px-app unresolved name="Webpack">
 		<div class="showbox">
 			<div class="loader">
 				<svg class="circular" viewBox="25 25 50 50">
@@ -48,27 +47,15 @@
 				</svg>
 			</div>
 		</div>
-	</webpack-app>
+	</px-app>
 
 	<script>
-		// Polymer = {lazyRegister: true, dom: 'shadow'};
-		(function () {
-			if ('registerElement' in document &&
-				'import' in document.createElement('link') &&
-				'content' in document.createElement('template')) {
-				// platform is good!
-			} else {
-				// polyfill the platform!
-				var e = document.createElement('script');
-				e.src = '/assets/bower/webcomponentsjs/webcomponents-lite.min.js';
-				document.body.appendChild(e);
-			}
 
+		(function () {
 			var b = document.createElement('script');
-			b.src = '/assets/js/main.bundle.js';
+			b.src = '/bundle.js';
 			b.defer = true;
 			document.body.appendChild(b);
-
 		})();
 
 	</script>
