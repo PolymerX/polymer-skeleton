@@ -10,7 +10,7 @@ const htmlFileName = arg ? arg.replace('--file=', '') : 'template.html';
 const log = console.log.bind(console);
 
 // Initialize watcher.
-const watcher = chokidar.watch('./src/**/*.postcss', {
+const watcher = chokidar.watch('./src/components/**/*.postcss', {
   persistent: true,
   awaitWriteFinish: {
     stabilityThreshold: 1000,

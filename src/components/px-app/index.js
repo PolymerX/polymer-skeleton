@@ -2,7 +2,7 @@
 
 import './template.html';
 
-class PxApp extends Polymer.Element {
+class PxApp extends window.Polymer.Element {
   static get is() {
     return 'px-app';
   }
