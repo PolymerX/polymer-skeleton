@@ -1,67 +1,26 @@
-const {readFileSync} = require('fs')
-const {join} = require('path')
+const {basename} = require('path');
 
-const replace = require('replace-in-file')
-const chokidar = require('chokidar')
+const chokidar = require('chokidar');
+const touch = require('touch');
 
-const postcss = require('postcss')
-const cssnext = require('postcss-cssnext')
-const cssnano = require('cssnano')
-const postcssReporter = require('postcss-reporter')
+const arg = process.argv.find(arg => arg.includes('--file='));
+const htmlFileName = arg ? arg.replace('--file=', '') : 'template.html';
 
-const postcssPlugins = [
-  cssnext({
-    browsers: ['last 2 version']
-  }),
-  cssnano({
-    autoprefixer: false
-  }),
-  postcssReporter({
-    filter: () => true,
-    clearReportedMessages: true
-  })
-]
-// const postcssOptions = {}
-// const filterType = /^text\/css$/
+// Something to use when events are received.
+const log = console.log.bind(console);
 
 // Initialize watcher.
-const watcher = chokidar.watch('./src/components/**/*.postcss', {
+const watcher = chokidar.watch('./src/**/*.postcss', {
   persistent: true,
   awaitWriteFinish: {
     stabilityThreshold: 1000,
     pollInterval: 100
   }
-})
-
-// Something to use when events are received.
-const log = console.log.bind(console)
-
-const replaceHtml = (path, css) => {
-  return replace({
-    files: path,
-    from: /<style>(.|\n)*?<\/style>/,
-    to: `<style>
-        ${css}
-      </style>`
-  })
-}
-
-const compile = sourcePath => {
-  const css = readFileSync(sourcePath, 'utf8')
-  const splittedPath = sourcePath.split('/')
-  const normalizedPath = splittedPath.splice(0, splittedPath.length - 1).join('/')
-  const htmlPath = join(normalizedPath, 'style-module.html')
-
-  postcss(postcssPlugins)
-    .process(css)
-    .then(cssRes => replaceHtml(htmlPath, cssRes))
-		.then(compileFiles => log(`>> Compiled: ${sourcePath} -> ${compileFiles}`))
-    .catch(err => console.error(`! ERR: ${err}`))
-}
+});
 
 // Add event listeners.
 watcher
-  .on('add', sourcePath => log(`File ${sourcePath} has been added`))
-  .on('change', sourcePath => compile(sourcePath))
-  .on('unlink', sourcePath => log(`File ${sourcePath} has been removed`))
+  .on('add', sourcePath => log(`PostCSS Watcher: file ${sourcePath} has been added`))
+  .on('change', sourcePath => touch(sourcePath.replace(basename(sourcePath), htmlFileName)))
+  .on('unlink', sourcePath => log(`PostCSS Watcher: File ${sourcePath} has been removed`));
 
