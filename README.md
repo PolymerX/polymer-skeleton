@@ -9,7 +9,8 @@
 
 ## Polymer Skeleton
 > A mininum boilerplate to deliver a Polymer 2.x in ES6 syntax with Webpack and PostCSS.
-> Made for personal use, glad if someone can get a good starting point from here.
+> Made for personal use, glad if someone can get a good starting point from here. **Bye bye Bower**.
+
 
 ## Features
 
@@ -67,9 +68,11 @@ You can make a shared `style-module` and import it when you need commons styles 
 
 ## How Polymer is imported
 
-It's a little trick to just show Polymer to Webpack and bundle with the other `js`.
-Exporting the `window.Polymer` object and importing it where needed inside the `js` of the components.
+We are using a forked branch of Polymer modified by [Contactlab](https://github.com/contactlab/polymer) that expose Polymer as javascript module so we can **install Polymer using NPM** and **import Polymer into the Webpack `bundle.js`** (as global object, currently).
 
+## `@webcomponents/webcomponentsjs
+
+We are getting the `webpcomponents-loader.js` polyfill from GitHub using NPM/Yarn and copy it into a `vendor` folder with a `postinstall` script.
 ## Todo
 
 - Setup unit (wct) and integration (Nightwatch) tests
