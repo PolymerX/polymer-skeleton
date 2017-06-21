@@ -2,6 +2,7 @@
 
 const path = require('path');
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
+const PostcssPolymerWebpackPlugin = require('./build_utils/postcss-polymer-webpack-plugin');
 
 const isBuild = process.env.NODE_ENV === 'build';
 
@@ -38,7 +39,8 @@ module.exports = {
         // and let Webpack Dev Server take care of this
         reload: false
       }
-    )
+    ),
+    new PostcssPolymerWebpackPlugin()
   ],
   devServer: {
     contentBase: path.resolve('src'),
