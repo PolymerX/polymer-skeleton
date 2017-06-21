@@ -14,10 +14,14 @@
 ## Features
 
 - [Webpack](https://webpack.js.org/)
-  - [Babel](https://babeljs.io/) as module loader.
 - webpack-dev-server with hot reloading active.
-  - [BrowserSync](https://www.npmjs.com/package/browser-sync-webpack-plugin) plugin.
+- [BrowserSync](https://www.npmjs.com/package/browser-sync-webpack-plugin) plugin.
 - [PostCSS](http://postcss.org/) with [cssnext](http://cssnext.io/) (include autoprefixer) plugin.
+
+#### Loaders
+- [babel-loader](https://github.com/babel/babel-loader) - Module loader (***no traspilation***)(https://github.com/babel/babel-loader)
+- [wc-loader](https://github.com/aruntk/wc-loader) - Load Polymer elements within the Webpack bundle
+- [postcss-polymer-loader](https://github.com/PolymerX/postcss-polymer-loader) - Load PostCSS into the `<style>` scoped tag of Polymer elements
 
 ## Usage
 
@@ -32,25 +36,13 @@ Remove the `.git` folder and change details within:
 
 Then start building your application!
 
-	$ yarn && bower install
+	$ yarn
 
 #### Developing
 
 Start the `webpack-dev-server` & `browser-sync` on localhost `http://localhost:3000` with hot-reload and watch on `.postcss` files.
 
 	$ yarn dev
-
-#### Developing JS
-
-Start the `webpack-dev-server` & `browser-sync` on localhost `http://localhost:3000` with hot-reload.
-
-	$ yarn dev:js
-
-#### Developing Style
-
-Watch on `.postcss` files within the `components` directory.
-
-	$ yarn dev:postcss
 
 #### Test
 

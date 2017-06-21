@@ -7,8 +7,6 @@
   "scripts": {
     "build": "webpack",
     "dev": "./build_utils/run_dev.sh",
-    "dev:js": "webpack-dev-server --hot",
-    "dev:postcss": "node build_utils/postcss-build.js",
     "test": "xo",
     "lint": "xo --fix",
     "postinstall": "cp -R node_modules/@webcomponents/webcomponentsjs src/vendor"
