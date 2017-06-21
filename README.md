@@ -8,13 +8,13 @@
 
 
 ## Polymer Skeleton
-> A mininum boilerplate to deliver a Polymer 1.x in ES6 syntax with Webpack and PostCSS.
+> A mininum boilerplate to deliver a Polymer 2.x in ES6 syntax with Webpack and PostCSS.
 > Made for personal use, glad if someone can get a good starting point from here.
 
 ## Features
 
 - [Webpack](https://webpack.js.org/)
-  - [Babel](https://babeljs.io/) as module loader with the ES2015 preset.
+  - [Babel](https://babeljs.io/) as module loader.
 - webpack-dev-server with hot reloading active.
   - [BrowserSync](https://www.npmjs.com/package/browser-sync-webpack-plugin) plugin.
 - [PostCSS](http://postcss.org/) with [cssnext](http://cssnext.io/) (include autoprefixer) plugin.
