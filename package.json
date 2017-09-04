@@ -1,15 +1,15 @@
 {
-  "name": "polymer-webpack-skeleton",
+  "name": "polymer-skeleton",
   "version": "0.0.0",
   "main": "src/index.js",
   "license": "MIT",
   "author": "LasaleFamine <info@godev.space>",
   "scripts": {
     "build": "webpack",
-    "dev": "./build_utils/run_dev.sh",
+    "dev": "webpack-dev-server --hot --inline",
     "test": "xo",
     "lint": "xo --fix",
-    "postinstall": "cp -R node_modules/@webcomponents/webcomponentsjs src/vendor"
+    "postinstall": "rm -rf src/vendor && mkdir src/vendor && cp node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js src/vendor/webcomponents-loader.js"
   },
   "xo": {
     "space": true,
@@ -22,25 +22,22 @@
     }
   },
   "devDependencies": {
-    "babel-core": "^6.25.0",
-    "babel-loader": "^7.1.0",
-    "browser-sync": "^2.18.12",
-    "browser-sync-webpack-plugin": "^1.1.4",
-    "chokidar": "^1.6.1",
-    "cssnano": "^3.10.0",
-    "postcss": "^5.2.15",
-    "postcss-cssnext": "^2.9.0",
-    "postcss-polymer-loader": "^0.0.3",
-    "postcss-reporter": "^3.0.0",
-    "stylelint-config-standard": "^16.0.0",
-    "touch": "^1.0.0",
-    "wc-loader": "^1.1.4",
-    "webpack": "^3.0.0",
-    "webpack-dev-server": "^2.5.0",
-    "xo": "^0.18.2"
+    "babel-core": "6.26.0",
+    "babel-loader": "7.1.2",
+    "chokidar": "1.6.1",
+    "cssnano": "3.10.0",
+    "postcss": "5.2.15",
+    "postcss-cssnext": "3.0.2",
+    "postcss-html-loader": "1.0.0",
+    "postcss-reporter": "5.0.0",
+    "stylelint-config-standard": "17.0.0",
+    "text-loader": "0.0.1",
+    "touch": "3.1.0",
+    "webpack": "3.5.5",
+    "webpack-dev-server": "2.7.1",
+    "xo": "0.18.2"
   },
   "dependencies": {
-    "@polymer/polymer": "contactlab/polymer",
-    "@webcomponents/webcomponentsjs": "webcomponents/webcomponentsjs"
+    "@polymer/polymer": "LasaleFamine/polymer#3.0-preview"
   }
 }
