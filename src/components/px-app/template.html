@@ -1,8 +1,17 @@
-<dom-module id="px-app">
-  <postcss src="./style.postcss"></postcss>
-  <postcss src="./../../assets/postcss/global.postcss"></postcss>
-  <template>
-    <div class="TestDivOne">asdasdasdas</div>
-    <div class="TestDivTwo"><p>ciao</p></div>
+
+<postcss src="./style.postcss"></postcss>
+<postcss src="./../../assets/postcss/global.postcss"></postcss>
+<div>
+  <div class="TestDivOne">
+    <h1>[[name]]</h1>
+  </div>
+  <div class="TestDivTwo">
+    <p>Wait 2000ms... This will change: [[someProp]]</p>
+    <p>Then wait again 2000ms</p>
+  </div>
+
+  <template is="dom-if" if="[[showChangedProp]]">
+    Something changed -> [[someProp]]
   </template>
-</dom-module>
+</div>
+
