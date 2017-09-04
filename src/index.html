@@ -20,34 +20,13 @@
 			min-height: 100vh;
 			-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 		}
-		/* styling for render while resources are loading */
-
-		webpack-app[unresolved] {
-			display: block;
-			height: 45px;
-			padding-top: 40px;
-			padding-left: 10px;
-			font-size: 39px;
-			font-weight: 600;
-			letter-spacing: 10px;
-			text-align: center;
-		}
 	</style>
 
-  <script src="./vendor/webcomponentsjs/webcomponents-loader.js" async></script>
+  <script src="./vendor/webcomponents-loader.js" async></script>
 </head>
 
 <body>
-	<div>another test</div>
-	<px-app unresolved name="Webpack">
-		<div class="showbox">
-			<div class="loader">
-				<svg class="circular" viewBox="25 25 50 50">
-					<circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" />
-				</svg>
-			</div>
-		</div>
-	</px-app>
+	<px-app unresolved name="Polymer Skeleton"></px-app>
 
 	<script>
 
