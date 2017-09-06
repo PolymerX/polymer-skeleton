@@ -8,7 +8,7 @@
 
 
 ## Polymer Skeleton
-> A mininum boilerplate to deliver a Polymer 2.x in ES6 syntax with Webpack and PostCSS.
+> A mininum boilerplate to deliver a Polymer 3.x with Webpack and PostCSS.
 > Made for personal use, glad if someone can get a good starting point from here. **Bye bye Bower**.
 
 
@@ -16,13 +16,12 @@
 
 - [Webpack](https://webpack.js.org/)
 - webpack-dev-server with hot reloading active.
-- [BrowserSync](https://www.npmjs.com/package/browser-sync-webpack-plugin) plugin.
 - [PostCSS](http://postcss.org/) with [cssnext](http://cssnext.io/) (include autoprefixer) plugin.
 
 #### Loaders
-- [babel-loader](https://github.com/babel/babel-loader) - Module loader (***no traspilation***)(https://github.com/babel/babel-loader)
-- [wc-loader](https://github.com/aruntk/wc-loader) - Load Polymer elements within the Webpack bundle
-- [postcss-polymer-loader](https://github.com/PolymerX/postcss-polymer-loader) - Load PostCSS into the `<style>` scoped tag of Polymer elements
+- [babel-loader](https://github.com/babel/babel-loader) - Module loader (***no traspilation***)(https://github.com/babel/babel-loader).
+- [text-loader](https://github.com/dfenstermaker/text-loader) - Load HTML templates as string.
+- [postcss-html-loader](https://github.com/PolymerX/postcss-html-loader) - Load PostCSS into the `<style>` scoped tag of Polymer elements.
 
 ## Usage
 
@@ -41,7 +40,7 @@ Then start building your application!
 
 #### Developing
 
-Start the `webpack-dev-server` & `browser-sync` on localhost `http://localhost:3000` with hot-reload and watch on `.postcss` files.
+Start the `webpack-dev-server` on localhost `http://localhost:3000` with hot-reload and watch on `.postcss` files.
 
 	$ yarn dev
 
@@ -51,9 +50,7 @@ CURRENTLY only XO for code style
 
 	$ yarn test
 
-#### Build (Webpack) // TODO
-
-CURRENTLY simply build the Webpack bundle (rework to Kubozer maybe)
+#### Build (Webpack and copy statics) to `dist` folder
 
 	$ yarn build
 
@@ -66,17 +63,16 @@ During development `.postcss` files will be watched, compiled and injected to th
 **How about commons styles?**
 You can make a shared `style-module` and import it when you need commons styles inside your component. More info about this technique [here](https://www.polymer-project.org/1.0/docs/devguide/styling#style-modules)
 
-## How Polymer is imported
+## How Polymer 3 is imported
 
-We are using a forked branch of Polymer modified by [Contactlab](https://github.com/contactlab/polymer) that expose Polymer as javascript module so we can **install Polymer using NPM** and **import Polymer into the Webpack `bundle.js`** (as global object, currently).
+We are currently used a modified version of the `@polymer/polymer` official NPM version. The `flat` property within the `package.json` is causing some problem with the load dependency system of `webpack`.
 
 ## `@webcomponents/webcomponentsjs
 
-We are getting the `webpcomponents-loader.js` polyfill from GitHub using NPM/Yarn and copy it into a `vendor` folder with a `postinstall` script.
+We are getting the `webpcomponents-loader.js` polyfill from GitHub using NPM/Yarn and copy it into a `vendor` folder with a `Node` script.
 ## Todo
 
-- Setup unit (wct) and integration (Nightwatch) tests
+- Setup unit (wct) and integration (Nightwatch/Testcafe/Puppeteer) tests
 - Add [PolymerRedux]()
-- Add [unfetch]() polyfill
+- Add fetch polyfill ?
 - Setup service-workers
-- Add build process to `dist` directory
