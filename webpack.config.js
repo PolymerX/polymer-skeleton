@@ -1,34 +1,34 @@
-'use strict';
-
-const path = require('path');
+const {resolve} = require('path');
 const PostcssPolymerWebpackPlugin = require('./build_utils/postcss-polymer-webpack-plugin');
 
-const isBuild = process.env.NODE_ENV === 'build';
+const isDev = process.argv.find(arg => arg.includes('webpack-dev-server'));
+const outputPath = isDev ? resolve('src') : resolve('dist');
+const plugins = isDev ? [
+  new PostcssPolymerWebpackPlugin()
+] : [];
 
 module.exports = {
-  entry: ['./src/index.js'],
+  entry: './src/index.js',
   output: {
-    path: isBuild ? path.resolve('./dist') : path.resolve('./src'),
+    path: outputPath,
     filename: 'bundle.js'
   },
   module: {
-    rules: [{
-      test: /\.html$/,
-      loaders: ['text-loader', 'postcss-html-loader']
-    }]
+    rules: [
+      {
+        test: /\.html$/,
+        use: ['text-loader', 'postcss-html-loader']
+      }
+    ]
   },
-  plugins: [
-    new PostcssPolymerWebpackPlugin()
-  ],
+  plugins,
   devServer: {
-    contentBase: path.resolve('src'),
-    publicPath: '/',
+    contentBase: resolve(outputPath),
     compress: true,
+    overlay: {
+      errors: true
+    },
     port: 3000,
-    watchOptions: {
-      // Bower files and postcss ignored, reload when "style-module.html" is compiled(modified)
-      // ignored: ['src/assets/bower/**/*', 'src/components/**/*.postcss'],
-      poll: true
-    }
+    host: 'localhost'
   }
 };
