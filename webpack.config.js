@@ -1,5 +1,5 @@
 const {resolve} = require('path');
-const PostcssPolymerWebpackPlugin = require('./build_utils/postcss-polymer-webpack-plugin');
+const PostcssPolymerWebpackPlugin = require('./scripts/postcss-polymer-webpack-plugin');
 
 const isDev = process.argv.find(arg => arg.includes('webpack-dev-server'));
 const outputPath = isDev ? resolve('src') : resolve('dist');

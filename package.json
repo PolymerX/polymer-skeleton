@@ -5,11 +5,12 @@
   "license": "MIT",
   "author": "LasaleFamine <info@godev.space>",
   "scripts": {
-    "build": "webpack",
-    "dev": "webpack-dev-server --hot --inline",
+    "build": "yarn copystatic:build && webpack",
+    "dev": "yarn copystatic && webpack-dev-server --hot --inline",
     "test": "xo",
     "lint": "xo --fix",
-    "postinstall": "rm -rf src/vendor && mkdir src/vendor && cp node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js src/vendor/webcomponents-loader.js"
+    "copystatic": "node scripts/copy-statics.js",
+    "copystatic:build": "node scripts/copy-statics.js build"
   },
   "xo": {
     "space": true,
@@ -22,10 +23,9 @@
     }
   },
   "devDependencies": {
-    "babel-core": "6.26.0",
-    "babel-loader": "7.1.2",
     "chokidar": "1.6.1",
     "cssnano": "3.10.0",
+    "fs-extra": "4.0.1",
     "postcss": "5.2.15",
     "postcss-cssnext": "3.0.2",
     "postcss-html-loader": "1.0.0",
