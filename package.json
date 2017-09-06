@@ -1,41 +1,43 @@
 {
-  "name": "polymer-webpack-skeleton",
+  "name": "polymer-skeleton",
   "version": "0.0.0",
   "main": "src/index.js",
   "license": "MIT",
   "author": "LasaleFamine <info@godev.space>",
   "scripts": {
-    "build": "webpack",
-    "dev": "./build_utils/run_dev.sh",
-    "dev:js": "webpack-dev-server --hot",
-    "dev:postcss": "node build_utils/postcss-build.js",
+    "build": "yarn copystatic:build && webpack",
+    "dev": "yarn copystatic && webpack-dev-server --hot --inline",
     "test": "xo",
-    "lint": "xo --fix"
+    "lint": "xo --fix",
+    "copystatic": "node scripts/copy-statics.js",
+    "copystatic:build": "node scripts/copy-statics.js build"
   },
   "xo": {
-    "semicolon": false,
     "space": true,
     "envs": [
       "browser"
-    ]
+    ],
+    "rules": {
+      "eol-last": 0,
+      "import/no-unassigned-import": 0
+    }
   },
   "devDependencies": {
-    "babel-core": "^6.23.1",
-    "babel-loader": "^6.3.2",
-    "babel-preset-es2015": "^6.22.0",
-    "browser-sync": "^2.18.8",
-    "browser-sync-webpack-plugin": "^1.1.4",
-    "chokidar": "^1.6.1",
-    "cssnano": "^3.10.0",
-    "fs-extra": "^2.0.0",
-    "postcss": "^5.2.15",
-    "postcss-cssnext": "^2.9.0",
-    "postcss-reporter": "^3.0.0",
-    "replace-in-file": "^2.4.1",
-    "stylelint-config-standard": "^16.0.0",
-    "webpack": "^2.2.1",
-    "webpack-dev-server": "^2.4.1",
-    "xo": "^0.17.1"
+    "chokidar": "1.6.1",
+    "cssnano": "3.10.0",
+    "fs-extra": "4.0.1",
+    "postcss": "5.2.15",
+    "postcss-cssnext": "3.0.2",
+    "postcss-html-loader": "1.0.0",
+    "postcss-reporter": "5.0.0",
+    "stylelint-config-standard": "17.0.0",
+    "text-loader": "0.0.1",
+    "touch": "3.1.0",
+    "webpack": "3.5.5",
+    "webpack-dev-server": "2.7.1",
+    "xo": "0.18.2"
   },
-  "dependencies": {}
+  "dependencies": {
+    "@polymer/polymer": "LasaleFamine/polymer#3.0-preview"
+  }
 }
