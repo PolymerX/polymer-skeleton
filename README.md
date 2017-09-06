@@ -8,16 +8,20 @@
 
 
 ## Polymer Skeleton
-> A mininum boilerplate to deliver a Polymer 1.x in ES6 syntax with Webpack and PostCSS.
-> Made for personal use, glad if someone can get a good starting point from here.
+> A mininum boilerplate to deliver a Polymer 3.x with Webpack and PostCSS.
+> Made for personal use, glad if someone can get a good starting point from here. **Bye bye Bower**.
+
 
 ## Features
 
 - [Webpack](https://webpack.js.org/)
-  - [Babel](https://babeljs.io/) as module loader with the ES2015 preset.
 - webpack-dev-server with hot reloading active.
-  - [BrowserSync](https://www.npmjs.com/package/browser-sync-webpack-plugin) plugin.
 - [PostCSS](http://postcss.org/) with [cssnext](http://cssnext.io/) (include autoprefixer) plugin.
+
+#### Loaders
+- [babel-loader](https://github.com/babel/babel-loader) - Module loader (***no traspilation***)(https://github.com/babel/babel-loader).
+- [text-loader](https://github.com/dfenstermaker/text-loader) - Load HTML templates as string.
+- [postcss-html-loader](https://github.com/PolymerX/postcss-html-loader) - Load PostCSS into the `<style>` scoped tag of Polymer elements.
 
 ## Usage
 
@@ -32,25 +36,13 @@ Remove the `.git` folder and change details within:
 
 Then start building your application!
 
-	$ yarn && bower install
+	$ yarn
 
 #### Developing
 
-Start the `webpack-dev-server` & `browser-sync` on localhost `http://localhost:3000` with hot-reload and watch on `.postcss` files.
+Start the `webpack-dev-server` on localhost `http://localhost:3000` with hot-reload and watch on `.postcss` files.
 
 	$ yarn dev
-
-#### Developing JS
-
-Start the `webpack-dev-server` & `browser-sync` on localhost `http://localhost:3000` with hot-reload.
-
-	$ yarn dev:js
-
-#### Developing Style
-
-Watch on `.postcss` files within the `components` directory.
-
-	$ yarn dev:postcss
 
 #### Test
 
@@ -58,9 +50,7 @@ CURRENTLY only XO for code style
 
 	$ yarn test
 
-#### Build (Webpack) // TODO
-
-CURRENTLY simply build the Webpack bundle (rework to Kubozer maybe)
+#### Build (Webpack and copy statics) to `dist` folder
 
 	$ yarn build
 
@@ -73,15 +63,16 @@ During development `.postcss` files will be watched, compiled and injected to th
 **How about commons styles?**
 You can make a shared `style-module` and import it when you need commons styles inside your component. More info about this technique [here](https://www.polymer-project.org/1.0/docs/devguide/styling#style-modules)
 
-## How Polymer is imported
+## How Polymer 3 is imported
 
-It's a little trick to just show Polymer to Webpack and bundle with the other `js`.
-Exporting the `window.Polymer` object and importing it where needed inside the `js` of the components.
+We are currently used a modified version of the `@polymer/polymer` official NPM version. The `flat` property within the `package.json` is causing some problem with the load dependency system of `webpack`.
 
+## `@webcomponents/webcomponentsjs
+
+We are getting the `webpcomponents-loader.js` polyfill from GitHub using NPM/Yarn and copy it into a `vendor` folder with a `Node` script.
 ## Todo
 
-- Setup unit (wct) and integration (Nightwatch) tests
+- Setup unit (wct) and integration (Nightwatch/Testcafe/Puppeteer) tests
 - Add [PolymerRedux]()
-- Add [unfetch]() polyfill
+- Add fetch polyfill ?
 - Setup service-workers
-- Add build process to `dist` directory
