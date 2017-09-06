@@ -1,13 +1,13 @@
 <img src="http://i.imgur.com/OqurdD1.jpg" width="530">
 
-[![Build Status](https://travis-ci.org/PolymerX/polymer-skeleton.svg?style=flat-square&branch=master)](https://travis-ci.org/PolymerX/polymer-skeleton)
 [![GitHub release](https://img.shields.io/github/release/PolymerX/polymer-skeleton.svg?style=flat-square)](https://github.com/PolymerX/polymer-skeleton)
+[![Build Status](https://travis-ci.org/PolymerX/polymer-skeleton.svg?style=flat-square&branch=master)](https://travis-ci.org/PolymerX/polymer-skeleton)
 [![GitHub issues](https://img.shields.io/github/issues/PolymerX/polymer-skeleton.svg?style=flat-square)](https://github.com/PolymerX/polymer-skeleton/issues)
 [![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg?style=flat-square)](https://github.com/sindresorhus/xo)
 [![Polymer Skeleton](https://img.shields.io/badge/polymerX-SKELETON-435877.svg?style=flat-square)](https://github.com/PolymerX/polymer-skeleton)
 
 
-## Polymer Skeleton
+## Polymer Skeleton: **Polymer 3**
 > A mininum boilerplate to deliver a Polymer 3.x with Webpack and PostCSS.
 > Made for personal use, glad if someone can get a good starting point from here. **Bye bye Bower**.
 
@@ -19,7 +19,6 @@
 - [PostCSS](http://postcss.org/) with [cssnext](http://cssnext.io/) (include autoprefixer) plugin.
 
 #### Loaders
-- [babel-loader](https://github.com/babel/babel-loader) - Module loader (***no traspilation***)(https://github.com/babel/babel-loader).
 - [text-loader](https://github.com/dfenstermaker/text-loader) - Load HTML templates as string.
 - [postcss-html-loader](https://github.com/PolymerX/postcss-html-loader) - Load PostCSS into the `<style>` scoped tag of Polymer elements.
 
