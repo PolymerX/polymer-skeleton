@@ -13,6 +13,10 @@
   version "1.17.1"
   resolved "https://registry.yarnpkg.com/@polymer/sinonjs/-/sinonjs-1.17.1.tgz#e47d3785b7d0e8c29feb97f7e924b0fc597e2e9b"
 
+"@polymer/test-fixture@PolymerX/test-fixture#3.0-preview":
+  version "3.0.0-pre.1"
+  resolved "https://codeload.github.com/PolymerX/test-fixture/tar.gz/a42bd327b5ec8cf5954c155611fb19ea7ea8b22c"
+
 "@polymer/test-fixture@^0.0.3":
   version "0.0.3"
   resolved "https://registry.yarnpkg.com/@polymer/test-fixture/-/test-fixture-0.0.3.tgz#4443752697d4d9293bbc412ea0b5e4d341f149d9"
@@ -5107,14 +5111,14 @@ postcss-font-variant@^3.0.0:
   dependencies:
     postcss "^6.0.1"
 
-postcss-html-loader@1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/postcss-html-loader/-/postcss-html-loader-1.0.0.tgz#d6db883b53281fd76850d37634a9c28d334b5e7f"
+postcss-html-loader@1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/postcss-html-loader/-/postcss-html-loader-1.0.1.tgz#9267819eecf900dc21746938fd3e38cbd5d31f8d"
   dependencies:
     fs-extra "4.0.1"
     loader-utils "1.1.0"
     parse5 "3.0.2"
-    postcss "6.0.9"
+    postcss "6.0.11"
     postcss-load-config "1.2.0"
 
 postcss-image-set-polyfill@^0.3.5:
@@ -5362,13 +5366,13 @@ postcss@5.2.15:
     source-map "^0.5.6"
     supports-color "^3.2.3"
 
-postcss@6.0.9:
-  version "6.0.9"
-  resolved "https://registry.yarnpkg.com/postcss/-/postcss-6.0.9.tgz#54819766784a51c65b1ec4d54c2f93765438c35a"
+postcss@6.0.11:
+  version "6.0.11"
+  resolved "https://registry.yarnpkg.com/postcss/-/postcss-6.0.11.tgz#f48db210b1d37a7f7ab6499b7a54982997ab6f72"
   dependencies:
     chalk "^2.1.0"
-    source-map "^0.5.6"
-    supports-color "^4.2.1"
+    source-map "^0.5.7"
+    supports-color "^4.4.0"
 
 postcss@^5.0.10, postcss@^5.0.11, postcss@^5.0.12, postcss@^5.0.13, postcss@^5.0.14, postcss@^5.0.16, postcss@^5.0.2, postcss@^5.0.4, postcss@^5.0.5, postcss@^5.0.8, postcss@^5.2.16:
   version "5.2.17"
@@ -6423,7 +6427,7 @@ supports-color@^3.1.1, supports-color@^3.2.3:
   dependencies:
     has-flag "^1.0.0"
 
-supports-color@^4.0.0, supports-color@^4.2.1:
+supports-color@^4.0.0, supports-color@^4.2.1, supports-color@^4.4.0:
   version "4.4.0"
   resolved "https://registry.yarnpkg.com/supports-color/-/supports-color-4.4.0.tgz#883f7ddabc165142b2a61427f3352ded195d1a3e"
   dependencies:
