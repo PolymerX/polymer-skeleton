@@ -45,7 +45,7 @@ Start the `webpack-dev-server` on localhost `http://localhost:3000` with hot-rel
 
 #### Test
 
-CURRENTLY only XO for code style
+XO for code style and WCT for components tests.
 
 	$ yarn test
 
@@ -66,7 +66,7 @@ You can make a shared `style-module` and import it when you need commons styles 
 
 We are currently used a modified version of the `@polymer/polymer` official NPM version. The `flat` property within the `package.json` is causing some problem with the load dependency system of `webpack`.
 
-## `@webcomponents/webcomponentsjs
+## `@webcomponents/webcomponentsjs`
 
 We are getting the `webpcomponents-loader.js` polyfill from GitHub using NPM/Yarn and copy it into a `vendor` folder with a `Node` script.
 ## Todo

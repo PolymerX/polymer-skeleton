@@ -31,10 +31,10 @@
   },
   "devDependencies": {
     "@polymer/test-fixture": "PolymerX/test-fixture#3.0-preview",
-    "chokidar": "1.6.1",
+    "chokidar": "1.7.0",
     "cssnano": "3.10.0",
     "fs-extra": "4.0.1",
-    "postcss": "5.2.15",
+    "postcss": "6.0.11",
     "postcss-cssnext": "3.0.2",
     "postcss-html-loader": "1.0.1",
     "postcss-reporter": "5.0.0",
@@ -42,7 +42,7 @@
     "text-loader": "0.0.1",
     "touch": "3.1.0",
     "web-component-tester": "6.1.5",
-    "webpack": "3.5.5",
+    "webpack": "3.5.6",
     "webpack-dev-server": "2.7.1",
     "xo": "0.18.2"
   },
