@@ -44,6 +44,7 @@
     "web-component-tester": "6.1.5",
     "webpack": "3.5.6",
     "webpack-dev-server": "2.7.1",
+    "workbox-webpack-plugin": "2.0.0",
     "xo": "0.18.2"
   },
   "dependencies": {
