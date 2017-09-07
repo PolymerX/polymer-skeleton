@@ -7,10 +7,14 @@
   "scripts": {
     "build": "yarn copystatic:build && webpack",
     "dev": "yarn copystatic && webpack-dev-server --hot --inline",
-    "test": "xo",
+    "pretest": "yarn linkbower && yarn build",
+    "test": "xo && wct",
+    "posttest": "yarn rmbower",
     "lint": "xo --fix",
     "copystatic": "node scripts/copy-statics.js",
-    "copystatic:build": "node scripts/copy-statics.js build"
+    "copystatic:build": "node scripts/copy-statics.js build",
+    "linkbower": "node scripts/link-bower.js",
+    "rmbower": "node scripts/link-bower.js remove"
   },
   "xo": {
     "space": true,
@@ -20,19 +24,24 @@
     "rules": {
       "eol-last": 0,
       "import/no-unassigned-import": 0
-    }
+    },
+    "ignores": [
+      "test/test-fixture.js"
+    ]
   },
   "devDependencies": {
+    "@polymer/test-fixture": "PolymerX/test-fixture#3.0-preview",
     "chokidar": "1.6.1",
     "cssnano": "3.10.0",
     "fs-extra": "4.0.1",
     "postcss": "5.2.15",
     "postcss-cssnext": "3.0.2",
-    "postcss-html-loader": "1.0.0",
+    "postcss-html-loader": "1.0.1",
     "postcss-reporter": "5.0.0",
     "stylelint-config-standard": "17.0.0",
     "text-loader": "0.0.1",
     "touch": "3.1.0",
+    "web-component-tester": "6.1.5",
     "webpack": "3.5.5",
     "webpack-dev-server": "2.7.1",
     "xo": "0.18.2"

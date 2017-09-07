@@ -7,3 +7,5 @@ dist
 node_modules
 .vscode/
 src/vendor/webcomponents-loader.js
+# To be sure...
+bower_components
