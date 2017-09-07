@@ -34,6 +34,8 @@ export default class PxApp extends PolymerElement {
     // For testing the observer, remove me.
     setTimeout(() => {
       this.someProp = 'chaaaaaaange';
+      // Tested with WCT
+      this.dispatchEvent(new CustomEvent('prop-changed'));
     }, 2000);
   }
 
