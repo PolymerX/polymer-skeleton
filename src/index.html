@@ -29,7 +29,6 @@
           registration.onupdatefound = function() {
             if (navigator.serviceWorker.controller) {
               var installingWorker = registration.installing;
-
               installingWorker.onstatechange = function() {
                 switch (installingWorker.state) {
                   case 'installed':
