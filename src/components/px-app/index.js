@@ -1,6 +1,9 @@
 
 import {Element as PolymerElement} from '@polymer/polymer/polymer-element';
 import '@polymer/polymer/lib/elements/dom-if';
+
+import globalCss from './../../postcss/global.postcss';
+import css from './style.postcss';
 import template from './template.html';
 
 export default class PxApp extends PolymerElement {
@@ -24,7 +27,7 @@ export default class PxApp extends PolymerElement {
   }
 
   static get template() {
-    return template;
+    return `<style>${globalCss} ${css}</style> ${template}`;
   }
 
   constructor() {
