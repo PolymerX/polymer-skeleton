@@ -36,7 +36,7 @@
     "fs-extra": "4.0.1",
     "postcss": "6.0.11",
     "postcss-cssnext": "3.0.2",
-    "postcss-html-loader": "1.0.1",
+    "postcss-loader": "2.0.6",
     "postcss-reporter": "5.0.0",
     "stylelint-config-standard": "17.0.0",
     "text-loader": "0.0.1",
