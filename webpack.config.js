@@ -45,7 +45,7 @@ const plugins = isDev ? [
     swDest: join(outputPath, 'sw.js')
   }),
   new CopyWebpackPlugin(
-    Array.concat(copyStatics.copyWebcomponents, copyStatics.copyOthers)
+    [].concat(copyStatics.copyWebcomponents, copyStatics.copyOthers)
   ),
   new CleanWebpackPlugin([outputPath], {verbose: true})
 ];
