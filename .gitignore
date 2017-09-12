@@ -7,5 +7,6 @@ dist
 node_modules
 .vscode/
 src/vendor/webcomponents-loader.js
+*.report.html
 # To be sure...
 bower_components
