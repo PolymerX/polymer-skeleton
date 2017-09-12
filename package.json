@@ -5,7 +5,7 @@
   "license": "MIT",
   "author": "LasaleFamine <info@godev.space>",
   "scripts": {
-    "build": "webpack",
+    "build": "NODE_ENV=production webpack --optimize-minimize",
     "dev": "webpack-dev-server --hot --inline",
     "pretest": "yarn linkbower && yarn build",
     "test": "xo && wct",

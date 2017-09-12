@@ -51,7 +51,7 @@ XO for code style and WCT for components tests.
 
 	$ yarn test
 
-#### Build (Webpack and copy statics) to `dist` folder. Also generating Service Workers.
+#### Build: (almost) production-ready (`webpack --optimize-minimze` and copy statics) to `dist` folder. Also generating Service Workers.
 
 	$ yarn build
 
@@ -68,9 +68,13 @@ You can simply `import` any other `.postcss` file within your main component `.j
 
 We are currently used a modified version of the `@polymer/polymer` official NPM version. The `flat` property within the `package.json` is causing some problem with the load dependency system of `webpack`.
 
-## `@webcomponents/webcomponentsjs`
+## @webcomponents/webcomponentsjs
 
 We are getting the `webpcomponents-loader.js` polyfill from GitHub using NPM/Yarn and copy it into a `vendor` folder with a `Node` script.
+
+## custom-element-es5-adpater.js
+
+Loading the `custom-element-es5-adapter.js` is necessary because the `custom elements`' [known(1)](https://stackoverflow.com/questions/43520535/class-constructor-polymerelement-cannot-be-invoked-without-new/45097891#45097891) [issue(2)](https://github.com/webcomponents/custom-elements#es5-vs-es2015) (the lovely `Uncaught TypeError: Class constructor PolymerElement cannot be invoked without 'new'`) about ES6`class`s
 ## Todo
 
 - Integration (Nightwatch/Testcafe/Puppeteer) tests?

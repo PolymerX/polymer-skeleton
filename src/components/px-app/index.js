@@ -22,6 +22,14 @@ export default class PxApp extends PolymerElement {
         type: Boolean,
         value: false,
         reflectToAttribute: true
+      },
+      appVersion: {
+        type: String,
+        value: process.env.appVersion
+      },
+      ENV: {
+        type: String,
+        value: process.env.NODE_ENV
       }
     };
   }
