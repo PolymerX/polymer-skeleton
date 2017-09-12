@@ -10,7 +10,7 @@
     "pretest": "yarn linkbower && yarn build",
     "test": "xo && wct && yarn test:lighthouse",
     "test:lighthouse": "concurrently --kill-others \"http-server dist\" \"lighthouse --view http://localhost:8080\" ",
-    "test:travis": "xo && wct",
+    "test:travis": "yarn pretest && xo && wct",
     "clean:lighthouse": "rm *.report.html",
     "posttest": "yarn rmbower",
     "lint": "xo --fix",
