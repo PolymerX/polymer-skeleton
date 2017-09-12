@@ -1,13 +1,21 @@
 const {resolve, join} = require('path');
+const webpack = require('webpack');
 const WorkboxPlugin = require('workbox-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+
+const pkg = require('./package.json');
 
 /**
  * === ENV configuration
  */
 const isDev = process.argv.find(arg => arg.includes('webpack-dev-server'));
+const ENV = isDev ? 'development' : 'production';
 const outputPath = isDev ? resolve('src') : resolve('dist');
+const processEnv = {
+  NODE_ENV: JSON.stringify(ENV),
+  appVersion: JSON.stringify(pkg.version)
+};
 
 /**
  * === Copy static files configuration
@@ -49,7 +57,8 @@ const copyStatics = {
  * Plugin configuration
  */
 const plugins = isDev ? [
-  new CopyWebpackPlugin(copyStatics.copyWebcomponents)
+  new CopyWebpackPlugin(copyStatics.copyWebcomponents),
+  new webpack.DefinePlugin({'process.env': processEnv})
 ] : [
   new WorkboxPlugin({
     globDirectory: outputPath,
@@ -59,7 +68,8 @@ const plugins = isDev ? [
   new CopyWebpackPlugin(
     [].concat(copyStatics.copyWebcomponents, copyStatics.copyOthers)
   ),
-  new CleanWebpackPlugin([outputPath], {verbose: true})
+  new CleanWebpackPlugin([outputPath], {verbose: true}),
+  new webpack.DefinePlugin({'process.env': processEnv})
 ];
 
 /**
@@ -71,6 +81,7 @@ module.exports = {
     path: outputPath,
     filename: 'bundle.js'
   },
+  devtool: 'cheap-module-source-map',
   module: {
     rules: [
       {
