@@ -47,9 +47,13 @@ Start the `webpack-dev-server` on localhost `http://localhost:3000` with hot-rel
 
 #### Test
 
-XO for code style and WCT for components tests. It will also runs [Lighthouse](https://github.com/GoogleChrome/lighthouse) for testing the PWA capabilities:
+XO for code style and WCT for components tests:
 
 	$ yarn test
+
+Run [Lighthouse](https://github.com/GoogleChrome/lighthouse) for testing the PWA capabilities:
+
+    $ yarn test:lighthouse
 
 #### Build
 (Almost) production-ready (`webpack --optimize-minimze` and copy statics) to `dist` folder. Also generating Service Workers:
