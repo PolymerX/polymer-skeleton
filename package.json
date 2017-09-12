@@ -29,6 +29,8 @@
   },
   "devDependencies": {
     "@polymer/test-fixture": "PolymerX/test-fixture#3.0-preview",
+    "babel-loader": "7.1.2",
+    "babel-preset-env": "1.6.0",
     "chokidar": "1.7.0",
     "clean-webpack-plugin": "0.1.16",
     "copy-webpack-plugin": "4.0.1",
