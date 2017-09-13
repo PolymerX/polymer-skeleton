@@ -41,17 +41,22 @@ Then start building your application!
 
 #### Developing
 
-Start the `webpack-dev-server` on localhost `http://localhost:3000` with hot-reload and watch on `.postcss` files.
+Start the `webpack-dev-server` on localhost `http://localhost:3000` with hot-reload and watch on `.postcss` files:
 
 	$ yarn dev
 
 #### Test
 
-XO for code style and WCT for components tests.
+XO for code style and WCT for components tests:
 
 	$ yarn test
 
-#### Build: (almost) production-ready (`webpack --optimize-minimze` and copy statics) to `dist` folder. Also generating Service Workers.
+Run [Lighthouse](https://github.com/GoogleChrome/lighthouse) for testing the PWA capabilities:
+
+    $ yarn test:lighthouse
+
+#### Build
+(Almost) production-ready (`webpack --optimize-minimze` and copy statics) to `dist` folder. Also generating Service Workers:
 
 	$ yarn build
 

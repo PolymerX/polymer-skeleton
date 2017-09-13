@@ -49,12 +49,12 @@
       console.log('Service worker is not supported');
     }
   </script>
-  <script src="./vendor/custom-elements-es5-adapter.js"></script>
-  <script src="./vendor/webcomponents-loader.js"></script>
 </head>
 
 <body>
-	<px-app unresolved name="Polymer Skeleton"></px-app>
+	<px-app unresolved name="Polymer Skeleton">
+    Loading...
+  </px-app>
 
 	<script>
 		(function () {
@@ -65,6 +65,8 @@
 		})();
   </script>
 
+  <script src="./vendor/custom-elements-es5-adapter.js" async></script>
+  <script src="./vendor/webcomponents-loader.js" async></script>
 </body>
 
 </html>
