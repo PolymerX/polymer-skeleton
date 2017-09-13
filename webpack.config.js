@@ -39,12 +39,12 @@ const copyStatics = {
     flatten: true
   }],
   copyOthers: [{
+    from: 'assets/**',
+    context: resolve('./src'),
+    to: outputPath
+  }, {
     from: resolve('./src/index.html'),
     to: outputPath,
-    flatten: true
-  }, {
-    from: resolve('./src/assets/**'),
-    to: join(outputPath, 'assets'),
     flatten: true
   }, {
     from: resolve('./src/manifest.json'),
