@@ -6,7 +6,7 @@ import globalCss from './../../../postcss/global.postcss';
 import css from './style.postcss';
 import template from './template.html';
 
-export default class PxApp extends PolymerElement {
+export default class SkApp extends PolymerElement {
 
   static get properties() {
     return {
@@ -63,4 +63,4 @@ export default class PxApp extends PolymerElement {
   }
 }
 
-window.customElements.define('px-app', PxApp);
+window.customElements.define('sk-app', SkApp);
