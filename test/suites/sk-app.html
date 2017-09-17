@@ -18,13 +18,13 @@
 
   <test-fixture id="element">
     <template>
-      <px-app name="Px App"></px-app>
+      <sk-app name="Sk App"></sk-app>
     </template>
   </test-fixture>
 
 
   <script>
-    suite('<px-app>', () => {
+    suite('<sk-app>', () => {
       let element;
 
       setup(() => {
@@ -33,7 +33,7 @@
 
       suite('Test Properties', () => {
         test('Default Properties', () => {
-          assert.equal(element.name, 'Px App');
+          assert.equal(element.name, 'Sk App');
           assert.equal(element.someProp, 'awesome prop');
         });
       });
