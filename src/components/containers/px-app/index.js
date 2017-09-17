@@ -2,7 +2,7 @@
 import {Element as PolymerElement} from '@polymer/polymer/polymer-element';
 import '@polymer/polymer/lib/elements/dom-if';
 
-import globalCss from './../../postcss/global.postcss';
+import globalCss from './../../../postcss/global.postcss';
 import css from './style.postcss';
 import template from './template.html';
 
