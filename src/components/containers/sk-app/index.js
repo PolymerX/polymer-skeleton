@@ -2,7 +2,7 @@
 import {Element as PolymerElement} from '@polymer/polymer/polymer-element';
 import '@polymer/polymer/lib/elements/dom-if';
 
-import globalCss from './../../../postcss/global.postcss';
+import HueRotateCss from './../../../global_style/animations/hue-rotate.postcss';
 import css from './style.postcss';
 import template from './template.html';
 
@@ -12,16 +12,6 @@ export default class SkApp extends PolymerElement {
     return {
       name: {
         type: String
-      },
-      someProp: {
-        type: String,
-        value: 'awesome prop',
-        observer: '_obsPropChanged'
-      },
-      showChangedProp: {
-        type: Boolean,
-        value: false,
-        reflectToAttribute: true
       },
       appVersion: {
         type: String,
@@ -35,11 +25,7 @@ export default class SkApp extends PolymerElement {
   }
 
   static get template() {
-    return `<style>${globalCss} ${css}</style> ${template}`;
-  }
-
-  constructor() {
-    super();
+    return `<style>${HueRotateCss} ${css}</style> ${template}`;
   }
 }
 
