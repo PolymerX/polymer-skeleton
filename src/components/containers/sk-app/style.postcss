@@ -1,7 +1,17 @@
 :host {
-  display: flex;
+  display: block;
   overflow: auto;
   height: 100vh;
+}
+
+
+.Header {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  width: 100%;
+  padding-right: 40px;
+  box-sizing: border-box;
 }
 
 
@@ -9,5 +19,32 @@
   display: block;
   width: 100%;
   max-width: 300px;
-  animation: HueRotate 30s infinite linear;
+}
+
+
+.Logo:hover {
+  animation: HueRotate 1s infinite linear;
+}
+
+
+sk-menu {
+  margin-left: 16px;
+}
+
+
+.MenuLink:hover {
+  color: #091629;
+}
+
+
+@media (min-width: 60em) {
+  .Header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  sk-menu {
+    margin-left: 0;
+  }
 }

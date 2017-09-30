@@ -1,8 +1,9 @@
 
 import {Element as PolymerElement} from '@polymer/polymer/polymer-element';
-import '@polymer/polymer/lib/elements/dom-if';
+import '../../dumbs/sk-menu';
 
 import HueRotateCss from './../../../global_style/animations/hue-rotate.postcss';
+import LinksCss from './../../../global_style/basics/links.postcss';
 import css from './style.postcss';
 import template from './template.html';
 
@@ -25,7 +26,7 @@ export default class SkApp extends PolymerElement {
   }
 
   static get template() {
-    return `<style>${HueRotateCss} ${css}</style> ${template}`;
+    return `<style>${LinksCss} ${HueRotateCss} ${css}</style> ${template}`;
   }
 }
 
