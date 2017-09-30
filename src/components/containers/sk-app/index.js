@@ -4,6 +4,7 @@ import '../../dumbs/sk-menu';
 
 import HueRotateCss from './../../../global_style/animations/hue-rotate.postcss';
 import LinksCss from './../../../global_style/basics/links.postcss';
+import TypographyCSS from './../../../global_style/basics/typography.postcss';
 import css from './style.postcss';
 import template from './template.html';
 
@@ -26,7 +27,14 @@ export default class SkApp extends PolymerElement {
   }
 
   static get template() {
-    return `<style>${LinksCss} ${HueRotateCss} ${css}</style> ${template}`;
+    return `
+      <style>
+        ${TypographyCSS}
+        ${LinksCss}
+        ${HueRotateCss}
+        ${css}
+      </style>
+      ${template}`;
   }
 }
 
