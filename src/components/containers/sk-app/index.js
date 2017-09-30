@@ -40,26 +40,6 @@ export default class SkApp extends PolymerElement {
 
   constructor() {
     super();
-    console.log('Old ready() callback');
-
-    // For testing the observer, remove me.
-    setTimeout(() => {
-      this.someProp = 'chaaaaaaange';
-      // Tested with WCT
-      this.dispatchEvent(new CustomEvent('prop-changed'));
-    }, 2000);
-  }
-
-  _obsPropChanged(value, oldValue) {
-    if (oldValue === undefined) {
-      return false;
-    }
-
-    console.log('Prop changed ->', value, oldValue);
-    // For testing the dom-if, remove me.
-    setTimeout(() => {
-      this.showChangedProp = true;
-    }, 2000);
   }
 }
 
