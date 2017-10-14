@@ -4,6 +4,11 @@
   "main": "src/index.js",
   "license": "MIT",
   "author": "LasaleFamine <info@godev.space>",
+  "repository": "PolymerX/polymer-skeleton",
+  "contributors": [
+    "Alessio Occhipinti <info@godev.space> (https://godev.space)",
+    "Mattia Astorino (http://equinsuocha.io/)"
+  ],
   "scripts": {
     "build": "NODE_ENV=production webpack --optimize-minimize",
     "dev": "webpack-dev-server --hot --inline",
@@ -13,9 +18,10 @@
     "test:travis": "yarn pretest && yarn lint && wct",
     "clean:lighthouse": "rm *.report.html",
     "posttest": "yarn rmbower",
-    "lint": "xo && stylelint src/components/**/*.postcss",
+    "lint": "xo && stylelint src/components/**/*.postcss && remark .",
     "linkbower": "node scripts/link-bower.js",
     "rmbower": "node scripts/link-bower.js remove",
+    "remark:lint": "remark .",
     "release": "standard-version"
   },
   "xo": {
@@ -29,6 +35,11 @@
     },
     "ignores": [
       "test/test-fixture.js"
+    ]
+  },
+  "remarkConfig": {
+    "plugins": [
+      "preset-github"
     ]
   },
   "devDependencies": {
@@ -46,6 +57,8 @@
     "postcss": "6.0.13",
     "postcss-cssnext": "3.0.2",
     "postcss-loader": "2.0.8",
+    "remark-cli": "4.0.0",
+    "remark-preset-github": "0.0.7",
     "standard-version": "4.2.0",
     "stylelint": "8.2.0",
     "stylelint-config-standard": "17.0.0",
