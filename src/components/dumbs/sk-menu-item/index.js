@@ -1,5 +1,5 @@
 
-import { Element as PolymerElement } from '@polymer/polymer/polymer-element';
+import {Element as PolymerElement} from '@polymer/polymer/polymer-element';
 
 import css from './style.postcss';
 import template from './template.html';

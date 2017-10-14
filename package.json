@@ -45,7 +45,6 @@
     "postcss": "6.0.11",
     "postcss-cssnext": "3.0.2",
     "postcss-loader": "2.0.6",
-    "postcss-reporter": "5.0.0",
     "stylelint": "8.1.1",
     "stylelint-config-standard": "17.0.0",
     "text-loader": "0.0.1",

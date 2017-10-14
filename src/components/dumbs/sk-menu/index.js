@@ -1,6 +1,6 @@
 
-import { Element as PolymerElement } from '@polymer/polymer/polymer-element';
-import '../sk-menu-item';
+import {Element as PolymerElement} from '@polymer/polymer/polymer-element';
+import './../sk-menu-item';
 
 import css from './style.postcss';
 import template from './template.html';
