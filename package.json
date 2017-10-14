@@ -15,7 +15,8 @@
     "posttest": "yarn rmbower",
     "lint": "xo && stylelint src/components/**/*.postcss",
     "linkbower": "node scripts/link-bower.js",
-    "rmbower": "node scripts/link-bower.js remove"
+    "rmbower": "node scripts/link-bower.js remove",
+    "release": "standard-version"
   },
   "xo": {
     "space": true,
@@ -45,6 +46,7 @@
     "postcss": "6.0.13",
     "postcss-cssnext": "3.0.2",
     "postcss-loader": "2.0.8",
+    "standard-version": "4.2.0",
     "stylelint": "8.2.0",
     "stylelint-config-standard": "17.0.0",
     "text-loader": "0.0.1",
