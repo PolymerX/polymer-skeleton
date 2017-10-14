@@ -25,6 +25,10 @@
 - [text-loader](https://github.com/dfenstermaker/text-loader) - Load HTML templates as string.
 - [postcss-loader](https://github.com/postcss/postcss-loader) - Load PostCSS into the `<style>` scoped tag of Polymer elements as string.
 
+## Supported Browsers
+
+> TODO
+
 ## Usage
 
 Clone this repository:
@@ -48,7 +52,7 @@ Start the `webpack-dev-server` on localhost `http://localhost:3000` with hot-rel
 
 #### Test
 
-XO for code style and WCT for components tests:
+XO for code style, Stylelint for PostCSS linting, and WCT for components tests:
 
 	$ yarn test
 
@@ -80,8 +84,4 @@ We are getting the `webpcomponents-loader.js` polyfill from GitHub using NPM/Yar
 
 ## custom-element-es5-adpater.js
 
-Loading the `custom-element-es5-adapter.js` is necessary because the `custom elements`' [known(1)](https://stackoverflow.com/questions/43520535/class-constructor-polymerelement-cannot-be-invoked-without-new/45097891#45097891) [issue(2)](https://github.com/webcomponents/custom-elements#es5-vs-es2015) (the lovely `Uncaught TypeError: Class constructor PolymerElement cannot be invoked without 'new'`) about ES6`class`s
-## Todo
-
-- Integration (Nightwatch/Testcafe/Puppeteer) tests?
-- Add [PolymerRedux]()
+Loading the `custom-element-es5-adapter.js` is necessary because the `custom elements`' [known(1)](https://stackoverflow.com/questions/43520535/class-constructor-polymerelement-cannot-be-invoked-without-new/45097891#45097891) [issue(2)](https://github.com/webcomponents/custom-elements#es5-vs-es2015) (the lovely `Uncaught TypeError: Class constructor PolymerElement cannot be invoked without 'new'`) about ES6 `classes`
