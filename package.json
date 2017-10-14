@@ -18,7 +18,7 @@
     "test:travis": "yarn pretest && yarn lint && wct",
     "clean:lighthouse": "rm *.report.html",
     "posttest": "yarn rmbower",
-    "lint": "xo && stylelint src/components/**/*.postcss && remark .",
+    "lint": "xo && stylelint src/components/**/*.postcss",
     "linkbower": "node scripts/link-bower.js",
     "rmbower": "node scripts/link-bower.js remove",
     "remark:lint": "remark .",
