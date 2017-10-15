@@ -1,6 +1,6 @@
 {
   "name": "polymer-skeleton",
-  "version": "0.0.0",
+  "version": "1.0.0-beta",
   "main": "src/index.js",
   "license": "MIT",
   "author": "LasaleFamine <info@godev.space>",
