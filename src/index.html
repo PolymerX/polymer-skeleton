@@ -80,17 +80,10 @@
     <div class="Loader">Loading...</div>
   </sk-app>
 
-	<script>
-		(function () {
-			var b = document.createElement('script');
-			b.src = '/bundle.js';
-			b.defer = true;
-			document.body.appendChild(b);
-		})();
-  </script>
-
-  <script src="./vendor/custom-elements-es5-adapter.js" async></script>
-  <script src="./vendor/webcomponents-loader.js" async></script>
+  <script src="./vendor/custom-elements-es5-adapter.js" async nomodule></script>
+  <script src="./vendor/webcomponents-lite.js" async></script>
+  <script src="./bundle.js" async nomodule></script>
+  <script src="./module.bundle.js" async type="module"></script>
 </body>
 
 </html>

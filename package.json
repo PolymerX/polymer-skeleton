@@ -11,17 +11,19 @@
   ],
   "scripts": {
     "build": "NODE_ENV=production webpack --optimize-minimize",
+    "postbuild": "NODE_ENV=production webpack --config webpack-module-build.config.js",
     "dev": "webpack-dev-server --hot --inline",
+    "dev:module": "BROWSERS=module webpack-dev-server --hot --inline",
     "pretest": "yarn linkbower && yarn build",
-    "test": "yarn lint && wct && yarn test:lighthouse",
+    "test": "yarn lint && wct && yarn test:lighthouse && yarn lint:remark",
     "test:lighthouse": "concurrently --kill-others \"http-server dist\" \"lighthouse --view http://localhost:8080\" ",
     "test:travis": "yarn pretest && yarn lint && wct",
     "clean:lighthouse": "rm *.report.html",
     "posttest": "yarn rmbower",
     "lint": "xo && stylelint src/components/**/*.postcss",
+    "lint:remark": "remark .",
     "linkbower": "node scripts/link-bower.js",
     "rmbower": "node scripts/link-bower.js remove",
-    "remark:lint": "remark .",
     "release": "standard-version"
   },
   "xo": {
