@@ -11,7 +11,9 @@
   ],
   "scripts": {
     "build": "NODE_ENV=production webpack --optimize-minimize",
+    "postbuild": "NODE_ENV=production webpack --config webpack-module.config.js",
     "dev": "webpack-dev-server --hot --inline",
+    "dev:module": "BROWSERS=module webpack-dev-server --hot --inline",
     "pretest": "yarn linkbower && yarn build",
     "test": "yarn lint && wct && yarn test:lighthouse",
     "test:lighthouse": "concurrently --kill-others \"http-server dist\" \"lighthouse --view http://localhost:8080\" ",
