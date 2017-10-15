@@ -11,6 +11,8 @@ const pkg = require('./package.json');
  */
 const isDev = process.argv.find(arg => arg.includes('webpack-dev-server'));
 const ENV = isDev ? 'development' : 'production';
+const BROWSERS = process.env.BROWSERS === 'module' ? ['last 2 Chrome versions'] : ['last 2 versions', 'not ie <= 11'];
+const IS_MODULE_BUILD = BROWSERS.includes('Chrome');
 const outputPath = isDev ? resolve('src') : resolve('dist');
 const processEnv = {
   NODE_ENV: JSON.stringify(ENV),
@@ -39,12 +41,12 @@ const copyStatics = {
     flatten: true
   }],
   copyOthers: [{
+    from: 'assets/**',
+    context: resolve('./src'),
+    to: outputPath
+  }, {
     from: resolve('./src/index.html'),
     to: outputPath,
-    flatten: true
-  }, {
-    from: resolve('./src/assets/**'),
-    to: join(outputPath, 'assets'),
     flatten: true
   }, {
     from: resolve('./src/manifest.json'),
@@ -79,7 +81,7 @@ module.exports = {
   entry: './src/index.js',
   output: {
     path: outputPath,
-    filename: 'bundle.js'
+    filename: IS_MODULE_BUILD ? 'module.bundle.js' : 'bundle.js'
   },
   devtool: 'cheap-module-source-map',
   module: {
@@ -94,7 +96,7 @@ module.exports = {
             presets: [[
               'env',
               {
-                targets: {browsers: ['last 2 versions', 'not ie <= 11']},
+                targets: {browsers: BROWSERS},
                 debug: true
               }
             ]]
@@ -119,6 +121,7 @@ module.exports = {
       errors: true
     },
     port: 3000,
-    host: 'localhost'
+    host: '0.0.0.0',
+    disableHostCheck: true
   }
 };

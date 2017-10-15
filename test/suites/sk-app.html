@@ -11,43 +11,29 @@
 
   <script src="/node_modules/@polymer/test-fixture/test-fixture.js"></script>
   <!-- All bundle -->
-  <script src="/dist/bundle.js" async></script>
+  <script src="/dist/bundle.js"></script>
 </head>
 
 <body>
 
   <test-fixture id="element">
     <template>
-      <px-app name="Px App"></px-app>
+      <sk-app name="Sk App"></sk-app>
     </template>
   </test-fixture>
 
 
   <script>
-    suite('<px-app>', () => {
+    suite('<sk-app>', () => {
       let element;
-
       setup(() => {
         element = fixture('element');
       });
-
       suite('Test Properties', () => {
         test('Default Properties', () => {
-          assert.equal(element.name, 'Px App');
-          assert.equal(element.someProp, 'awesome prop');
+          assert.equal(element.name, 'Sk App');
         });
       });
-
-      suite('Test Behaviors', () => {
-        test('Property "someProp" should change after 2000 ms', done => {
-          assert.equal(element.someProp, 'awesome prop');
-          setTimeout(() => {
-            assert.equal(element.someProp, 'chaaaaaaange', 'Property changed after 2000ms correctly');
-            done();
-          }, 2001)
-        });
-      });
-
     });
   </script>
 </body>

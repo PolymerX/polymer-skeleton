@@ -5,21 +5,45 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
 
-	<title>Px App</title>
+	<title>Polymer Skeleton</title>
 
 	<link rel="shortcut icon" sizes="32x32" href="/images/news-icon-32.png">
-	<meta name="theme-color" content="#000">
-	<link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#000">
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+  <link rel="mask-icon" href="/assets/icons/safari-pinned-tab.svg" color="#4c60e3">
+  <link rel="shortcut icon" href="/assets/icons/favicon.ico">
+  <meta name="msapplication-config" content="/assets/icons/browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
 
 	<style>
-		body {
-			margin: 0;
-			background-color: #FAFAFA;
-			color: #383838;
-			font-family: Georgia;
-			min-height: 100vh;
-			-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-		}
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+        font-size: calc(100% + 4 * (100vw - 600px) / 400);
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+      line-height: 1.5;
+      background: #FFF;
+      overflow: hidden;
+      text-rendering: geometricPrecision;
+      -webkit-font-smoothing: antialiased;
+      margin: 0;
+      height: 100%;
+    }
+
+    .Loader {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+    }
 	</style>
 
   <script>
@@ -52,21 +76,14 @@
 </head>
 
 <body>
-	<px-app unresolved name="Polymer Skeleton">
-    Loading...
-  </px-app>
+	<sk-app unresolved name="Polymer Skeleton">
+    <div class="Loader">Loading...</div>
+  </sk-app>
 
-	<script>
-		(function () {
-			var b = document.createElement('script');
-			b.src = '/bundle.js';
-			b.defer = true;
-			document.body.appendChild(b);
-		})();
-  </script>
-
-  <script src="./vendor/custom-elements-es5-adapter.js" async></script>
-  <script src="./vendor/webcomponents-loader.js" async></script>
+  <script src="./vendor/custom-elements-es5-adapter.js" async nomodule></script>
+  <script src="./vendor/webcomponents-lite.js" async></script>
+  <script src="./bundle.js" async nomodule></script>
+  <script src="./module.bundle.js" async type="module"></script>
 </body>
 
 </html>
