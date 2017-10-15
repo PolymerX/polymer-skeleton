@@ -31,7 +31,7 @@
 
 ## Supported Browsers
 
-All modern browsers 😁
+All modern browsers. 🕶
 But as the features said, we are also transpiling the bundle for "oldie" browsers, but of course we are not covering things like IE11.
 
 ## Usage
