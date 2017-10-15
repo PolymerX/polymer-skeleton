@@ -33,7 +33,7 @@
 
 All modern browsers. 🕶
 
-But as the features said, we are also transpiling the bundle for "oldie" browsers, but of course we are not covering things like IE11.
+But as the features said, we are also transpiling the bundle for "oldie" browsers. Of course we are not covering things like IE11.
 
 ## Usage
 
