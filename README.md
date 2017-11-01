@@ -63,7 +63,7 @@ For "oldie" browsers, transpiling also Javascript `class`. Works on `Firefox`:
 yarn dev
 ```
 
-For modern browsers with `class` support. Wokrs on `Chrome` and `Safari`:
+For modern browsers with `class` support. Works on `Chrome`, `Safari`, and `Edge`:
 
 ```bash
 yarn dev:module
@@ -96,7 +96,7 @@ yarn build
 
 During development `.postcss` files will be watched, compiled and injected to the relative `<style>` tag within the component template. The CSS is scoped to the component so don't worry about CSS specificity, you can also use `:host`, `:host-context` and `:root` selectors. Read more about [styling web components](https://www.polymer-project.org/2.0/docs/devguide/style-shadow-dom) and [custom CSS properties](https://www.polymer-project.org/2.0/docs/devguide/custom-css-properties).
 
-[Cssnext](http://cssnext.io/) also include Autoprefixer plugin, if you don't know how it work (...and you should), it allow you to write CSS without worry about vendor prefixes. Just write your css properties prefix-free and let autoprefixer do the work for you when compiling.
+[Cssnext](http://cssnext.io/) also includes Autoprefixer plugin, if you don't know how it works (...and you should), it allows you to write CSS without worrying about vendor prefixes. Just write your css properties prefix-free and let autoprefixer do the work for you when compiling.
 
 **How about commons styles?**
 You can simply `import` any other `.postcss` file within your main component `.js` file and print it inside the `template()`.
@@ -104,12 +104,12 @@ You can simply `import` any other `.postcss` file within your main component `.j
 
 ## How Polymer 3 is imported
 
-We are currently used a modified version of the `@polymer/polymer` official NPM version. The `flat` property within the `package.json` is causing some problem with the load dependency system of `webpack`.
+We are currently using a modified version of the `@polymer/polymer` official NPM version. The `flat` property within the `package.json` is causing some problems with the load dependency system of `webpack`.
 
 
 ## [**@webcomponents/webcomponentsjs**](https://github.com/webcomponents/webcomponentsjs)
 
-We are getting the `webpcomponents-lite.js` polyfill from GitHub using NPM/Yarn and copy it into a `vendor` folder with a `Node` script. Currently, the `webcomponents-loader.js` has a bug for Firefox and we can't use it.
+We are getting the `webpcomponents-lite.js` polyfill from GitHub using NPM/Yarn and copying it into a `vendor` folder with a `Node` script. Currently, the `webcomponents-loader.js` has a bug for Firefox and we can't use it.
 
 
 ## custom-element-es5-adpater.js
@@ -128,4 +128,3 @@ Loading the `custom-element-es5-adapter.js` is necessary because the `custom ele
 ## License
 
 PolymerX © MIT
-
