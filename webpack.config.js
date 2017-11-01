@@ -2,7 +2,6 @@ const {resolve, join} = require('path');
 const webpack = require('webpack');
 const WorkboxPlugin = require('workbox-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 const pkg = require('./package.json');
 
@@ -71,7 +70,6 @@ const plugins = isDev ? [
   new CopyWebpackPlugin(
     [].concat(copyStatics.copyWebcomponents, copyStatics.copyOthers)
   ),
-  new CleanWebpackPlugin([outputPath], {verbose: true}),
   new webpack.DefinePlugin({'process.env': processEnv})
 ];
 
