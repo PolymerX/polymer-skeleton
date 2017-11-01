@@ -11,7 +11,8 @@ const pkg = require('./package.json');
  */
 const isDev = process.argv.find(arg => arg.includes('webpack-dev-server'));
 const ENV = isDev ? 'development' : 'production';
-const BROWSERS = process.env.BROWSERS === 'module' ? ['last 2 Chrome versions', 'Safari 10'] : ['last 2 versions', 'not ie <= 11'];
+const BROWSERS = process.env.BROWSERS === 'module' ?
+  ['last 2 Chrome versions', 'Safari 10'] : ['> 1%', 'last 2 versions', 'Firefox ESR', 'not ie <= 11'];
 const IS_MODULE_BUILD = BROWSERS[0].includes('Chrome');
 const outputPath = isDev ? resolve('src') : resolve('dist');
 const processEnv = {
