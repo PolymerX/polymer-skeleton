@@ -64,7 +64,7 @@ const plugins = isDev ? [
 ] : [
   new WorkboxPlugin({
     globDirectory: outputPath,
-    globPatterns: ['**/*.{html,js,css}'],
+    globPatterns: ['**/*.{html,js,css, svg, png}'],
     swDest: join(outputPath, 'sw.js')
   }),
   new CopyWebpackPlugin(
