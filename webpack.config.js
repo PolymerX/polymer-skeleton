@@ -36,6 +36,10 @@ const copyStatics = {
     to: join(outputPath, 'vendor'),
     flatten: true
   }, {
+    from: resolve('./node_modules/@webcomponents/webcomponentsjs/webcomponents-hi-sd-ce.js'),
+    to: join(outputPath, 'vendor'),
+    flatten: true
+  }, {
     from: resolve('./node_modules/@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js'),
     to: join(outputPath, 'vendor'),
     flatten: true
