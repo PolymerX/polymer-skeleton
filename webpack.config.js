@@ -2,7 +2,6 @@ const {resolve, join} = require('path');
 const webpack = require('webpack');
 const WorkboxPlugin = require('workbox-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 const pkg = require('./package.json');
 
@@ -37,6 +36,10 @@ const copyStatics = {
     to: join(outputPath, 'vendor'),
     flatten: true
   }, {
+    from: resolve('./node_modules/@webcomponents/webcomponentsjs/webcomponents-hi-sd-ce.js'),
+    to: join(outputPath, 'vendor'),
+    flatten: true
+  }, {
     from: resolve('./node_modules/@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js'),
     to: join(outputPath, 'vendor'),
     flatten: true
@@ -65,13 +68,12 @@ const plugins = isDev ? [
 ] : [
   new WorkboxPlugin({
     globDirectory: outputPath,
-    globPatterns: ['**/*.{html,js,css}'],
+    globPatterns: ['**/*.{html, js, css, svg, png, woff, woff2, ttf}'],
     swDest: join(outputPath, 'sw.js')
   }),
   new CopyWebpackPlugin(
     [].concat(copyStatics.copyWebcomponents, copyStatics.copyOthers)
   ),
-  new CleanWebpackPlugin([outputPath], {verbose: true}),
   new webpack.DefinePlugin({'process.env': processEnv})
 ];
 

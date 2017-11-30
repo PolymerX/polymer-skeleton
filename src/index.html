@@ -7,8 +7,6 @@
 
 	<title>Polymer Skeleton</title>
 
-	<link rel="shortcut icon" sizes="32x32" href="/images/news-icon-32.png">
-  <meta name="theme-color" content="#000">
   <link rel="manifest" href="manifest.json">
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
@@ -72,6 +70,24 @@
     } else {
       console.log('Service worker is not supported');
     }
+
+    document.addEventListener('WebComponentsReady', function componentsReady() {
+      document.removeEventListener('WebComponentsReady', componentsReady, false);
+
+      var script = document.createElement('script');
+      script.async = true
+      script.src = './bundle.js';
+      script.setAttribute('nomodule', true);
+
+      var scriptModule = document.createElement('script');
+      scriptModule.async = true
+      scriptModule.src = './module.bundle.js';
+      scriptModule.setAttribute('type', 'module');
+
+      var refScript = document.body.getElementsByTagName('script')[0];
+      refScript.parentNode.insertBefore(script, refScript);
+      refScript.parentNode.insertBefore(scriptModule, refScript);
+  }, false);
   </script>
 </head>
 
@@ -82,8 +98,6 @@
 
   <script src="./vendor/custom-elements-es5-adapter.js" async nomodule></script>
   <script src="./vendor/webcomponents-lite.js" async></script>
-  <script src="./bundle.js" async nomodule></script>
-  <script src="./module.bundle.js" async type="module"></script>
 </body>
 
 </html>

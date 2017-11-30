@@ -1,5 +1,6 @@
 const {resolve} = require('path');
 const webpack = require('webpack');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 const pkg = require('./package.json');
 
@@ -16,7 +17,10 @@ const processEnv = {
 /**
  * Plugin configuration
  */
-const plugins = [new webpack.DefinePlugin({'process.env': processEnv})];
+const plugins = [
+  new webpack.DefinePlugin({'process.env': processEnv}),
+  new CleanWebpackPlugin([outputPath], {verbose: true})
+];
 
 /**
  * === Webpack configuration
