@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.0.0-beta-1"></a>
+# [1.0.0-beta-1](https://github.com/PolymerX/polymer-skeleton/compare/v1.0.0-beta...v1.0.0-beta-1) (2017-11-30)
+
+
+### Bug Fixes
+
+* **#72:** re-added manifest inside src root  ([05de895](https://github.com/PolymerX/polymer-skeleton/commit/05de895))
+* **#72:** removed manifest from icons ([7a71cac](https://github.com/PolymerX/polymer-skeleton/commit/7a71cac))
+* **#75:** fixed builds order ([5dd7443](https://github.com/PolymerX/polymer-skeleton/commit/5dd7443))
+
+
+### Features
+
+* **webcomponents-loader:** re-added with correct logic ([e37f75a](https://github.com/PolymerX/polymer-skeleton/commit/e37f75a))
+
+
+
 <a name="1.0.0-beta"></a>
 # 1.0.0-beta (2017-10-15)
 
