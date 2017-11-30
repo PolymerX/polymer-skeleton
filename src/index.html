@@ -84,7 +84,6 @@
       scriptModule.src = './module.bundle.js';
       scriptModule.setAttribute('type', 'module');
 
-
       var refScript = document.body.getElementsByTagName('script')[0];
       refScript.parentNode.insertBefore(script, refScript);
       refScript.parentNode.insertBefore(scriptModule, refScript);
