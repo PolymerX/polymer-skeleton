@@ -1,3 +1,5 @@
+'use strict';
+
 const {resolve, join} = require('path');
 const webpack = require('webpack');
 const merge = require('webpack-merge');

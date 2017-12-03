@@ -1,14 +1,7 @@
-const {resolve, join} = require('path');
+'use strict';
 
-
-/**
- * === ENV configuration
- */
 const BROWSERS = ['> 1%', 'last 2 versions', 'Firefox ESR', 'not ie <= 11'];
 
-/**
- * === Webpack configuration
- */
 module.exports = {
   module: {
     rules: [
