@@ -10,8 +10,8 @@
     "Mattia Astorino (http://equinsuocha.io/)"
   ],
   "scripts": {
-    "prebuild": "NODE_ENV=production webpack --config webpack-module-build.config.js",
-    "build": "NODE_ENV=production webpack --optimize-minimize",
+    "prebuild": "BROWSERS=module webpack",
+    "build": "webpack --optimize-minimize",
     "dev": "webpack-dev-server --hot --inline",
     "dev:module": "BROWSERS=module webpack-dev-server --hot --inline",
     "pretest": "yarn linkbower && yarn build",
@@ -69,6 +69,7 @@
     "web-component-tester": "6.3.0",
     "webpack": "3.8.1",
     "webpack-dev-server": "2.9.3",
+    "webpack-merge": "4.1.1",
     "workbox-webpack-plugin": "2.1.0",
     "xo": "0.18.2"
   },

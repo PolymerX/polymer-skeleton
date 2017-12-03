@@ -1,19 +1,19 @@
 const {resolve, join} = require('path');
 const webpack = require('webpack');
+const merge = require('webpack-merge');
 const WorkboxPlugin = require('workbox-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const pkg = require('./package.json');
 
-/**
- * === ENV configuration
- */
-const isDev = process.argv.find(arg => arg.includes('webpack-dev-server'));
-const ENV = isDev ? 'development' : 'production';
-const BROWSERS = process.env.BROWSERS === 'module' ?
-  ['last 2 Chrome versions', 'Safari 10'] : ['> 1%', 'last 2 versions', 'Firefox ESR', 'not ie <= 11'];
-const IS_MODULE_BUILD = BROWSERS[0].includes('Chrome');
-const outputPath = isDev ? resolve('src') : resolve('dist');
+const moduleConf = require('./webpack-module.config');
+const nomoduleConf = require('./webpack-nomodule.config');
+
+const ENV = process.env.NODE_ENV;
+const IS_DEV = process.argv.find(arg => arg.includes('webpack-dev-server'));
+const IS_MODULE_BUILD = process.env.BROWSERS === 'module';
+const OUTPUT_PATH = IS_DEV ? resolve('src') : resolve('dist');
+
 const processEnv = {
   NODE_ENV: JSON.stringify(ENV),
   appVersion: JSON.stringify(pkg.version)
@@ -25,36 +25,36 @@ const processEnv = {
 const copyStatics = {
   copyWebcomponents: [{
     from: resolve('./node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js'),
-    to: join(outputPath, 'vendor'),
+    to: join(OUTPUT_PATH, 'vendor'),
     flatten: true
   }, {
     from: resolve('./node_modules/@webcomponents/webcomponentsjs/webcomponents-lite.js'),
-    to: join(outputPath, 'vendor'),
+    to: join(OUTPUT_PATH, 'vendor'),
     flatten: true
   }, {
     from: resolve('./node_modules/@webcomponents/webcomponentsjs/webcomponents-sd-ce.js'),
-    to: join(outputPath, 'vendor'),
+    to: join(OUTPUT_PATH, 'vendor'),
     flatten: true
   }, {
     from: resolve('./node_modules/@webcomponents/webcomponentsjs/webcomponents-hi-sd-ce.js'),
-    to: join(outputPath, 'vendor'),
+    to: join(OUTPUT_PATH, 'vendor'),
     flatten: true
   }, {
     from: resolve('./node_modules/@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js'),
-    to: join(outputPath, 'vendor'),
+    to: join(OUTPUT_PATH, 'vendor'),
     flatten: true
   }],
   copyOthers: [{
     from: 'assets/**',
     context: resolve('./src'),
-    to: outputPath
+    to: OUTPUT_PATH
   }, {
     from: resolve('./src/index.html'),
-    to: outputPath,
+    to: OUTPUT_PATH,
     flatten: true
   }, {
     from: resolve('./src/manifest.json'),
-    to: outputPath,
+    to: OUTPUT_PATH,
     flatten: true
   }]
 };
@@ -62,14 +62,14 @@ const copyStatics = {
 /**
  * Plugin configuration
  */
-const plugins = isDev ? [
+const plugins = IS_DEV ? [
   new CopyWebpackPlugin(copyStatics.copyWebcomponents),
   new webpack.DefinePlugin({'process.env': processEnv})
 ] : [
   new WorkboxPlugin({
-    globDirectory: outputPath,
+    globDirectory: OUTPUT_PATH,
     globPatterns: ['**/*.{html, js, css, svg, png, woff, woff2, ttf}'],
-    swDest: join(outputPath, 'sw.js')
+    swDest: join(OUTPUT_PATH, 'sw.js')
   }),
   new CopyWebpackPlugin(
     [].concat(copyStatics.copyWebcomponents, copyStatics.copyOthers)
@@ -77,35 +77,15 @@ const plugins = isDev ? [
   new webpack.DefinePlugin({'process.env': processEnv})
 ];
 
-/**
- * === Webpack configuration
- */
-module.exports = {
+const SHARED = {
   entry: './src/index.js',
+  devtool: 'cheap-module-source-map',
   output: {
-    path: outputPath,
+    path: OUTPUT_PATH,
     filename: IS_MODULE_BUILD ? 'module.bundle.js' : 'bundle.js'
   },
-  devtool: 'cheap-module-source-map',
   module: {
     rules: [
-      {
-        test: /\.js$/,
-        // We need to transpile Polymer itself and other ES6 code
-        // exclude: /(node_modules)/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: [[
-              'env',
-              {
-                targets: {browsers: BROWSERS},
-                debug: true
-              }
-            ]]
-          }
-        }
-      },
       {
         test: /\.html$/,
         use: ['text-loader']
@@ -118,7 +98,7 @@ module.exports = {
   },
   plugins,
   devServer: {
-    contentBase: resolve(outputPath),
+    contentBase: OUTPUT_PATH,
     compress: true,
     overlay: {
       errors: true
@@ -128,3 +108,5 @@ module.exports = {
     disableHostCheck: true
   }
 };
+
+module.exports = merge(IS_MODULE_BUILD ? moduleConf : nomoduleConf, SHARED);
