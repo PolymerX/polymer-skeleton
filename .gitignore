@@ -6,6 +6,7 @@ coverage
 dist
 node_modules
 .vscode/
+.idea/
 .DS_Store
 src/vendor/webcomponents-loader.js
 *.report.html
