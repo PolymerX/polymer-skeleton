@@ -13,7 +13,6 @@ const nomoduleConf = require('./webpack-nomodule.config');
 
 const ENV = process.env.NODE_ENV;
 const IS_DEV = process.argv.find(arg => arg.includes('webpack-dev-server'));
-const IS_MODULE_BUILD = process.env.BROWSERS === 'module';
 const OUTPUT_PATH = IS_DEV ? resolve('src') : resolve('dist');
 
 const processEnv = {
@@ -79,36 +78,40 @@ const plugins = IS_DEV ? [
   new webpack.DefinePlugin({'process.env': processEnv})
 ];
 
-const SHARED = {
-  entry: './src/index.js',
-  devtool: 'cheap-module-source-map',
-  output: {
-    path: OUTPUT_PATH,
-    filename: IS_MODULE_BUILD ? 'module.bundle.js' : 'bundle.js'
-  },
-  module: {
-    rules: [
-      {
-        test: /\.html$/,
-        use: ['text-loader']
-      },
-      {
-        test: /\.postcss$/,
-        use: ['text-loader', 'postcss-loader']
-      }
-    ]
-  },
-  plugins,
-  devServer: {
-    contentBase: OUTPUT_PATH,
-    compress: true,
-    overlay: {
-      errors: true
+const shared = env => {
+  const IS_MODULE_BUILD = env.BROWSERS === 'module';
+
+  return {
+    entry: './src/index.js',
+    devtool: 'cheap-module-source-map',
+    output: {
+      path: OUTPUT_PATH,
+      filename: IS_MODULE_BUILD ? 'module.bundle.js' : 'bundle.js'
     },
-    port: 3000,
-    host: '0.0.0.0',
-    disableHostCheck: true
-  }
+    module: {
+      rules: [
+        {
+          test: /\.html$/,
+          use: ['text-loader']
+        },
+        {
+          test: /\.postcss$/,
+          use: ['text-loader', 'postcss-loader']
+        }
+      ]
+    },
+    plugins,
+    devServer: {
+      contentBase: OUTPUT_PATH,
+      compress: true,
+      overlay: {
+        errors: true
+      },
+      port: 3000,
+      host: '0.0.0.0',
+      disableHostCheck: true
+    }
+  };
 };
 
-module.exports = merge(IS_MODULE_BUILD ? moduleConf : nomoduleConf, SHARED);
+module.exports = (env = {}) => merge(env.BROWSERS === 'module' ? moduleConf : nomoduleConf, shared(env));
