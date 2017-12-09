@@ -10,10 +10,10 @@
     "Mattia Astorino (http://equinsuocha.io/)"
   ],
   "scripts": {
-    "prebuild": "BROWSERS=module webpack",
-    "build": "webpack --optimize-minimize",
+    "build": "webpack --env.BROWSERS=module && webpack",
+    "build:prod": "webpack --env.BROWSERS=module --env.NODE_ENV=production && webpack --env.NODE_ENV=production --optimize-minimize",
     "dev": "webpack-dev-server --hot --inline",
-    "dev:module": "BROWSERS=module webpack-dev-server --hot --inline",
+    "dev:module": "webpack-dev-server --env.BROWSERS=module --hot --inline",
     "pretest": "yarn linkbower && yarn build",
     "test": "yarn lint && wct && yarn test:lighthouse && yarn lint:remark",
     "test:lighthouse": "concurrently --kill-others \"http-server dist\" \"lighthouse --view http://localhost:8080\" ",
