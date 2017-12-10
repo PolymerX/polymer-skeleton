@@ -12,10 +12,8 @@ const moduleConf = require('./webpack-module.config');
 const nomoduleConf = require('./webpack-nomodule.config');
 
 const ENV = process.argv.find(arg => arg.includes('NODE_ENV=production')) ? 'production' : 'development';
-const IS_DEV = ENV === 'development';
-const OUTPUT_PATH = IS_DEV ? resolve('src') : resolve('dist');
-
-console.info('[info] Current ENV', ENV);
+const IS_DEV_SERVER = process.argv.find(arg => arg.includes('webpack-dev-server'));
+const OUTPUT_PATH = IS_DEV_SERVER ? resolve('src') : resolve('dist');
 
 const processEnv = {
   NODE_ENV: JSON.stringify(ENV),
@@ -65,7 +63,7 @@ const copyStatics = {
 /**
  * Plugin configuration
  */
-const plugins = IS_DEV ? [
+const plugins = IS_DEV_SERVER ? [
   new CopyWebpackPlugin(copyStatics.copyWebcomponents),
   new webpack.DefinePlugin({'process.env': processEnv})
 ] : [
@@ -116,4 +114,4 @@ const shared = env => {
   };
 };
 
-module.exports = (env = {}) => merge(env.BROWSERS === 'module' ? moduleConf(env) : nomoduleConf(env), shared(env));
+module.exports = (env = {}) => merge(env.BROWSERS === 'module' ? moduleConf() : nomoduleConf(), shared(env));

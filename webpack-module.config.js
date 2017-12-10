@@ -4,8 +4,9 @@ const {resolve} = require('path');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 const outputPath = resolve('dist');
+const IS_DEV_SERVER = process.argv.find(arg => arg.includes('webpack-dev-server'));
 
-module.exports = env => {
+module.exports = () => {
   return {
     module: {
       rules: [
@@ -28,7 +29,7 @@ module.exports = env => {
         }
       ]
     },
-    plugins: env.NODE_ENV === 'development' || process.env.NODE_ENV === 'development' ? [] : [
+    plugins: IS_DEV_SERVER ? [] : [
       new CleanWebpackPlugin([outputPath], {verbose: true})
     ]
   };
