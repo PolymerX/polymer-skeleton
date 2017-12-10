@@ -11,9 +11,11 @@ const pkg = require('./package.json');
 const moduleConf = require('./webpack-module.config');
 const nomoduleConf = require('./webpack-nomodule.config');
 
-const ENV = process.env.NODE_ENV;
-const IS_DEV = process.argv.find(arg => arg.includes('webpack-dev-server'));
+const ENV = process.argv.find(arg => arg.includes('NODE_ENV=production')) ? 'production' : 'development';
+const IS_DEV = ENV === 'development';
 const OUTPUT_PATH = IS_DEV ? resolve('src') : resolve('dist');
+
+console.info('[info] Current ENV', ENV);
 
 const processEnv = {
   NODE_ENV: JSON.stringify(ENV),
@@ -114,4 +116,4 @@ const shared = env => {
   };
 };
 
-module.exports = (env = {}) => merge(env.BROWSERS === 'module' ? moduleConf : nomoduleConf, shared(env));
+module.exports = (env = {}) => merge(env.BROWSERS === 'module' ? moduleConf(env) : nomoduleConf(env), shared(env));
