@@ -1,7 +1,7 @@
 
 import {Element as PolymerElement} from '@polymer/polymer/polymer-element';
 
-import css from './style.postcss';
+import css from './style.pcss';
 import template from './template.html';
 
 export default class SkMenuItem extends PolymerElement {

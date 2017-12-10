@@ -2,10 +2,10 @@
 import {Element as PolymerElement} from '@polymer/polymer/polymer-element';
 import './../../dumbs/sk-menu';
 
-import HueRotateCss from './../../../global-style/animations/hue-rotate.postcss';
-import LinksCss from './../../../global-style/basics/links.postcss';
-import TypographyCSS from './../../../global-style/basics/typography.postcss';
-import css from './style.postcss';
+import HueRotateCss from './../../../global-style/animations/hue-rotate.pcss';
+import LinksCss from './../../../global-style/basics/links.pcss';
+import TypographyCSS from './../../../global-style/basics/typography.pcss';
+import css from './style.pcss';
 import template from './template.html';
 
 export default class SkApp extends PolymerElement {
