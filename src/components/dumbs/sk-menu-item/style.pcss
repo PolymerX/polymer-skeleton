@@ -1,11 +1,14 @@
 :host {
   contain: content;
-  display: inline-block;
+  display: inline-flex;
   overflow: hidden;
   position: relative;
-  padding: 8px;
   user-select: none;
   color: #091629;
+}
+
+::slotted(a) {
+  padding: 8px;
 }
 
 
