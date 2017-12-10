@@ -95,7 +95,7 @@ const shared = env => {
           use: ['text-loader']
         },
         {
-          test: /\.postcss$/,
+          test: /\.pcss$/,
           use: ['text-loader', 'postcss-loader']
         }
       ]

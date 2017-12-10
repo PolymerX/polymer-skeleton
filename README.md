@@ -55,7 +55,7 @@ yarn
 
 #### Developing
 
-Start the `webpack-dev-server` on localhost `http://localhost:3000` with hot-reload and watch on `.postcss` files.
+Start the `webpack-dev-server` on localhost `http://localhost:3000` with hot-reload and watch on `.pcss` files.
 
 For "oldie" browsers, transpiling also Javascript `class`. Works on `Firefox`:
 
@@ -94,12 +94,12 @@ yarn build
 
 ## Styling components with PostCSS and CSSNext
 
-During development `.postcss` files will be watched, compiled and injected to the relative `<style>` tag within the component template. The CSS is scoped to the component so don't worry about CSS specificity, you can also use `:host`, `:host-context` and `:root` selectors. Read more about [styling web components](https://www.polymer-project.org/2.0/docs/devguide/style-shadow-dom) and [custom CSS properties](https://www.polymer-project.org/2.0/docs/devguide/custom-css-properties).
+During development `.pcss` files will be watched, compiled and injected to the relative `<style>` tag within the component template. The CSS is scoped to the component so don't worry about CSS specificity, you can also use `:host`, `:host-context` and `:root` selectors. Read more about [styling web components](https://www.polymer-project.org/2.0/docs/devguide/style-shadow-dom) and [custom CSS properties](https://www.polymer-project.org/2.0/docs/devguide/custom-css-properties).
 
 [Cssnext](http://cssnext.io/) also includes Autoprefixer plugin, if you don't know how it works (...and you should), it allows you to write CSS without worrying about vendor prefixes. Just write your css properties prefix-free and let autoprefixer do the work for you when compiling.
 
 **How about commons styles?**
-You can simply `import` any other `.postcss` file within your main component `.js` file and print it inside the `template()`.
+You can simply `import` any other `.pcss` file within your main component `.js` file and print it inside the `template()`.
 
 
 ## How Polymer 3 is imported
