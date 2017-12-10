@@ -4,6 +4,13 @@
     "color-hex-case": "upper",
     "max-empty-lines": 2,
     "no-missing-end-of-source-newline": true,
-    "selector-type-no-unknown": null
+    "no-descending-specificity": null,
+    "selector-type-no-unknown": null,
+    "string-quotes": "single",
+    "property-no-vendor-prefix": true,
+    "max-nesting-depth": 2,
+    "property-no-unknown": [true, {
+      "ignoreProperties": ["contain", "appearance"]
+    }]
   }
 }
