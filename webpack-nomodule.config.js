@@ -19,7 +19,8 @@ module.exports = () => {
                   targets: {browsers: BROWSERS},
                   debug: true
                 }
-              ]]
+              ]],
+              plugins: [['transform-object-rest-spread', {useBuiltIns: true}]]
             }
           }
         }
