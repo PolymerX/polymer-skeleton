@@ -45,31 +45,34 @@
 	</style>
 
   <script>
-     if ('serviceWorker' in navigator) {
+    (function() {
+      if (!'serviceWorker' in navigator) {
+        console.log('Service worker is not supported');
+        return;
+      }
+
       navigator.serviceWorker.register('/sw.js')
         .then(function(registration) {
           registration.onupdatefound = function() {
             if (navigator.serviceWorker.controller) {
               var installingWorker = registration.installing;
-              installingWorker.onstatechange = function() {
-                switch (installingWorker.state) {
-                  case 'installed':
-                    break;
-                  case 'redundant':
-                    throw new Error('The installing ' +
-                                    'service worker became redundant.');
-                  default:
-                    // Ignore
-                }
-            };
-          }
-        };
-      }).catch(function(e) {
-        console.error('Error during service worker registration:', e);
-      });
-    } else {
-      console.log('Service worker is not supported');
-    }
+                installingWorker.onstatechange = function() {
+                  switch (installingWorker.state) {
+                    case 'installed':
+                      break;
+                    case 'redundant':
+                      throw new Error('The installing ' +
+                                      'service worker became redundant.');
+                    default:
+                      // Ignore
+                  }
+              };
+            }
+          };
+        }).catch(function(e) {
+          console.error('Error during service worker registration:', e);
+        });
+    })();
 
     document.addEventListener('WebComponentsReady', function componentsReady() {
       document.removeEventListener('WebComponentsReady', componentsReady, false);
@@ -87,7 +90,7 @@
       var refScript = document.body.getElementsByTagName('script')[0];
       refScript.parentNode.insertBefore(script, refScript);
       refScript.parentNode.insertBefore(scriptModule, refScript);
-  }, false);
+    }, false);
   </script>
 </head>
 
@@ -97,7 +100,7 @@
   </sk-app>
 
   <script src="./vendor/custom-elements-es5-adapter.js" async nomodule></script>
-  <script src="./vendor/webcomponents-lite.js" async></script>
+  <script src="./vendor/webcomponents-loader.js" async></script>
 </body>
 
 </html>

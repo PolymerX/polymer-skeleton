@@ -10,17 +10,17 @@
     "Mattia Astorino (http://equinsuocha.io/)"
   ],
   "scripts": {
-    "prebuild": "NODE_ENV=production webpack --config webpack-module-build.config.js",
-    "build": "NODE_ENV=production webpack --optimize-minimize",
+    "build": "webpack --env.BROWSERS=module && webpack",
+    "build:prod": "webpack --env.BROWSERS=module --env.NODE_ENV=production && webpack --env.NODE_ENV=production --optimize-minimize",
     "dev": "webpack-dev-server --hot --inline",
-    "dev:module": "BROWSERS=module webpack-dev-server --hot --inline",
+    "dev:module": "webpack-dev-server --env.BROWSERS=module --inline",
     "pretest": "yarn linkbower && yarn build",
     "test": "yarn lint && wct && yarn test:lighthouse && yarn lint:remark",
     "test:lighthouse": "concurrently --kill-others \"http-server dist\" \"lighthouse --view http://localhost:8080\" ",
     "test:travis": "yarn pretest && yarn lint && wct",
     "clean:lighthouse": "rm *.report.html",
     "posttest": "yarn rmbower",
-    "lint": "xo && stylelint src/components/**/*.postcss",
+    "lint": "xo && stylelint src/components/**/*.pcss",
     "lint:remark": "remark .",
     "linkbower": "node scripts/link-bower.js",
     "rmbower": "node scripts/link-bower.js remove",
@@ -47,6 +47,7 @@
   "devDependencies": {
     "@polymer/test-fixture": "PolymerX/test-fixture#3.0-preview",
     "babel-loader": "7.1.2",
+    "babel-plugin-transform-object-rest-spread": "6.26.0",
     "babel-preset-env": "1.6.1",
     "chokidar": "1.7.0",
     "clean-webpack-plugin": "0.1.17",
@@ -69,6 +70,7 @@
     "web-component-tester": "6.3.0",
     "webpack": "3.8.1",
     "webpack-dev-server": "2.9.3",
+    "webpack-merge": "4.1.1",
     "workbox-webpack-plugin": "2.1.0",
     "xo": "0.18.2"
   },
