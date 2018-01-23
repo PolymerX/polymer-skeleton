@@ -23,7 +23,8 @@ module.exports = () => {
                   targets: {browsers: ['last 2 Chrome versions', 'Safari 10']},
                   debug: true
                 }
-              ]]
+              ]],
+              plugins: [['transform-object-rest-spread', {useBuiltIns: true}]]
             }
           }
         }

@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.0.0-beta-2"></a>
+# [1.0.0-beta-2](https://github.com/PolymerX/polymer-skeleton/compare/v1.0.0-beta-1...v1.0.0-beta-2) (2018-01-14)
+
+
+### Bug Fixes
+
+* **dev-server:** we should check on the dev server for dev command ([aebf2c0](https://github.com/PolymerX/polymer-skeleton/commit/aebf2c0))
+* **ENV:** fixed env variables. Now it makes the correct check ([0f02848](https://github.com/PolymerX/polymer-skeleton/commit/0f02848))
+* **env vars:** a better way to pass env vars to webpack ([7bf5522](https://github.com/PolymerX/polymer-skeleton/commit/7bf5522))
+
+
+### Features
+
+* **object-array-spread-plugin:** added babel plugin ([eb0ff1b](https://github.com/PolymerX/polymer-skeleton/commit/eb0ff1b))
+* **split-webpack:** splitting webpack configuration ([444f284](https://github.com/PolymerX/polymer-skeleton/commit/444f284))
+
+
+
 <a name="1.0.0-beta-1"></a>
 # [1.0.0-beta-1](https://github.com/PolymerX/polymer-skeleton/compare/v1.0.0-beta...v1.0.0-beta-1) (2017-11-30)
 
