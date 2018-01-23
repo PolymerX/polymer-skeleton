@@ -8,7 +8,7 @@ module.exports = () => ({
         '.sss'
       ]
     },
-    'stylelint': {
+    stylelint: {
       configFile: '.stylelintrc'
     },
     'postcss-mixins': {},
@@ -16,7 +16,7 @@ module.exports = () => ({
     'postcss-custom-media': {},
     'postcss-selector-not': {},
     'postcss-discard-comments': {},
-    'autoprefixer': {
+    autoprefixer: {
       browsers: [
         '> 1%',
         'last 2 versions',
@@ -24,7 +24,7 @@ module.exports = () => ({
         'not ie <= 11'
       ]
     },
-    'cssnano': {
+    cssnano: {
       preset: 'default'
     },
     'postcss-reporter': {
