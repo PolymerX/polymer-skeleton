@@ -1,6 +1,6 @@
 {
   "name": "Polymer Skeleton",
-  "short_name": "SK",
+  "short_name": "Polymer Skeleton",
   "icons": [{
       "src": "/assets/icons/android-chrome-192x192.png",
       "sizes": "192x192",
@@ -12,7 +12,8 @@
       "type": "image/png"
     }
   ],
-  "theme_color": "#ffffff",
+  "theme_color": "#A7FFEB",
   "background_color": "#ffffff",
-  "display": "standalone"
+  "display": "standalone",
+  "start_url": "/"
 }
