@@ -24,7 +24,9 @@
     "lint:remark": "remark .",
     "linkbower": "node scripts/link-bower.js",
     "rmbower": "node scripts/link-bower.js remove",
-    "release": "standard-version"
+    "release": "standard-version",
+    "postinstall": "if [ $HEROKU ]; then yarn && yarn build; fi",
+    "start": "http-server dist -p $PORT"
   },
   "xo": {
     "space": true,
@@ -56,7 +58,7 @@
     "copy-webpack-plugin": "4.2.0",
     "cssnano": "3.10.0",
     "fs-extra": "4.0.2",
-    "http-server": "0.10.0",
+    "http-server": "0.11.1",
     "lighthouse": "2.5.0",
     "postcss": "6.0.13",
     "postcss-cssnext": "3.0.2",
