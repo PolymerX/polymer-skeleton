@@ -2,12 +2,22 @@
   "name": "Polymer Skeleton",
   "short_name": "Polymer Skeleton",
   "icons": [{
-      "src": "/assets/icons/android-chrome-192x192.png",
+      "src": "/assets/icons/polymer-skeleton-48x48.png",
+      "sizes": "48x48",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/icons/polymer-skeleton-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/icons/polymer-skeleton-192x192.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "/assets/icons/android-chrome-384x384.png",
+      "src": "/assets/icons/polymer-skeleton-384x384.png",
       "sizes": "384x384",
       "type": "image/png"
     }
@@ -15,5 +25,6 @@
   "theme_color": "#A7FFEB",
   "background_color": "#ffffff",
   "display": "standalone",
-  "start_url": "/"
+  "start_url": "/",
+  "orientation": "portrait"
 }
