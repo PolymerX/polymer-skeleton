@@ -67,7 +67,8 @@ const plugins = [IS_DEV_SERVER ?
   new CopyWebpackPlugin(copyStatics.copyWebcomponents) :
   new WorkboxPlugin({
     globDirectory: OUTPUT_PATH,
-    globPatterns: ['**/*.{html, js, css, svg, png, woff, woff2, ttf}'],
+    globPatterns: ['**/!(*map*)'],
+    globIgnores: ['**/sw.js'],
     swDest: join(OUTPUT_PATH, 'sw.js')
   }),
   new CopyWebpackPlugin(
