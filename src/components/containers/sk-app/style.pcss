@@ -1,3 +1,8 @@
+@import './../../../global-style/basics/media-queries.pcss';
+@import './../../../global-style/basics/links.pcss';
+@import './../../../global-style/basics/typography.pcss';
+@import './../../../global-style/keyframes/hue-rotate.pcss';
+
 :host {
   display: block;
   overflow: auto;
@@ -12,6 +17,12 @@
   width: 100%;
   padding-right: 40px;
   box-sizing: border-box;
+
+  @media (--medium) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
 
 
@@ -19,6 +30,7 @@
   display: block;
   width: 100%;
   max-width: 300px;
+  user-select: none;
 }
 
 
@@ -29,24 +41,15 @@
 
 sk-menu {
   margin-left: 16px;
+
+  @media (--medium) {
+    margin-left: 0;
+  }
 }
 
 
 .MenuLink:hover {
   color: #091629;
-}
-
-
-@media (min-width: 60em) {
-  .Header {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  sk-menu {
-    margin-left: 0;
-  }
 }
 
 
