@@ -1,5 +1,6 @@
 
 import {Element as PolymerElement} from '@polymer/polymer/polymer-element';
+import './../../dumbs/sk-header';
 import './../../dumbs/sk-menu';
 
 import css from './style.pcss';
