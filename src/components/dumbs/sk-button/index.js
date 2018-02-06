@@ -1,15 +1,14 @@
 
 import {Element as PolymerElement} from '@polymer/polymer/polymer-element';
-import './../sk-menu-item';
 
 import css from './style.pcss';
 import template from './template.html';
 
-export default class SkMenu extends PolymerElement {
-
+export default class SkButton extends PolymerElement {
   static get template() {
-    return `<style>${css}</style> ${template}`;
+    return `
+      <style>${css}</style> ${template}`;
   }
 }
 
-window.customElements.define('sk-menu', SkMenu);
+window.customElements.define('sk-button', SkButton, {extends: 'button'});

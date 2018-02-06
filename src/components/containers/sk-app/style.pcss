@@ -1,26 +1,12 @@
 @import './../../../global-style/basics/media-queries.pcss';
 @import './../../../global-style/basics/links.pcss';
 @import './../../../global-style/basics/typography.pcss';
-@import './../../../global-style/keyframes/hue-rotate.pcss';
+@import './../../../global-style/keyframes/fadeIn.pcss';
 
 :host {
   display: block;
   overflow: auto;
   height: 100vh;
-}
-
-
-sk-menu {
-  margin-left: 16px;
-
-  @media (--medium) {
-    margin-left: 0;
-  }
-}
-
-
-.MenuLink:hover {
-  color: #091629;
 }
 
 
@@ -33,6 +19,9 @@ sk-menu {
   padding: 0 40px;
   user-select: none;
   cursor: default;
+  position: relative;
+  padding-top: 220px;
+  margin-bottom: 100px;
 }
 
 
@@ -41,14 +30,32 @@ sk-menu {
   text-align: center;
   font-weight: 800;
   margin-top: 0;
-  margin-bottom: 90px;
+  margin-bottom: 40px;
+  opacity: 0;
+  animation-name: FadeIn;
+  animation-duration: 400ms;
+  animation-delay: 400ms;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
 }
 
 
 .Welcome p {
   text-align: center;
   margin-top: 0;
-  max-width: 60%;
+  max-width: 90%;
+  letter-spacing: 2px;
+  opacity: 0.8;
+  opacity: 0;
+  animation-name: FadeIn;
+  animation-duration: 400ms;
+  animation-delay: 500ms;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+
+  @media (--medium) {
+    max-width: 60%;
+  }
 }
 
 
@@ -60,4 +67,31 @@ sk-menu {
   position: fixed;
   bottom: 16px;
   right: 16px;
+}
+
+
+.SKLogo {
+  position: absolute;
+  top: -200px;
+  width: 600px;
+  opacity: 0;
+  animation-name: FadeIn;
+  animation-duration: 600ms;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+
+  @media (--medium) {
+    top: -180px;
+  }
+}
+
+
+sk-button {
+  margin-top: 80px;
+  opacity: 0;
+  animation-name: FadeIn;
+  animation-duration: 400ms;
+  animation-delay: 700ms;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
 }
