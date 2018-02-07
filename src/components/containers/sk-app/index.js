@@ -1,12 +1,9 @@
 
 import {Element as PolymerElement} from '@polymer/polymer/polymer-element';
-import './../../dumbs/sk-menu';
 
-import HueRotateCss from './../../../global-style/animations/hue-rotate.pcss';
-import LinksCss from './../../../global-style/basics/links.pcss';
-import TypographyCSS from './../../../global-style/basics/typography.pcss';
 import css from './style.pcss';
 import template from './template.html';
+import '../../dumbs/sk-button';
 
 export default class SkApp extends PolymerElement {
 
@@ -28,13 +25,7 @@ export default class SkApp extends PolymerElement {
 
   static get template() {
     return `
-      <style>
-        ${TypographyCSS}
-        ${LinksCss}
-        ${HueRotateCss}
-        ${css}
-      </style>
-      ${template}`;
+      <style>${css}</style> ${template}`;
   }
 }
 
