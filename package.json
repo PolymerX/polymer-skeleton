@@ -85,6 +85,6 @@
     "xo": "0.18.2"
   },
   "dependencies": {
-    "@polymer/polymer": "LasaleFamine/polymer#3.0-preview"
+    "@polymer/polymer": "3.0.0-pre.9"
   }
 }
