@@ -102,14 +102,9 @@ We also include Autoprefixer plugin, if you don't know how it works (...and you 
 You can simply `import` any other `.pcss` file within your main component `.js` file and print it inside the `template()`.
 
 
-## How Polymer 3 is imported
-
-We are currently using a modified version of the `@polymer/polymer` official NPM version. The `flat` property within the `package.json` is causing some problems with the load dependency system of `webpack`.
-
-
 ## [**@webcomponents/webcomponentsjs**](https://github.com/webcomponents/webcomponentsjs)
 
-We are getting the `webpcomponents-lite.js` polyfill from GitHub using NPM/Yarn and copying it into a `vendor` folder with a `Node` script. Currently, the `webcomponents-loader.js` has a bug for Firefox and we can't use it.
+We are getting the `webpcomponents-loader.js` polyfill from GitHub using NPM/Yarn and copying it into a `vendor` folder with a `Node` script.
 
 
 ## custom-element-es5-adpater.js
