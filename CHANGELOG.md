@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.0.0-beta-3"></a>
+# [1.0.0-beta-3](https://github.com/PolymerX/polymer-skeleton/compare/v1.0.0-beta-2...v1.0.0-beta-3) (2018-02-14)
+
+
+### Bug Fixes
+
+* Fix service worker support  detection on Edge 41 ([370a5db](https://github.com/PolymerX/polymer-skeleton/commit/370a5db)), closes [#107](https://github.com/PolymerX/polymer-skeleton/issues/107)
+* **sw:** service worker generation fix ([36aa521](https://github.com/PolymerX/polymer-skeleton/commit/36aa521))
+* Improve starter template ([04d3b8e](https://github.com/PolymerX/polymer-skeleton/commit/04d3b8e))
+
+
+### Features
+
+* Remove cssnext and add single plugins. Moving css deps inside css files ([07f5cdb](https://github.com/PolymerX/polymer-skeleton/commit/07f5cdb))
+* Switch from postcss-cssnext to separated postcss plugins ([f25a49e](https://github.com/PolymerX/polymer-skeleton/commit/f25a49e))
+
+
+
 <a name="1.0.0-beta-2"></a>
 # [1.0.0-beta-2](https://github.com/PolymerX/polymer-skeleton/compare/v1.0.0-beta-1...v1.0.0-beta-2) (2018-01-14)
 
