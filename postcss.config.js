@@ -1,35 +1,35 @@
 module.exports = () => ({
-  plugins: {
-    'postcss-easy-import': {
+  plugins: [
+    require('postcss-easy-import')({
       extensions: [
         '.pcss',
         '.css',
         '.postcss',
         '.sss'
       ]
-    },
-    stylelint: {
+    }),
+    require('stylelint')({
       configFile: '.stylelintrc'
-    },
-    'postcss-mixins': {},
-    'postcss-nesting': {},
-    'postcss-custom-media': {},
-    'postcss-selector-not': {},
-    'postcss-discard-comments': {},
-    autoprefixer: {
+    }),
+    require('postcss-mixins'),
+    require('postcss-nesting'),
+    require('postcss-custom-media'),
+    require('postcss-selector-not'),
+    require('postcss-discard-comments'),
+    require('autoprefixer')({
       browsers: [
         '> 1%',
         'last 2 versions',
         'Firefox ESR',
         'not ie <= 11'
       ]
-    },
-    cssnano: {
+    }),
+    require('cssnano')({
       preset: 'default'
-    },
-    'postcss-reporter': {
+    }),
+    require('postcss-reporter')({
       clearReportedMessages: true,
       noPlugin: true
-    }
-  }
+    })
+  ]
 });
