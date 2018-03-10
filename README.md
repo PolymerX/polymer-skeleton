@@ -9,7 +9,6 @@
 # Polymer Skeleton: **Polymer 3** Progressive Web App ([DEMO](https://polymer-skeleton.herokuapp.com))
 
 > A mininum boilerplate to deliver a Polymer 3.x with Webpack, PostCSS and Service Workers ready.
-> Made for personal use, glad if someone can get a good starting point from here. **Bye bye Bower**.
 
 ## Features
 
