@@ -83,6 +83,6 @@
     "xo": "0.18.2"
   },
   "dependencies": {
-    "@polymer/polymer": "3.0.0-pre.9"
+    "@polymer/polymer": "3.0.0-pre.12"
   }
 }
