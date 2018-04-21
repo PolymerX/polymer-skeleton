@@ -6,10 +6,7 @@
 [![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg?style=flat-square)](https://github.com/sindresorhus/xo)
 [![Polymer Skeleton](https://img.shields.io/badge/polymerX-SKELETON-435877.svg?style=flat-square)](https://github.com/PolymerX/polymer-skeleton)
 
-# Polymer Skeleton: **Polymer 3** Progressive Web App ([DEMO](https://polymer-skeleton.herokuapp.com))
-
 > A mininum boilerplate to deliver a Polymer 3.x with Webpack, PostCSS and Service Workers ready.
-> Made for personal use, glad if someone can get a good starting point from here. **Bye bye Bower**.
 
 ## Features
 
