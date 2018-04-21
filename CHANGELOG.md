@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.0.0-beta-4"></a>
+# [1.0.0-beta-4](https://github.com/PolymerX/polymer-skeleton/compare/v1.0.0-beta-3...v1.0.0-beta-4) (2018-04-21)
+
+
+### Bug Fixes
+
+* **windows-postinstall:** fixed postinstall script for Windows ([a7a39d0](https://github.com/PolymerX/polymer-skeleton/commit/a7a39d0))
+
+
+### Features
+
+* **polymer3-pre12:** updated Polymer to new pre ([3f33a56](https://github.com/PolymerX/polymer-skeleton/commit/3f33a56))
+
+
+
 <a name="1.0.0-beta-3"></a>
 # [1.0.0-beta-3](https://github.com/PolymerX/polymer-skeleton/compare/v1.0.0-beta-2...v1.0.0-beta-3) (2018-02-14)
 
