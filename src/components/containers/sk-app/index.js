@@ -26,6 +26,10 @@ export default class SkApp extends PolymerElement {
   static get template() {
     return html([`<style>${css}</style> ${template}`]);
   }
+
+  startTour() {
+    window.location.replace('https://github.com/PolymerX/polymer-skeleton');
+  }
 }
 
 window.customElements.define('sk-app', SkApp);
