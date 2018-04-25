@@ -63,20 +63,21 @@ const copyStatics = {
 /**
  * Plugin configuration
  */
-const plugins = [IS_DEV_SERVER ?
-  new CopyWebpackPlugin(copyStatics.copyWebcomponents) :
+const sharedPlugins = [new webpack.DefinePlugin({'process.env': processEnv})];
+const devPlugins = [new CopyWebpackPlugin(copyStatics.copyWebcomponents)];
+const buildPlugins = [
+  new CopyWebpackPlugin(
+    [].concat(copyStatics.copyWebcomponents, copyStatics.copyOthers)
+  ),
   new WorkboxPlugin({
     globDirectory: OUTPUT_PATH,
     globPatterns: ['**/!(*map*)'],
     globIgnores: ['**/sw.js'],
     swDest: join(OUTPUT_PATH, 'sw.js')
-  }),
-  new CopyWebpackPlugin(
-    [].concat(copyStatics.copyWebcomponents, copyStatics.copyOthers)
-  )
-].concat([
-  new webpack.DefinePlugin({'process.env': processEnv})
-]);
+  })
+];
+
+const plugins = sharedPlugins.concat(IS_DEV_SERVER ? devPlugins : buildPlugins);
 
 const shared = env => {
   const IS_MODULE_BUILD = env.BROWSERS === 'module';
