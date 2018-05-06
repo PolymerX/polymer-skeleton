@@ -3,7 +3,7 @@
 const {resolve, join} = require('path');
 const webpack = require('webpack');
 const merge = require('webpack-merge');
-const WorkboxPlugin = require('workbox-webpack-plugin');
+const {GenerateSW} = require('workbox-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const pkg = require('./package.json');
@@ -69,7 +69,7 @@ const buildPlugins = [
   new CopyWebpackPlugin(
     [].concat(copyStatics.copyWebcomponents, copyStatics.copyOthers)
   ),
-  new WorkboxPlugin({
+  new GenerateSW({
     globDirectory: OUTPUT_PATH,
     globPatterns: ['**/!(*map*)'],
     globIgnores: ['**/sw.js'],
@@ -83,8 +83,8 @@ const shared = env => {
   const IS_MODULE_BUILD = env.BROWSERS === 'module';
 
   return {
+    mode: ENV,
     entry: './src/index.js',
-    devtool: 'cheap-module-source-map',
     output: {
       path: OUTPUT_PATH,
       filename: IS_MODULE_BUILD ? 'module.bundle.js' : 'bundle.js'
