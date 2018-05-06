@@ -1,7 +1,7 @@
 sudo: required
 language: node_js
 node_js:
-  - 'node'
+  - '9'
   - '6'
 
 before_script:
