@@ -6,7 +6,6 @@ import template from './template.html';
 import '../../dumbs/sk-button';
 
 export default class SkApp extends PolymerElement {
-
   static get properties() {
     return {
       name: {
