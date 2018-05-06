@@ -22,7 +22,7 @@
       "type": "image/png"
     },
     {
-      "src": "/assets/icons/polymer-skeleton-512x512.png",
+      "src": "/assets/icons/polymer-skeleton-384x384.png",
       "sizes": "512x512",
       "type": "image/png"
     }
