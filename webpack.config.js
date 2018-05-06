@@ -3,7 +3,7 @@
 const {resolve, join} = require('path');
 const webpack = require('webpack');
 const merge = require('webpack-merge');
-const WorkboxPlugin = require('workbox-webpack-plugin');
+const {GenerateSW} = require('workbox-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const pkg = require('./package.json');
@@ -63,27 +63,28 @@ const copyStatics = {
 /**
  * Plugin configuration
  */
-const plugins = [IS_DEV_SERVER ?
-  new CopyWebpackPlugin(copyStatics.copyWebcomponents) :
-  new WorkboxPlugin({
+const sharedPlugins = [new webpack.DefinePlugin({'process.env': processEnv})];
+const devPlugins = [new CopyWebpackPlugin(copyStatics.copyWebcomponents)];
+const buildPlugins = [
+  new CopyWebpackPlugin(
+    [].concat(copyStatics.copyWebcomponents, copyStatics.copyOthers)
+  ),
+  new GenerateSW({
     globDirectory: OUTPUT_PATH,
     globPatterns: ['**/!(*map*)'],
     globIgnores: ['**/sw.js'],
     swDest: join(OUTPUT_PATH, 'sw.js')
-  }),
-  new CopyWebpackPlugin(
-    [].concat(copyStatics.copyWebcomponents, copyStatics.copyOthers)
-  )
-].concat([
-  new webpack.DefinePlugin({'process.env': processEnv})
-]);
+  })
+];
+
+const plugins = sharedPlugins.concat(IS_DEV_SERVER ? devPlugins : buildPlugins);
 
 const shared = env => {
   const IS_MODULE_BUILD = env.BROWSERS === 'module';
 
   return {
+    mode: ENV,
     entry: './src/index.js',
-    devtool: 'cheap-module-source-map',
     output: {
       path: OUTPUT_PATH,
       filename: IS_MODULE_BUILD ? 'module.bundle.js' : 'bundle.js'
