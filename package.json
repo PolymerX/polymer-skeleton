@@ -76,6 +76,6 @@
     "xo": "0.21.0"
   },
   "dependencies": {
-    "@polymer/polymer": "3.0.0-pre.12"
+    "@polymer/polymer": "3.0.2"
   }
 }
