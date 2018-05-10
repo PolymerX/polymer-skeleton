@@ -26,6 +26,9 @@
     "postinstall": "node scripts/postinstall.js",
     "start": "http-server dist -p $PORT"
   },
+  "engines": {
+    "node": ">= 8.0"
+  },
   "xo": {
     "space": true,
     "envs": [
