@@ -17,7 +17,7 @@
     "pretest": "yarn build",
     "test": "yarn lint && wct --npm && yarn test:lighthouse",
     "test:lighthouse": "concurrently --kill-others \"http-server dist\" \"lighthouse --view http://localhost:8080\" ",
-    "test:travis": "yarn pretest && yarn lint && wct",
+    "test:travis": "yarn pretest && yarn lint && wct --npm",
     "clean:lighthouse": "rm *.report.html",
     "posttest": "yarn rmbower",
     "lint": "xo && stylelint src/components/**/*.pcss",
