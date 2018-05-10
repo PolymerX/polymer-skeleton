@@ -113,12 +113,11 @@
     call-me-maybe "^1.0.1"
     glob-to-regexp "^0.3.0"
 
-"@polymer/polymer@3.0.0-pre.12":
-  version "3.0.0-pre.12"
-  resolved "https://registry.npmjs.org/@polymer/polymer/-/polymer-3.0.0-pre.12.tgz#3f5dd19099a194bf1066cf417ae13c335bd63b04"
+"@polymer/polymer@3.0.2":
+  version "3.0.2"
+  resolved "https://registry.npmjs.org/@polymer/polymer/-/polymer-3.0.2.tgz#626e6f9fae9716b0962ce0211e21df242153eab2"
   dependencies:
-    "@webcomponents/shadycss" "^1.0.0"
-    "@webcomponents/webcomponentsjs" "^1.0.0"
+    "@webcomponents/shadycss" "^1.2.0"
 
 "@polymer/sinonjs@^1.14.1":
   version "1.17.1"
@@ -386,11 +385,11 @@
   dependencies:
     "@types/node" "*"
 
-"@webcomponents/shadycss@^1.0.0":
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/@webcomponents/shadycss/-/shadycss-1.0.5.tgz#ff8537dd06c46f33eccee082cdecd9507bf39f56"
+"@webcomponents/shadycss@^1.2.0":
+  version "1.2.1"
+  resolved "https://registry.npmjs.org/@webcomponents/shadycss/-/shadycss-1.2.1.tgz#6e4a88534657807c8398b4bc196d0ca492182d54"
 
-"@webcomponents/webcomponentsjs@^1.0.0", "@webcomponents/webcomponentsjs@^1.0.7":
+"@webcomponents/webcomponentsjs@^1.0.7":
   version "1.0.10"
   resolved "https://registry.yarnpkg.com/@webcomponents/webcomponentsjs/-/webcomponentsjs-1.0.10.tgz#990da9820a89931c8df285871ec943bf99d4a747"
 
