@@ -36,7 +36,7 @@ But as the features said, we are also transpiling the bundle for "oldie" browser
 Clone this repository:
 
 ```bash
-git clone https://github.com/PolymerX/polymer-skeleton [your-app-name]
+git clone --depth 1 https://github.com/PolymerX/polymer-skeleton [your-app-name]
 ```
 
 Remove the `.git` folder and change details within:
