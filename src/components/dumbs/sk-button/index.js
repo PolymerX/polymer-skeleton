@@ -10,4 +10,4 @@ export default class SkButton extends PolymerElement {
   }
 }
 
-window.customElements.define('sk-button', SkButton, {extends: 'button'});
+window.customElements.define('sk-button', SkButton);
