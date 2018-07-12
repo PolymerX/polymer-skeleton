@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.0.0"></a>
+# [1.0.0](https://github.com/PolymerX/polymer-skeleton/compare/v1.0.0-beta-5...v1.0.0) (2018-07-12)
+
+
+### Bug Fixes
+
+* **manifest-meta:** fixed meta for manifest.json and others ([c9ad2fe](https://github.com/PolymerX/polymer-skeleton/commit/c9ad2fe))
+* **manifest-meta:** missing image ([47b1a1b](https://github.com/PolymerX/polymer-skeleton/commit/47b1a1b))
+* **safari-ios:** adding webcomponents-hi.js for webcomponets ready ([9d4bc92](https://github.com/PolymerX/polymer-skeleton/commit/9d4bc92))
+* **wct:** new wct, removed bower link script ([be28c7f](https://github.com/PolymerX/polymer-skeleton/commit/be28c7f))
+* **wct:** travis command fix ([72e1fa5](https://github.com/PolymerX/polymer-skeleton/commit/72e1fa5))
+
+
+
 <a name="1.0.0-beta-5"></a>
 # [1.0.0-beta-5](https://github.com/PolymerX/polymer-skeleton/compare/v1.0.0-beta-4...v1.0.0-beta-5) (2018-05-06)
 
