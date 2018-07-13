@@ -5,6 +5,9 @@ const webpack = require('webpack');
 const {GenerateSW} = require('workbox-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackExcludeAssetsPlugin = require('html-webpack-exclude-assets-plugin');
+const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
 
 const pkg = require('./package.json');
 
@@ -60,16 +63,41 @@ const copyStatics = {
 /**
  * Plugin configuration
  */
-const sharedPlugins = [new webpack.DefinePlugin({'process.env': processEnv})];
+const renderHtmlPlugins = () =>
+  [
+    new HtmlWebpackPlugin({
+      filename: resolve(OUTPUT_PATH, 'index.html'),
+      template: `!!ejs-loader!${resolve('./src/index.html')}`,
+      minify: ENV === 'production' && {
+        collapseWhitespace: true,
+        removeScriptTypeAttributes: true,
+        removeRedundantAttributes: true,
+        removeStyleLinkTypeAttributes: true,
+        removeComments: true
+      },
+      inject: true,
+      compile: true,
+      excludeAssets: [/(bundle|polyfills)(\..*)?\.js$/],
+      paths: {
+        webcomponents: './vendor/webcomponents-loader.js'
+      }
+    }),
+    new HtmlWebpackExcludeAssetsPlugin(),
+    new ScriptExtHtmlWebpackPlugin({
+      defaultAttribute: 'defer'
+    })
+  ];
+
+const sharedPlugins = [
+  new webpack.DefinePlugin({'process.env': processEnv}),
+  ...renderHtmlPlugins()
+];
 const devPlugins = [new CopyWebpackPlugin(copyStatics.copyWebcomponents)];
 const buildPlugins = [
   new CopyWebpackPlugin(
     [].concat(copyStatics.copyWebcomponents, copyStatics.copyOthers)
   ),
   new GenerateSW({
-    globDirectory: OUTPUT_PATH,
-    globPatterns: ['**/!(*map*)'],
-    globIgnores: ['**/sw.js'],
     swDest: join(OUTPUT_PATH, 'sw.js')
   }),
   new CleanWebpackPlugin([OUTPUT_PATH], {verbose: true})
@@ -84,6 +112,7 @@ module.exports = {
     path: OUTPUT_PATH,
     filename: 'bundle.js'
   },
+  devtool: 'cheap-source-map',
   module: {
     rules: [
       {

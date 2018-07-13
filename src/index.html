@@ -99,7 +99,7 @@
 
       var script = document.createElement('script');
       script.async = true
-      script.src = './bundle.js';
+      script.src = '<%= htmlWebpackPlugin.files.chunks["main"].entry %>';
 
       var refScript = document.body.getElementsByTagName('script')[0];
       refScript.parentNode.insertBefore(script, refScript);
@@ -108,11 +108,11 @@
 </head>
 
 <body>
-	<sk-app unresolved name="Polymer Skeleton">
+	<sk-app name="Polymer Skeleton">
     <div class="Loader">Loading...</div>
   </sk-app>
 
-  <script src="./vendor/webcomponents-loader.js"></script>
+  <script defer src="<%= htmlWebpackPlugin.options.paths.webcomponents %>"></script>
 </body>
 
 </html>
