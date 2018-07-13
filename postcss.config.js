@@ -18,10 +18,9 @@ module.exports = () => ({
     require('postcss-discard-comments'),
     require('autoprefixer')({
       browsers: [
-        '> 1%',
-        'last 2 versions',
-        'Firefox ESR',
-        'not ie <= 11'
+        '>=1%',
+        'not ie 11',
+        'not op_mini all'
       ]
     }),
     require('cssnano')({
