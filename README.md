@@ -19,7 +19,7 @@
 
 #### Loaders
 
-* [babel-loader](https://github.com/babel/babel-loader) with the [babel-preset-env](https://github.com/babel/babel-preset-env) enabled for the [**last 2 versions**](https://babeljs.io/docs/plugins/preset-env/) and babel-plugin-transform-object-rest-spread installed.
+* [babel-loader](https://github.com/babel/babel-loader) with the [babel-preset-env](https://github.com/babel/babel-preset-env) and `babel-plugin-transform-object-rest-spread` installed.
 * [text-loader](https://github.com/dfenstermaker/text-loader) - Load HTML templates as string.
 * [postcss-loader](https://github.com/postcss/postcss-loader) - Load PostCSS into the `<style>` scoped tag of Polymer elements as string.
 
