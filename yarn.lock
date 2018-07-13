@@ -518,10 +518,6 @@
   version "1.17.1"
   resolved "https://registry.yarnpkg.com/@polymer/sinonjs/-/sinonjs-1.17.1.tgz#e47d3785b7d0e8c29feb97f7e924b0fc597e2e9b"
 
-"@polymer/test-fixture@PolymerX/test-fixture#3.0-preview":
-  version "3.0.0-pre.1"
-  resolved "https://codeload.github.com/PolymerX/test-fixture/tar.gz/a42bd327b5ec8cf5954c155611fb19ea7ea8b22c"
-
 "@polymer/test-fixture@^0.0.3":
   version "0.0.3"
   resolved "https://registry.yarnpkg.com/@polymer/test-fixture/-/test-fixture-0.0.3.tgz#4443752697d4d9293bbc412ea0b5e4d341f149d9"

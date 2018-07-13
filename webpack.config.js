@@ -2,14 +2,11 @@
 
 const {resolve, join} = require('path');
 const webpack = require('webpack');
-const merge = require('webpack-merge');
 const {GenerateSW} = require('workbox-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 const pkg = require('./package.json');
-
-const moduleConf = require('./webpack-module.config');
-const nomoduleConf = require('./webpack-nomodule.config');
 
 const ENV = process.argv.find(arg => arg.includes('NODE_ENV=production')) ? 'production' : 'development';
 const IS_DEV_SERVER = process.argv.find(arg => arg.includes('webpack-dev-server'));
@@ -44,10 +41,6 @@ const copyStatics = {
     from: resolve('./node_modules/@webcomponents/webcomponentsjs/webcomponents-hi.js'),
     to: join(OUTPUT_PATH, 'vendor'),
     flatten: true
-  }, {
-    from: resolve('./node_modules/@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js'),
-    to: join(OUTPUT_PATH, 'vendor'),
-    flatten: true
   }],
   copyOthers: [{
     from: 'assets/**',
@@ -78,45 +71,59 @@ const buildPlugins = [
     globPatterns: ['**/!(*map*)'],
     globIgnores: ['**/sw.js'],
     swDest: join(OUTPUT_PATH, 'sw.js')
-  })
+  }),
+  new CleanWebpackPlugin([OUTPUT_PATH], {verbose: true})
 ];
 
 const plugins = sharedPlugins.concat(IS_DEV_SERVER ? devPlugins : buildPlugins);
 
-const shared = env => {
-  const IS_MODULE_BUILD = env.BROWSERS === 'module';
-
-  return {
-    mode: ENV,
-    entry: './src/index.js',
-    output: {
-      path: OUTPUT_PATH,
-      filename: IS_MODULE_BUILD ? 'module.bundle.js' : 'bundle.js'
-    },
-    module: {
-      rules: [
-        {
-          test: /\.html$/,
-          use: ['text-loader']
-        },
-        {
-          test: /\.pcss$/,
-          use: ['text-loader', 'postcss-loader']
-        }
-      ]
-    },
-    plugins,
-    devServer: {
-      contentBase: OUTPUT_PATH,
-      compress: true,
-      overlay: {
-        errors: true
+module.exports = {
+  mode: ENV,
+  entry: './src/index.js',
+  output: {
+    path: OUTPUT_PATH,
+    filename: 'bundle.js'
+  },
+  module: {
+    rules: [
+      {
+        test: /\.html$/,
+        use: ['text-loader']
       },
-      port: 3000,
-      host: '0.0.0.0',
-      disableHostCheck: true
-    }
-  };
+      {
+        test: /\.pcss$/,
+        use: ['text-loader', 'postcss-loader']
+      },
+      {
+        test: /\.js$/,
+        // We need to transpile Polymer itself and other ES6 code
+        // exclude: /(node_modules)/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: [[
+              'env',
+              {
+                targets: {browsers: ['last 2 Chrome versions', 'Safari 10']},
+                debug: true
+              }
+            ]],
+            plugins: [['transform-object-rest-spread', {useBuiltIns: true}]]
+          }
+        }
+      }
+    ]
+  },
+  plugins,
+  devServer: {
+    contentBase: OUTPUT_PATH,
+    compress: true,
+    overlay: {
+      errors: true
+    },
+    port: 3000,
+    host: '0.0.0.0',
+    disableHostCheck: true
+  }
 };
 
-module.exports = (env = {}) => merge(env.BROWSERS === 'module' ? moduleConf() : nomoduleConf(), shared(env));
