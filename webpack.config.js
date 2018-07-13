@@ -66,22 +66,22 @@ const copyStatics = {
 const renderHtmlPlugins = () =>
   [
     new HtmlWebpackPlugin({
-			filename: resolve(OUTPUT_PATH, 'index.html'),
-			template: `!!ejs-loader!${resolve('./src/index.html')}`,
-			minify: ENV === 'production' && {
-				collapseWhitespace: true,
-				removeScriptTypeAttributes: true,
-				removeRedundantAttributes: true,
-				removeStyleLinkTypeAttributes: true,
-				removeComments: true
-			},
-			inject: true,
-			compile: true,
+      filename: resolve(OUTPUT_PATH, 'index.html'),
+      template: `!!ejs-loader!${resolve('./src/index.html')}`,
+      minify: ENV === 'production' && {
+        collapseWhitespace: true,
+        removeScriptTypeAttributes: true,
+        removeRedundantAttributes: true,
+        removeStyleLinkTypeAttributes: true,
+        removeComments: true
+      },
+      inject: true,
+      compile: true,
       excludeAssets: [/(bundle|polyfills)(\..*)?\.js$/],
       paths: {
         webcomponents: './vendor/webcomponents-loader.js'
       }
-		}),
+    }),
     new HtmlWebpackExcludeAssetsPlugin(),
     new ScriptExtHtmlWebpackPlugin({
       defaultAttribute: 'defer'
