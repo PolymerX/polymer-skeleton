@@ -100,7 +100,6 @@
       var script = document.createElement('script');
       script.async = true
       script.src = './bundle.js';
-      script.setAttribute('type', 'module');
 
       var refScript = document.body.getElementsByTagName('script')[0];
       refScript.parentNode.insertBefore(script, refScript);
