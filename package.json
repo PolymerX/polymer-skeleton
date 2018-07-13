@@ -20,10 +20,8 @@
     "clean:lighthouse": "rm *.report.html",
     "posttest": "yarn rmbower",
     "lint": "xo && stylelint src/components/**/*.pcss",
-    "rmbower": "node scripts/link-bower.js remove",
     "release": "standard-version",
-    "postinstall": "node scripts/postinstall.js",
-    "start": "http-server dist -p $PORT"
+    "start": "yarn build && http-server dist"
   },
   "engines": {
     "node": ">= 8.0"
