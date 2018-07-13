@@ -21,8 +21,7 @@
     "posttest": "yarn rmbower",
     "lint": "xo && stylelint src/components/**/*.pcss",
     "release": "standard-version",
-    "postinstall": "node scripts/postinstall.js",
-    "start": "http-server dist -p $PORT"
+    "start": "yarn build && http-server dist"
   },
   "engines": {
     "node": ">= 8.0"
