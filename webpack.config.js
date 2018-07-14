@@ -29,20 +29,24 @@ const copyStatics = {
     to: join(OUTPUT_PATH, 'vendor'),
     flatten: true
   }, {
-    from: resolve('./node_modules/@webcomponents/webcomponentsjs/webcomponents-lite.js'),
+    from: resolve('./node_modules/@webcomponents/webcomponentsjs/webcomponents-bundle.js'),
     to: join(OUTPUT_PATH, 'vendor'),
     flatten: true
   }, {
-    from: resolve('./node_modules/@webcomponents/webcomponentsjs/webcomponents-sd-ce.js'),
-    to: join(OUTPUT_PATH, 'vendor'),
+    from: resolve('./node_modules/@webcomponents/webcomponentsjs/bundles/webcomponents-ce.js'),
+    to: join(OUTPUT_PATH, 'vendor', 'bundles'),
     flatten: true
   }, {
-    from: resolve('./node_modules/@webcomponents/webcomponentsjs/webcomponents-hi-sd-ce.js'),
-    to: join(OUTPUT_PATH, 'vendor'),
+    from: resolve('./node_modules/@webcomponents/webcomponentsjs/bundles/webcomponents-sd-ce.js'),
+    to: join(OUTPUT_PATH, 'vendor', 'bundles'),
     flatten: true
   }, {
-    from: resolve('./node_modules/@webcomponents/webcomponentsjs/webcomponents-hi.js'),
-    to: join(OUTPUT_PATH, 'vendor'),
+    from: resolve('./node_modules/@webcomponents/webcomponentsjs/bundles/webcomponents-sd-ce-pf.js'),
+    to: join(OUTPUT_PATH, 'vendor', 'bundles'),
+    flatten: true
+  }, {
+    from: resolve('./node_modules/@webcomponents/webcomponentsjs/bundles/webcomponents-sd.js'),
+    to: join(OUTPUT_PATH, 'vendor', 'bundles'),
     flatten: true
   }],
   copyOthers: [{
