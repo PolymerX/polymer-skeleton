@@ -8,6 +8,11 @@
   <sk-button on-click="startTour">Take a tour</sk-button>
 </section>
 
+<dom-if if=[[updateReady]]>
+  <template>
+    <sk-button on-click="reload" class="UpdateReadyAlert">Update ready, reload!</sk-button>
+  </template>
+</dom-if>
 
 <aside class="Meta">
   v[[appVersion]] - ENV: [[ENV]]

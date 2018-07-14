@@ -21,7 +21,7 @@
   cursor: default;
   position: relative;
   padding-top: 220px;
-  margin-bottom: 100px;
+  overflow-x: hidden;
 }
 
 
@@ -87,11 +87,17 @@
 
 
 sk-button {
-  margin-top: 80px;
+  margin-top: 20px;
   opacity: 0;
   animation-name: FadeIn;
   animation-duration: 400ms;
   animation-delay: 700ms;
   animation-fill-mode: forwards;
   animation-timing-function: ease-out;
+}
+
+.UpdateReadyAlert {
+  position: absolute;
+  left: 30px;
+  bottom: 30px;
 }
