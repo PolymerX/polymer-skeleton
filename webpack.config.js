@@ -98,7 +98,8 @@ const buildPlugins = [
     [].concat(copyStatics.copyWebcomponents, copyStatics.copyOthers)
   ),
   new GenerateSW({
-    swDest: join(OUTPUT_PATH, 'sw.js')
+    swDest: join(OUTPUT_PATH, 'sw.js'),
+    skipWaiting: true
   }),
   new CleanWebpackPlugin([OUTPUT_PATH], {verbose: true})
 ];
