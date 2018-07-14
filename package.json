@@ -24,7 +24,7 @@
     "start": "yarn build && http-server dist"
   },
   "engines": {
-    "node": ">= 8.0"
+    "node": ">= 8.0 < 10"
   },
   "xo": {
     "space": true,
