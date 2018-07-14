@@ -10,10 +10,9 @@
     "Mattia Astorino (http://equinsuocha.io/)"
   ],
   "scripts": {
-    "build": "webpack --env.BROWSERS=module && webpack",
-    "build:prod": "webpack --env.BROWSERS=module --env.NODE_ENV=production && webpack --env.NODE_ENV=production --optimize-minimize",
+    "build": "webpack",
+    "build:prod": "webpack --env.NODE_ENV=production --optimize-minimize",
     "dev": "webpack-dev-server --hot --inline",
-    "dev:module": "webpack-dev-server --env.BROWSERS=module --hot --inline",
     "pretest": "yarn build",
     "test": "yarn lint && wct --npm && yarn test:lighthouse",
     "test:lighthouse": "concurrently --kill-others \"http-server dist\" \"lighthouse --view http://localhost:8080\" ",
@@ -21,13 +20,11 @@
     "clean:lighthouse": "rm *.report.html",
     "posttest": "yarn rmbower",
     "lint": "xo && stylelint src/components/**/*.pcss",
-    "rmbower": "node scripts/link-bower.js remove",
     "release": "standard-version",
-    "postinstall": "node scripts/postinstall.js",
-    "start": "http-server dist -p $PORT"
+    "start": "yarn build && http-server dist"
   },
   "engines": {
-    "node": ">= 8.0"
+    "node": ">= 8.0 < 10"
   },
   "xo": {
     "space": true,
@@ -36,11 +33,9 @@
     ],
     "rules": {
       "eol-last": 0,
-      "import/no-unassigned-import": 0
-    },
-    "ignores": [
-      "test/test-fixture.js"
-    ]
+      "import/no-unassigned-import": 0,
+      "promise/prefer-await-to-then": 0
+    }
   },
   "devDependencies": {
     "autoprefixer": "8.4.1",
@@ -51,7 +46,9 @@
     "concurrently": "3.5.1",
     "copy-webpack-plugin": "4.5.1",
     "cssnano": "3.10.0",
-    "fs-extra": "6.0.0",
+    "ejs-loader": "0.3.1",
+    "html-webpack-exclude-assets-plugin": "0.0.7",
+    "html-webpack-plugin": "3.2.0",
     "http-server": "0.11.1",
     "lighthouse": "2.9.4",
     "postcss": "6.0.22",
@@ -64,6 +61,7 @@
     "postcss-nesting": "4.2.1",
     "postcss-reporter": "5.0.0",
     "postcss-selector-not": "3.0.1",
+    "script-ext-html-webpack-plugin": "2.0.1",
     "standard-version": "4.3.0",
     "stylelint": "9.2.0",
     "stylelint-config-standard": "18.2.0",
@@ -73,7 +71,6 @@
     "webpack": "4.7.0",
     "webpack-cli": "2.1.2",
     "webpack-dev-server": "3.1.4",
-    "webpack-merge": "4.1.2",
     "workbox-webpack-plugin": "3.2.0",
     "xo": "0.21.0"
   },

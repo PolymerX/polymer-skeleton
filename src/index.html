@@ -99,28 +99,20 @@
 
       var script = document.createElement('script');
       script.async = true
-      script.src = './bundle.js';
-      script.setAttribute('nomodule', true);
-
-      var scriptModule = document.createElement('script');
-      scriptModule.async = true
-      scriptModule.src = './module.bundle.js';
-      scriptModule.setAttribute('type', 'module');
+      script.src = '<%= htmlWebpackPlugin.files.chunks["main"].entry %>';
 
       var refScript = document.body.getElementsByTagName('script')[0];
       refScript.parentNode.insertBefore(script, refScript);
-      refScript.parentNode.insertBefore(scriptModule, refScript);
     }, false);
   </script>
 </head>
 
 <body>
-	<sk-app unresolved name="Polymer Skeleton">
+	<sk-app name="Polymer Skeleton">
     <div class="Loader">Loading...</div>
   </sk-app>
 
-  <script src="./vendor/custom-elements-es5-adapter.js" nomodule></script>
-  <script src="./vendor/webcomponents-loader.js"></script>
+  <script defer src="<%= htmlWebpackPlugin.options.paths.webcomponents %>"></script>
 </body>
 
 </html>

@@ -18,6 +18,10 @@ export default class SkApp extends PolymerElement {
       ENV: {
         type: String,
         value: process.env.NODE_ENV
+      },
+      updateReady: {
+        type: Boolean,
+        value: false
       }
     };
   }
@@ -26,8 +30,20 @@ export default class SkApp extends PolymerElement {
     return html([`<style>${css}</style> ${template}`]);
   }
 
+  constructor() {
+    super();
+
+    document.addEventListener('updateReady', () => {
+      this.updateReady = true;
+    });
+  }
+
   startTour() {
     window.location.replace('https://github.com/PolymerX/polymer-skeleton');
+  }
+
+  reload() {
+    window.location.reload();
   }
 }
 
