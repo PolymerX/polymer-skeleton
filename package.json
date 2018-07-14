@@ -33,7 +33,8 @@
     ],
     "rules": {
       "eol-last": 0,
-      "import/no-unassigned-import": 0
+      "import/no-unassigned-import": 0,
+      "promise/prefer-await-to-then": 0
     },
     "ignores": [
       "test/test-fixture.js"
