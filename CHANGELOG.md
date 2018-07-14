@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.1.0"></a>
+# [1.1.0](https://github.com/PolymerX/polymer-skeleton/compare/v1.0.1...v1.1.0) (2018-07-14)
+
+
+### Bug Fixes
+
+* removed module attribute for bundle ([a037c17](https://github.com/PolymerX/polymer-skeleton/commit/a037c17))
+
+
+### Features
+
+* added popup update ready for service workers + small fixes ([d438c35](https://github.com/PolymerX/polymer-skeleton/commit/d438c35))
+* postcss browserlist update ([55bf71e](https://github.com/PolymerX/polymer-skeleton/commit/55bf71e))
+* removed nomodule logic and build ([39ca21f](https://github.com/PolymerX/polymer-skeleton/commit/39ca21f))
+* support for html-webpack-plugin + small cleanup ([748e865](https://github.com/PolymerX/polymer-skeleton/commit/748e865))
+* switch to a better browserslist ([b4d877a](https://github.com/PolymerX/polymer-skeleton/commit/b4d877a))
+
+
+
 <a name="1.0.1"></a>
 ## [1.0.1](https://github.com/PolymerX/polymer-skeleton/compare/v1.0.0...v1.0.1) (2018-07-12)
 
