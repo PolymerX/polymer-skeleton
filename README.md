@@ -6,10 +6,11 @@
 [![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg?style=flat-square)](https://github.com/sindresorhus/xo)
 [![Polymer Skeleton](https://img.shields.io/badge/polymerX-SKELETON-435877.svg?style=flat-square)](https://github.com/PolymerX/polymer-skeleton) [![Greenkeeper badge](https://badges.greenkeeper.io/PolymerX/polymer-skeleton.svg)](https://greenkeeper.io/)
 
-> A mininum boilerplate to deliver a Polymer 3.x with Webpack, PostCSS and Service Workers ready.
+> A mininum boilerplate to deliver a Polymer 3.x and LitElement with Webpack, PostCSS and Service Workers ready.
 
 ## Features
 
+* [LitElement](https://github.com/Polymer/lit-element)
 * [Webpack](https://webpack.js.org/) 4
 * [webpack-dev-server](https://github.com/webpack/webpack-dev-server) with hot reloading active.
 * [PostCSS](http://postcss.org/) with many plugins.
@@ -20,8 +21,11 @@
 #### Loaders
 
 * [babel-loader](https://github.com/babel/babel-loader) with the [babel-preset-env](https://github.com/babel/babel-preset-env) and `babel-plugin-transform-object-rest-spread` installed.
-* [text-loader](https://github.com/dfenstermaker/text-loader) - Load HTML templates as string.
 * [postcss-loader](https://github.com/postcss/postcss-loader) - Load PostCSS into the `<style>` scoped tag of Polymer elements as string.
+
+## LitElement
+
+The introduction of `LitElement` let us to simply load the template as ES module so we changed our `template.html` to `template.js` that will export our template literal.
 
 
 ## Supported Browsers
@@ -78,6 +82,8 @@ yarn test:lighthouse
 ```bash
 yarn build
 ```
+
+
 
 
 ## Styling components with PostCSS
