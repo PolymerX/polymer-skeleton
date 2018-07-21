@@ -1,3 +1,6 @@
+import {html} from '@polymer/lit-element';
+
+export default props => html`
 <section class="Welcome">
   <img class="SKLogo" draggable="false" src="assets/AnimatedSkeleton.svg" alt="">
   <h1 class="Title">Web Components — Now.</h1>
@@ -8,14 +11,13 @@
   <sk-button on-click="startTour">Take a tour</sk-button>
 </section>
 
-<dom-if if=[[updateReady]]>
-  <template>
-    <sk-button on-click="reload" class="UpdateReadyAlert">Update ready, reload!</sk-button>
-  </template>
-</dom-if>
+${
+  props.updateReady ?
+    html`<sk-button on-click="reload" class="UpdateReadyAlert">Update ready, reload!</sk-button>` : ''
+}
 
 <aside class="Meta">
-  v[[appVersion]] - ENV: [[ENV]]
+  v${props.appVersion} - ENV: ${props.ENV}
 </aside>
-
+`;
 

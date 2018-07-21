@@ -62,11 +62,11 @@
     "postcss-nesting": "6.0.0",
     "postcss-reporter": "5.0.0",
     "postcss-selector-not": "3.0.1",
+    "raw-loader": "0.5.1",
     "script-ext-html-webpack-plugin": "2.0.1",
     "standard-version": "4.4.0",
     "stylelint": "9.3.0",
     "stylelint-config-standard": "18.2.0",
-    "text-loader": "0.0.1",
     "wct-browser-legacy": "1.0.1",
     "web-component-tester": "6.7.1",
     "webpack": "4.16.1",
@@ -76,7 +76,7 @@
     "xo": "0.21.1"
   },
   "dependencies": {
-    "@polymer/polymer": "3.0.2",
+    "@polymer/lit-element": "0.5.2",
     "@webcomponents/webcomponentsjs": "2.0.2"
   }
 }

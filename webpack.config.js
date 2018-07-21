@@ -121,12 +121,8 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.html$/,
-        use: ['text-loader']
-      },
-      {
         test: /\.pcss$/,
-        use: ['text-loader', 'postcss-loader']
+        use: ['raw-loader', 'postcss-loader']
       },
       {
         test: /\.js$/,
