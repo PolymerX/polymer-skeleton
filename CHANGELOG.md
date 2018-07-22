@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.1.4"></a>
+## [1.1.4](https://github.com/PolymerX/polymer-skeleton/compare/v1.1.3...v1.1.4) (2018-07-22)
+
+
+### Bug Fixes
+
+* **package:** update [@webcomponents](https://github.com/webcomponents)/webcomponentsjs to version 2.0.3 ([24b2640](https://github.com/PolymerX/polymer-skeleton/commit/24b2640))
+
+
+
 <a name="1.1.3"></a>
 ## [1.1.3](https://github.com/PolymerX/polymer-skeleton/compare/v1.1.2...v1.1.3) (2018-07-17)
 
