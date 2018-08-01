@@ -38,7 +38,7 @@
     }
   },
   "devDependencies": {
-    "autoprefixer": "9.0.1",
+    "autoprefixer": "9.0.2",
     "babel-core": "6.26.3",
     "babel-loader": "7.1.5",
     "babel-plugin-transform-object-rest-spread": "6.26.0",
