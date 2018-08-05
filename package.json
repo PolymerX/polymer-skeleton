@@ -38,7 +38,7 @@
     }
   },
   "devDependencies": {
-    "autoprefixer": "9.0.1",
+    "autoprefixer": "9.1.0",
     "babel-core": "6.26.3",
     "babel-loader": "7.1.5",
     "babel-plugin-transform-object-rest-spread": "6.26.0",
@@ -69,14 +69,14 @@
     "text-loader": "0.0.1",
     "wct-browser-legacy": "1.0.1",
     "web-component-tester": "6.7.1",
-    "webpack": "4.16.3",
+    "webpack": "4.16.4",
     "webpack-cli": "3.1.0",
     "webpack-dev-server": "3.1.5",
     "workbox-webpack-plugin": "3.4.1",
     "xo": "0.21.1"
   },
   "dependencies": {
-    "@polymer/polymer": "3.0.2",
-    "@webcomponents/webcomponentsjs": "2.0.3"
+    "@polymer/polymer": "3.0.3",
+    "@webcomponents/webcomponentsjs": "2.0.4"
   }
 }
