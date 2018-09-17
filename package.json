@@ -77,6 +77,6 @@
   },
   "dependencies": {
     "@polymer/polymer": "3.0.3",
-    "@webcomponents/webcomponentsjs": "2.1.2"
+    "@webcomponents/webcomponentsjs": "2.1.3"
   }
 }
