@@ -8478,11 +8478,11 @@ postcss-mixins@6.2.0:
     postcss-simple-vars "^4.1.0"
     sugarss "^1.0.0"
 
-postcss-nesting@6.0.0:
-  version "6.0.0"
-  resolved "https://registry.yarnpkg.com/postcss-nesting/-/postcss-nesting-6.0.0.tgz#4c45276a065765ec063efe1e4daf75c131518991"
+postcss-nesting@7.0.0:
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/postcss-nesting/-/postcss-nesting-7.0.0.tgz#6e26a770a0c8fcba33782a6b6f350845e1a448f6"
   dependencies:
-    postcss "^6.0.22"
+    postcss "^7.0.2"
 
 postcss-nesting@^4.0.1:
   version "4.2.1"
