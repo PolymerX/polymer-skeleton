@@ -3631,9 +3631,9 @@ cssnano-util-same-parent@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/cssnano-util-same-parent/-/cssnano-util-same-parent-4.0.0.tgz#d2a3de1039aa98bc4ec25001fa050330c2a16dac"
 
-cssnano@4.1.1:
-  version "4.1.1"
-  resolved "https://registry.yarnpkg.com/cssnano/-/cssnano-4.1.1.tgz#46e97285ca709b8f7e1ceafb352699d0ac15102a"
+cssnano@4.1.2:
+  version "4.1.2"
+  resolved "https://registry.yarnpkg.com/cssnano/-/cssnano-4.1.2.tgz#23c1ddb73351208afa65e2cb0d76c641982e0028"
   dependencies:
     cosmiconfig "^5.0.0"
     cssnano-preset-default "^4.0.1"
