@@ -55,7 +55,7 @@
     "postcss": "7.0.2",
     "postcss-cssnext": "3.1.0",
     "postcss-custom-media": "6.0.0",
-    "postcss-discard-comments": "4.0.0",
+    "postcss-discard-comments": "4.0.1",
     "postcss-easy-import": "3.0.0",
     "postcss-loader": "3.0.0",
     "postcss-mixins": "6.2.0",
@@ -71,7 +71,7 @@
     "web-component-tester": "6.8.0",
     "webpack": "4.20.0",
     "webpack-cli": "3.1.1",
-    "webpack-dev-server": "3.1.8",
+    "webpack-dev-server": "3.1.9",
     "workbox-webpack-plugin": "3.6.1",
     "xo": "0.22.0"
   },
