@@ -2805,13 +2805,13 @@ chrome-devtools-frontend@1.0.401423:
   version "1.0.401423"
   resolved "https://registry.yarnpkg.com/chrome-devtools-frontend/-/chrome-devtools-frontend-1.0.401423.tgz#32a89b8d04e378a494be3c8d63271703be1c04ea"
 
-chrome-devtools-frontend@1.0.422034:
-  version "1.0.422034"
-  resolved "https://registry.yarnpkg.com/chrome-devtools-frontend/-/chrome-devtools-frontend-1.0.422034.tgz#071c8ce14466b7653032fcd1ad1a4a68d5e3cbd9"
+chrome-devtools-frontend@1.0.593291:
+  version "1.0.593291"
+  resolved "https://registry.yarnpkg.com/chrome-devtools-frontend/-/chrome-devtools-frontend-1.0.593291.tgz#72ed2e488e4ab8c5df9f35a5ce6bb128eb3c5e74"
 
-chrome-launcher@^0.10.2:
-  version "0.10.2"
-  resolved "https://registry.yarnpkg.com/chrome-launcher/-/chrome-launcher-0.10.2.tgz#f7d860ddec627b6f01015736b5ae1e33b3d165b1"
+chrome-launcher@^0.10.5:
+  version "0.10.5"
+  resolved "https://registry.yarnpkg.com/chrome-launcher/-/chrome-launcher-0.10.5.tgz#d0aa72c11f1653e6a60dfebea171522447470ef1"
   dependencies:
     "@types/core-js" "^0.9.41"
     "@types/mkdirp" "^0.3.29"
@@ -3645,6 +3645,16 @@ csso@^3.5.0:
   resolved "https://registry.yarnpkg.com/csso/-/csso-3.5.1.tgz#7b9eb8be61628973c1b261e169d2f024008e758b"
   dependencies:
     css-tree "1.0.0-alpha.29"
+
+cssom@0.3.x:
+  version "0.3.4"
+  resolved "https://registry.yarnpkg.com/cssom/-/cssom-0.3.4.tgz#8cd52e8a3acfd68d3aed38ee0a640177d2f9d797"
+
+cssstyle@1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/cssstyle/-/cssstyle-1.1.1.tgz#18b038a9c44d65f7a8e428a653b9f6fe42faf5fb"
+  dependencies:
+    cssom "0.3.x"
 
 currently-unhandled@^0.4.1:
   version "0.4.1"
@@ -6214,9 +6224,9 @@ js-base64@^2.1.9:
   version "2.4.6"
   resolved "https://registry.yarnpkg.com/js-base64/-/js-base64-2.4.6.tgz#1d49f618bef43630cd191f4e122447acfdb947d8"
 
-js-library-detector@^4.3.1:
-  version "4.3.1"
-  resolved "https://registry.yarnpkg.com/js-library-detector/-/js-library-detector-4.3.1.tgz#6d34f55002813bc0a7543deef53faa4e2e79767b"
+js-library-detector@^5.1.0:
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/js-library-detector/-/js-library-detector-5.1.0.tgz#1e2e88b119bb91e6581b28f4a90018ea1320de73"
 
 js-tokens@^3.0.0, js-tokens@^3.0.2:
   version "3.0.2"
@@ -6405,14 +6415,15 @@ lighthouse-logger@^1.0.0:
   dependencies:
     debug "^2.6.8"
 
-lighthouse@3.1.1:
-  version "3.1.1"
-  resolved "https://registry.yarnpkg.com/lighthouse/-/lighthouse-3.1.1.tgz#6af0489b3bca190cfd6a714dd48681adc19149e6"
+lighthouse@3.2.0:
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/lighthouse/-/lighthouse-3.2.0.tgz#7192384823980881a55815a74f2d4d5b2b5bbdf0"
   dependencies:
     axe-core "3.0.0-beta.2"
-    chrome-devtools-frontend "1.0.422034"
-    chrome-launcher "^0.10.2"
+    chrome-devtools-frontend "1.0.593291"
+    chrome-launcher "^0.10.5"
     configstore "^3.1.1"
+    cssstyle "1.1.1"
     devtools-timeline-model "1.1.6"
     esprima "^4.0.1"
     http-link-header "^0.8.0"
@@ -6420,7 +6431,7 @@ lighthouse@3.1.1:
     intl-messageformat "^2.2.0"
     intl-messageformat-parser "^1.4.0"
     jpeg-js "0.1.2"
-    js-library-detector "^4.3.1"
+    js-library-detector "^5.1.0"
     lighthouse-logger "^1.0.0"
     lodash.isequal "^4.5.0"
     lookup-closest-locale "6.0.4"
@@ -6432,7 +6443,7 @@ lighthouse@3.1.1:
     rimraf "^2.6.1"
     robots-parser "^2.0.1"
     semver "^5.3.0"
-    speedline-core "1.4.0"
+    speedline-core "1.4.2"
     update-notifier "^2.1.0"
     ws "3.3.2"
     yargs "3.32.0"
@@ -9953,9 +9964,9 @@ specificity@^0.4.0:
   version "0.4.1"
   resolved "https://registry.yarnpkg.com/specificity/-/specificity-0.4.1.tgz#aab5e645012db08ba182e151165738d00887b019"
 
-speedline-core@1.4.0:
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/speedline-core/-/speedline-core-1.4.0.tgz#884831eaef66ddc928dd7d4c9e844c5d28bad7db"
+speedline-core@1.4.2:
+  version "1.4.2"
+  resolved "https://registry.yarnpkg.com/speedline-core/-/speedline-core-1.4.2.tgz#bb061444a218d67b4cd52f63a262386197b90c8a"
   dependencies:
     "@types/node" "*"
     image-ssim "^0.2.0"
