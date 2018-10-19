@@ -8253,7 +8253,13 @@ postcss-cssnext@3.1.0:
     postcss-selector-matches "^3.0.1"
     postcss-selector-not "^3.0.1"
 
-postcss-custom-media@6.0.0, postcss-custom-media@^6.0.0:
+postcss-custom-media@7.0.7:
+  version "7.0.7"
+  resolved "https://registry.yarnpkg.com/postcss-custom-media/-/postcss-custom-media-7.0.7.tgz#bbc698ed3089ded61aad0f5bfb1fb48bf6969e73"
+  dependencies:
+    postcss "^7.0.5"
+
+postcss-custom-media@^6.0.0:
   version "6.0.0"
   resolved "https://registry.yarnpkg.com/postcss-custom-media/-/postcss-custom-media-6.0.0.tgz#be532784110ecb295044fb5395a18006eb21a737"
   dependencies:
