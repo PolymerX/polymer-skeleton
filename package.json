@@ -54,7 +54,7 @@
     "lighthouse": "3.2.1",
     "postcss": "7.0.5",
     "postcss-cssnext": "3.1.0",
-    "postcss-custom-media": "6.0.0",
+    "postcss-custom-media": "7.0.7",
     "postcss-discard-comments": "4.0.1",
     "postcss-easy-import": "3.0.0",
     "postcss-loader": "3.0.0",
