@@ -8,7 +8,7 @@ module.exports = {
     },
     local: {
       remote: false,
-      browsers: ['chrome', 'firefox']
+      browsers: ['chrome']
     }
   }
 };
