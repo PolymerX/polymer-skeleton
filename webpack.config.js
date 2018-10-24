@@ -136,7 +136,7 @@ module.exports = {
           loader: 'babel-loader',
           options: {
             presets: [[
-              'env',
+              '@babel/preset-env',
               {
                 targets: {
                   browsers: [
@@ -149,7 +149,7 @@ module.exports = {
                 debug: true
               }
             ]],
-            plugins: [['transform-object-rest-spread', {useBuiltIns: true}]]
+            plugins: [['@babel/plugin-syntax-object-rest-spread', {useBuiltIns: true}]]
           }
         }
       }
