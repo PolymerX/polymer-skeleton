@@ -58,7 +58,7 @@
     "postcss-discard-comments": "4.0.1",
     "postcss-easy-import": "3.0.0",
     "postcss-loader": "3.0.0",
-    "postcss-mixins": "6.2.0",
+    "postcss-mixins": "6.2.1",
     "postcss-nesting": "7.0.0",
     "postcss-reporter": "6.0.0",
     "postcss-selector-not": "4.0.0",
