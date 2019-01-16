@@ -1560,10 +1560,10 @@
   version "1.5.2"
   resolved "https://registry.yarnpkg.com/@webcomponents/shadycss/-/shadycss-1.5.2.tgz#ad72f43000c39ba4ac61e625131f34f4b7cfe55f"
 
-"@webcomponents/webcomponentsjs@2.2.3":
-  version "2.2.3"
-  resolved "https://registry.yarnpkg.com/@webcomponents/webcomponentsjs/-/webcomponentsjs-2.2.3.tgz#1db73557e44df927ee5458c63b56f4a75183ca09"
-  integrity sha512-8ndihKAmH01M1GifAxIwNMJU6yI2uFnMjm6rPvLxO4IG1nzeyOFJB1B2LQRHnx7ChQCKCLap2B18zIOVY4ROoQ==
+"@webcomponents/webcomponentsjs@2.2.4":
+  version "2.2.4"
+  resolved "https://registry.yarnpkg.com/@webcomponents/webcomponentsjs/-/webcomponentsjs-2.2.4.tgz#b520d586e46517914d9708c2220b263116d5f86a"
+  integrity sha512-YkLxK9Mbw6QK5bNZ67Rarb/yj0gN+Ziy5+2sLjM0lDb3XafM36gXKZXaIBz4zvLA/cYYTdg+l1LlqXeHEcmeiA==
 
 "@webcomponents/webcomponentsjs@^1.0.7":
   version "1.2.2"
@@ -9042,7 +9042,7 @@ postcss-values-parser@^1.5.0:
     indexes-of "^1.0.1"
     uniq "^1.0.1"
 
-postcss@7.0.11:
+postcss@7.0.11, postcss@^7.0.11:
   version "7.0.11"
   resolved "https://registry.yarnpkg.com/postcss/-/postcss-7.0.11.tgz#f63c513b78026d66263bb2ca995bf02e3d1a697d"
   integrity sha512-9AXb//5UcjeOEof9T+yPw3XTa5SL207ZOIC/lHYP4mbUTEh4M0rDAQekQpVANCZdwQwKhBtFZCk3i3h3h2hdWg==
@@ -9074,15 +9074,6 @@ postcss@^7.0.1:
     chalk "^2.4.1"
     source-map "^0.6.1"
     supports-color "^5.5.0"
-
-postcss@^7.0.11:
-  version "7.0.11"
-  resolved "https://registry.yarnpkg.com/postcss/-/postcss-7.0.11.tgz#f63c513b78026d66263bb2ca995bf02e3d1a697d"
-  integrity sha512-9AXb//5UcjeOEof9T+yPw3XTa5SL207ZOIC/lHYP4mbUTEh4M0rDAQekQpVANCZdwQwKhBtFZCk3i3h3h2hdWg==
-  dependencies:
-    chalk "^2.4.2"
-    source-map "^0.6.1"
-    supports-color "^6.1.0"
 
 postcss@^7.0.3, postcss@^7.0.5:
   version "7.0.5"
