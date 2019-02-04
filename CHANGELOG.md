@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.1.5"></a>
+## [1.1.5](https://github.com/PolymerX/polymer-skeleton/compare/v1.1.4...v1.1.5) (2019-02-04)
+
+
+### Bug Fixes
+
+* **package:** update [@polymer](https://github.com/polymer)/polymer to version 3.0.3 ([fbe860c](https://github.com/PolymerX/polymer-skeleton/commit/fbe860c))
+* **package:** update [@webcomponents](https://github.com/webcomponents)/webcomponentsjs to version 2.0.4 ([2d4ede3](https://github.com/PolymerX/polymer-skeleton/commit/2d4ede3))
+* **package:** update [@webcomponents](https://github.com/webcomponents)/webcomponentsjs to version 2.1.0 ([207faa8](https://github.com/PolymerX/polymer-skeleton/commit/207faa8))
+* **package:** update [@webcomponents](https://github.com/webcomponents)/webcomponentsjs to version 2.1.1 ([3af4913](https://github.com/PolymerX/polymer-skeleton/commit/3af4913))
+* **package:** update [@webcomponents](https://github.com/webcomponents)/webcomponentsjs to version 2.1.2 ([c2b2903](https://github.com/PolymerX/polymer-skeleton/commit/c2b2903))
+* **package:** update [@webcomponents](https://github.com/webcomponents)/webcomponentsjs to version 2.1.3 ([b21bef7](https://github.com/PolymerX/polymer-skeleton/commit/b21bef7))
+* sw loader and dependencies ([c6c2d8f](https://github.com/PolymerX/polymer-skeleton/commit/c6c2d8f))
+* **package:** update [@webcomponents](https://github.com/webcomponents)/webcomponentsjs to version 2.2.0 ([b961079](https://github.com/PolymerX/polymer-skeleton/commit/b961079))
+* **package:** update [@webcomponents](https://github.com/webcomponents)/webcomponentsjs to version 2.2.1 ([7405e02](https://github.com/PolymerX/polymer-skeleton/commit/7405e02))
+* **package:** update [@webcomponents](https://github.com/webcomponents)/webcomponentsjs to version 2.2.2 ([ee06de6](https://github.com/PolymerX/polymer-skeleton/commit/ee06de6))
+* **package:** update [@webcomponents](https://github.com/webcomponents)/webcomponentsjs to version 2.2.3 ([5075247](https://github.com/PolymerX/polymer-skeleton/commit/5075247))
+* **package:** update [@webcomponents](https://github.com/webcomponents)/webcomponentsjs to version 2.2.4 ([eb06118](https://github.com/PolymerX/polymer-skeleton/commit/eb06118))
+
+
+
 <a name="1.1.4"></a>
 ## [1.1.4](https://github.com/PolymerX/polymer-skeleton/compare/v1.1.3...v1.1.4) (2018-07-22)
 
