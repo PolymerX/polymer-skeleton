@@ -66,35 +66,6 @@
 	</style>
 
   <script>
-    (function() {
-      if (!('serviceWorker' in navigator)) {
-        console.log('Service worker is not supported');
-        return;
-      }
-
-      navigator.serviceWorker.register('/sw.js')
-        .then(function(registration) {
-          registration.onupdatefound = function() {
-            if (navigator.serviceWorker.controller) {
-              var installingWorker = registration.installing;
-                installingWorker.onstatechange = function() {
-                  switch (installingWorker.state) {
-                    case 'installed':
-                      break;
-                    case 'redundant':
-                      throw new Error('The installing ' +
-                                      'service worker became redundant.');
-                    default:
-                      // Ignore
-                  }
-              };
-            }
-          };
-        }).catch(function(e) {
-          console.error('Error during service worker registration:', e);
-        });
-    })();
-
     document.addEventListener('WebComponentsReady', function componentsReady() {
       document.removeEventListener('WebComponentsReady', componentsReady, false);
 
