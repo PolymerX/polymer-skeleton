@@ -45,7 +45,7 @@
     "babel-loader": "8.0.5",
     "clean-webpack-plugin": "1.0.1",
     "concurrently": "4.1.0",
-    "copy-webpack-plugin": "5.0.0",
+    "copy-webpack-plugin": "5.0.1",
     "cssnano": "4.1.10",
     "ejs-loader": "0.3.1",
     "html-webpack-exclude-assets-plugin": "0.0.7",
