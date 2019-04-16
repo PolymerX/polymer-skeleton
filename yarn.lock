@@ -1514,10 +1514,10 @@
   version "1.5.2"
   resolved "https://registry.yarnpkg.com/@webcomponents/shadycss/-/shadycss-1.5.2.tgz#ad72f43000c39ba4ac61e625131f34f4b7cfe55f"
 
-"@webcomponents/webcomponentsjs@2.2.7":
-  version "2.2.7"
-  resolved "https://registry.yarnpkg.com/@webcomponents/webcomponentsjs/-/webcomponentsjs-2.2.7.tgz#1f1a7a7aa083db5ae6aadaeda68caa8fd8657462"
-  integrity sha512-kPPjzV+5kpoWpTniyvBSPcXS33f3j/C6HvNOJ3YecF3pvz3XwVeU4ammbxtVy/osF3z7hr1DYNptIf4oPEvXZA==
+"@webcomponents/webcomponentsjs@2.2.9":
+  version "2.2.9"
+  resolved "https://registry.yarnpkg.com/@webcomponents/webcomponentsjs/-/webcomponentsjs-2.2.9.tgz#c315b75d6f58a55f506e82dafe45b06f299cdbe8"
+  integrity sha512-cYXFHTqwMOJUk2iUcMmNP/nM7kjQn0jHVcMYXzqecqmsb7XcGlOvHbV0GSVFsGqrH68DuikkJBdEUHCV5ZiKAw==
 
 "@webcomponents/webcomponentsjs@^1.0.7":
   version "1.2.2"
