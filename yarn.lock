@@ -1919,17 +1919,18 @@ atob@^2.1.1:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/atob/-/atob-2.1.1.tgz#ae2d5a729477f289d60dd7f96a6314a22dd6c22a"
 
-autoprefixer@9.4.7:
-  version "9.4.7"
-  resolved "https://registry.yarnpkg.com/autoprefixer/-/autoprefixer-9.4.7.tgz#f997994f9a810eae47b38fa6d8a119772051c4ff"
-  integrity sha512-qS5wW6aXHkm53Y4z73tFGsUhmZu4aMPV9iHXYlF0c/wxjknXNHuj/1cIQb+6YH692DbJGGWcckAXX+VxKvahMA==
+autoprefixer@9.6.1:
+  version "9.6.1"
+  resolved "https://registry.yarnpkg.com/autoprefixer/-/autoprefixer-9.6.1.tgz#51967a02d2d2300bb01866c1611ec8348d355a47"
+  integrity sha512-aVo5WxR3VyvyJxcJC3h4FKfwCQvQWb1tSI5VHNibddCVWrcD1NvlxEweg3TSgiPztMnWfjpy2FURKA2kvDE+Tw==
   dependencies:
-    browserslist "^4.4.1"
-    caniuse-lite "^1.0.30000932"
+    browserslist "^4.6.3"
+    caniuse-lite "^1.0.30000980"
+    chalk "^2.4.2"
     normalize-range "^0.1.2"
     num2fraction "^1.2.2"
-    postcss "^7.0.14"
-    postcss-value-parser "^3.3.1"
+    postcss "^7.0.17"
+    postcss-value-parser "^4.0.0"
 
 autoprefixer@^7.1.1:
   version "7.2.6"
@@ -2538,14 +2539,14 @@ browserslist@^4.3.4:
     electron-to-chromium "^1.3.92"
     node-releases "^1.1.1"
 
-browserslist@^4.4.1:
-  version "4.4.1"
-  resolved "https://registry.yarnpkg.com/browserslist/-/browserslist-4.4.1.tgz#42e828954b6b29a7a53e352277be429478a69062"
-  integrity sha512-pEBxEXg7JwaakBXjATYw/D1YZh4QUSCX/Mnd/wnqSRPPSi1U39iDhDoKGoBUcraKdxDlrYqJxSI5nNvD+dWP2A==
+browserslist@^4.6.3:
+  version "4.6.3"
+  resolved "https://registry.yarnpkg.com/browserslist/-/browserslist-4.6.3.tgz#0530cbc6ab0c1f3fc8c819c72377ba55cf647f05"
+  integrity sha512-CNBqTCq22RKM8wKJNowcqihHJ4SkI8CGeK7KOR9tPboXUuS5Zk5lQgzzTbs4oxD8x+6HUshZUa2OyNI9lR93bQ==
   dependencies:
-    caniuse-lite "^1.0.30000929"
-    electron-to-chromium "^1.3.103"
-    node-releases "^1.1.3"
+    caniuse-lite "^1.0.30000975"
+    electron-to-chromium "^1.3.164"
+    node-releases "^1.1.23"
 
 browserstack@^1.2.0:
   version "1.5.1"
@@ -2765,10 +2766,10 @@ caniuse-lite@^1.0.30000921:
   resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000921.tgz#7a607c1623444b22351d834e093aedda3c42fbe8"
   integrity sha512-Bu09ciy0lMWLgpYC77I0YGuI8eFRBPPzaSOYJK1jTI64txCphYCqnWbxJYjHABYVt/TYX/p3jNjLBR87u1Bfpw==
 
-caniuse-lite@^1.0.30000929, caniuse-lite@^1.0.30000932:
-  version "1.0.30000934"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000934.tgz#4f2d749f51e9e2d4e9b182f8f121d26ec4208e8d"
-  integrity sha512-o7yfZn0R9N+mWAuksDsdLsb1gu9o//XK0QSU0zSSReKNRsXsFc/n/psxi0YSPNiqlKxImp5h4DHnAPdwYJ8nNA==
+caniuse-lite@^1.0.30000975, caniuse-lite@^1.0.30000980:
+  version "1.0.30000980"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000980.tgz#0df53e4354b3111f83ac15b0bd4c71fe92994231"
+  integrity sha512-as0PRtWHaX3gl2gpC7qA7bX88lr+qLacMMXm1QKLLQtBCwT/Ljbgrv5EXKMNBoeEX6yFZ4vIsBb4Nh+PEwW2Rw==
 
 capture-stack-trace@^1.0.0:
   version "1.0.0"
@@ -4215,10 +4216,10 @@ ejs-loader@0.3.1:
     loader-utils "^0.2.7"
     lodash "^3.6.0"
 
-electron-to-chromium@^1.3.103:
-  version "1.3.113"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.113.tgz#b1ccf619df7295aea17bc6951dc689632629e4a9"
-  integrity sha512-De+lPAxEcpxvqPTyZAXELNpRZXABRxf+uL/rSykstQhzj/B0l1150G/ExIIxKc16lI89Hgz81J0BHAcbTqK49g==
+electron-to-chromium@^1.3.164:
+  version "1.3.187"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.187.tgz#fea64435f370892c0f27aded1bbdcb6f235c592b"
+  integrity sha512-XCEygaK7Fs35/RwS+67YbBWs/ydG+oUFPuy1wv558jC3Opd2DHwRyRqrCmhxpmPmCSVlZujYX4TOmOXuMz2GZA==
 
 electron-to-chromium@^1.3.30, electron-to-chromium@^1.3.50:
   version "1.3.52"
@@ -7591,10 +7592,10 @@ node-releases@^1.1.1:
   dependencies:
     semver "^5.3.0"
 
-node-releases@^1.1.3:
-  version "1.1.3"
-  resolved "https://registry.yarnpkg.com/node-releases/-/node-releases-1.1.3.tgz#aad9ce0dcb98129c753f772c0aa01360fb90fbd2"
-  integrity sha512-6VrvH7z6jqqNFY200kdB6HdzkgM96Oaj9v3dqGfgp6mF+cHmU4wyQKZ2/WPDRVoR0Jz9KqbamaBN0ZhdUaysUQ==
+node-releases@^1.1.23:
+  version "1.1.25"
+  resolved "https://registry.yarnpkg.com/node-releases/-/node-releases-1.1.25.tgz#0c2d7dbc7fed30fbe02a9ee3007b8c90bf0133d3"
+  integrity sha512-fI5BXuk83lKEoZDdH3gRhtsNgh05/wZacuXkgbiYkceE7+QIMXOg98n9ZV7mz27B+kFHnqHcUpscZZlGRSmTpQ==
   dependencies:
     semver "^5.3.0"
 
@@ -9104,6 +9105,11 @@ postcss-value-parser@^3.3.1:
   version "3.3.1"
   resolved "https://registry.yarnpkg.com/postcss-value-parser/-/postcss-value-parser-3.3.1.tgz#9ff822547e2893213cf1c30efa51ac5fd1ba8281"
 
+postcss-value-parser@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/postcss-value-parser/-/postcss-value-parser-4.0.0.tgz#99a983d365f7b2ad8d0f9b8c3094926eab4b936d"
+  integrity sha512-ESPktioptiSUchCKgggAkzdmkgzKfmp0EU8jXH+5kbIUB+unr0Y4CY9SRMvibuvYUBjNh1ACLbxqYNpdTQOteQ==
+
 postcss-values-parser@^1.5.0:
   version "1.5.0"
   resolved "https://registry.yarnpkg.com/postcss-values-parser/-/postcss-values-parser-1.5.0.tgz#5d9fa63e2bcb0179ce48f3235303765eb89f3047"
@@ -9112,7 +9118,7 @@ postcss-values-parser@^1.5.0:
     indexes-of "^1.0.1"
     uniq "^1.0.1"
 
-postcss@7.0.14, postcss@^7.0.13, postcss@^7.0.14:
+postcss@7.0.14, postcss@^7.0.13:
   version "7.0.14"
   resolved "https://registry.yarnpkg.com/postcss/-/postcss-7.0.14.tgz#4527ed6b1ca0d82c53ce5ec1a2041c2346bbd6e5"
   integrity sha512-NsbD6XUUMZvBxtQAJuWDJeeC4QFsmWsfozWxCJPWf3M55K9iu2iMDaKqyoOdTJ1R4usBXuxlVFAIo8rZPQD4Bg==
@@ -9144,6 +9150,15 @@ postcss@^7.0.1:
     chalk "^2.4.1"
     source-map "^0.6.1"
     supports-color "^5.5.0"
+
+postcss@^7.0.17:
+  version "7.0.17"
+  resolved "https://registry.yarnpkg.com/postcss/-/postcss-7.0.17.tgz#4da1bdff5322d4a0acaab4d87f3e782436bad31f"
+  integrity sha512-546ZowA+KZ3OasvQZHsbuEpysvwTZNGJv9EfyCQdsIDltPSWHAeTQ5fQy/Npi2ZDtLI3zs7Ps/p6wThErhm9fQ==
+  dependencies:
+    chalk "^2.4.2"
+    source-map "^0.6.1"
+    supports-color "^6.1.0"
 
 postcss@^7.0.3, postcss@^7.0.5:
   version "7.0.5"
